@@ -16,59 +16,6 @@ public class Position {
 	}
 
 	public Position nextPosition(Direction direction) {
-		switch (direction) {
-		case E:
-
-			break;
-		case W:
-
-			break;
-		case S:
-
-			break;
-		case N:
-
-			break;
-		case SE:
-
-			break;
-		case SW:
-
-			break;
-		case NE:
-
-			break;
-		case NW:
-
-			break;
-		case SSE:
-
-			break;
-		case SSW:
-
-			break;
-		case NNE:
-
-			break;
-		case NNW:
-
-			break;
-		case ESE:
-
-			break;
-		case WSW:
-
-			break;
-		case ENE:
-
-			break;
-		case WNW:
-
-			break;
-
-		default:
-			break;
-		}
 		return null;
 	}
 
