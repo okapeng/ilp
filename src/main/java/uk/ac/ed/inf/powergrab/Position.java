@@ -14,19 +14,17 @@ public class Position {
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
-	
-	private void moveInDirection(Direction direction) {
-		this.longitude += Math.cos(direction.getDegree());
-		this.latitude += Math.sin(direction.getDegree());
-	}
 
 	public Position nextPosition(Direction direction) {
-		Position newPos = new Position(latitude + direction.getLatitudeChange(), longitude + direction.getLongitudeChange());
+		Position newPos = new Position(latitude + direction.getLatitudeChange(), 
+				longitude + direction.getLongitudeChange());
 		return newPos.inPlayArea() ? newPos : null;
 	}
 
 	public boolean inPlayArea() {
-		return this.latitude <= MAX_LATITIUDE && this.latitude >= MIN_LATITIUDE && this.longitude <= MAX_LONGITUDE
+		return this.latitude <= MAX_LATITIUDE 
+				&& this.latitude >= MIN_LATITIUDE 
+				&& this.longitude <= MAX_LONGITUDE
 				&& this.longitude >= MIN_LONGITUDE;
 	}
 }
