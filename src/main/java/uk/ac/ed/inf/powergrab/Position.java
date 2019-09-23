@@ -14,9 +14,15 @@ public class Position {
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
+	
+	private void moveInDirection(Direction direction) {
+		this.longitude += Math.cos(direction.getDegree());
+		this.latitude += Math.sin(direction.getDegree());
+	}
 
 	public Position nextPosition(Direction direction) {
-		return null;
+		Position newPos = new Position(latitude + direction.getLatitudeChange(), longitude + direction.getLongitudeChange());
+		return newPos.inPlayArea() ? newPos : null;
 	}
 
 	public boolean inPlayArea() {
