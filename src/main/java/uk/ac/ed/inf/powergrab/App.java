@@ -1,9 +1,5 @@
 package uk.ac.ed.inf.powergrab;
 
-/**
- * Hello world!
- *
- */
 public class App {
 	public static void main(String[] args) {
 		if (args.length != 7) {
@@ -15,6 +11,21 @@ public class App {
 
 		Position initPos = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
 		int randomSeed = Integer.parseInt(args[5]);
-		String droneType = args[6];
+		DroneType droneType = DroneType.valueOf(args[6]);
+		
+		//TODO download json map data
+
+		switch (droneType) {
+		case stateful:
+
+			break;
+		case stateless:
+
+			break;
+
+		default:
+			return;
+		}
+
 	}
 }
