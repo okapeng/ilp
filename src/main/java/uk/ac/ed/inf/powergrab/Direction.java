@@ -6,23 +6,24 @@ public enum Direction {
 	WSW(9), SW(10), SSW(11), S(12), SSE(13), SE(14), ESE(15);
 	
 	private static final double R = 0.0003;
-	private static final double UNIT_DEGREE = Math.PI / 8;
+	private static final double UNIT_DEGREE = Math.PI / 8.0;
 	
 	private double degree;
+	private double latitudeChange;
+	private double longitudeChange;
 	
 	private Direction(int order) {
 		this.degree = order * UNIT_DEGREE;
+		this.latitudeChange =  R * Math.sin(this.degree);
+		this.longitudeChange = R * Math.cos(this.degree);
 	}
-	
-	public double getDegree() {
-		return degree;
+
+	public double getLatitudeChange() {
+		return latitudeChange;
 	}
 
 	public double getLongitudeChange() {
-		return R * Math.cos(this.degree);
+		return longitudeChange;
 	}
-	
-	public double getLatitudeChange() {
-		return R * Math.sin(this.degree);
-	}
+
 }
