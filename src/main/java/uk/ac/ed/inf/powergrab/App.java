@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.*;
 
+import javax.sound.midi.Soundbank;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.mapbox.geojson.FeatureCollection;
@@ -21,22 +23,26 @@ public class App {
 				args[2], args[1], args[0]);
 
 		Position initPos = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
-		int randomSeed = Integer.parseInt(args[5]);
-		DroneType droneType = DroneType.valueOf(args[6]);
 		
-		//TODO download json map data
-
-		switch (droneType) {
-		case stateful:
-
-			break;
-		case stateless:
-
-			break;
-
-		default:
-			return;
-		}
+		System.out.println(initPos.latitude + "  " + initPos.longitude);
+		
+		System.out.println("\n\n\n");
+//		int randomSeed = Integer.parseInt(args[5]);
+//		DroneType droneType = DroneType.valueOf(args[6]);
+//		
+//		//TODO download json map data
+//
+//		switch (droneType) {
+//		case stateful:
+//
+//			break;
+//		case stateless:
+//
+//			break;
+//
+//		default:
+//			return;
+//		}
 
 		try {
 			HttpURLConnection conn = getConnection(mapString);
@@ -62,10 +68,12 @@ public class App {
 	}
 
 	private static String getMapSource(HttpURLConnection conn) throws IOException {
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		InputStreamReader inputStreamReader = new InputStreamReader(conn.getInputStream());
-		while (inputStreamReader.ready()) {
-			sb.append((char) inputStreamReader.read());
+		int c = inputStreamReader.read();
+		while (c != -1) {
+			sb.append((char) c);
+			c = inputStreamReader.read();
 		}
 		return sb.toString();
 	}
