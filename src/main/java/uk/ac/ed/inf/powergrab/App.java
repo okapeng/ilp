@@ -23,10 +23,7 @@ public class App {
 				args[2], args[1], args[0]);
 
 		Position initPos = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
-		
-		System.out.println(initPos.latitude + "  " + initPos.longitude);
-		
-		System.out.println("\n\n\n");
+				
 //		int randomSeed = Integer.parseInt(args[5]);
 //		DroneType droneType = DroneType.valueOf(args[6]);
 //		

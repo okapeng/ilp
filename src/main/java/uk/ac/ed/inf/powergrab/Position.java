@@ -1,5 +1,10 @@
 package uk.ac.ed.inf.powergrab;
 
+/**
+ * The position of the drone
+ * @author ivy
+ *
+ */
 public class Position {
 
 	private static final double R = 0.0003;
@@ -8,6 +13,9 @@ public class Position {
 	private static final double MAX_LONGITUDE = -3.184319;
 	private static final double MIN_LONGITUDE = -3.192473;
 
+	/**
+	 * The latitude and longitude of a position
+	 */
 	public double latitude;
 	public double longitude;
 
@@ -20,14 +28,14 @@ public class Position {
 	 * Calculate the new Position after moving in a given direction
 	 * 
 	 * @param direction
-	 * @return valid new position i.e. within the playing area
+	 * @return new position
 	 */
 	public Position nextPosition(Direction direction) {
 		if (direction == null) {
 			return null;
 		}
-		double newLatitude = latitude + R * direction.getLatitudeChange();
-		double newLongitude = longitude + R * direction.getLongitudeChange();
+		double newLatitude = latitude + R * Math.sin(direction.getDegree());
+		double newLongitude = longitude + R * Math.cos(direction.getDegree());
 		return new Position(newLatitude, newLongitude);
 	}
 

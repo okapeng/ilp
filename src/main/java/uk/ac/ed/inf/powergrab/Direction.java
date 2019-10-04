@@ -1,5 +1,10 @@
 package uk.ac.ed.inf.powergrab;
 
+/**
+ * The directions that a drone can choose to move
+ * @author ivy
+ *
+ */
 public enum Direction {
 	/**
 	 * Enumerate 16 directions from E to ESE anti-clockwise. Let E be the positive axes
@@ -8,28 +13,24 @@ public enum Direction {
 	WSW(9), SW(10), SSW(11), S(12), SSE(13), SE(14), ESE(15);
 	
 	/**
-	 * The angle between two consecutive direction
+	 * The fixed angle between two consecutive direction
 	 */
 	private static final double UNIT_DEGREE = Math.PI / 8;
+	/**
+	 * The degree of angle between this direction and E
+	 */
+	private double degree;
 	
 	/**
-	 *  The unit position difference by moving in the direction
+	 * Constructor of Direction, calculate the degree
+	 * @param order
 	 */
-	private double latitudeChange;
-	private double longitudeChange;
-	
-	private Direction(int order) {
-		double degree = order * UNIT_DEGREE;
-		this.latitudeChange = Math.sin(degree);
-		this.longitudeChange = Math.cos(degree);
+	private Direction(int index) {
+		this.degree = index * UNIT_DEGREE;
 	}
 
-	public double getLatitudeChange() {
-		return latitudeChange;
-	}
-
-	public double getLongitudeChange() {
-		return longitudeChange;
+	public double getDegree() {
+		return degree;
 	}
 
 }
