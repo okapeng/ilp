@@ -16,6 +16,8 @@ public enum Direction {
 	 * The fixed angle between two consecutive direction
 	 */
 	private static final double UNIT_DEGREE = Math.PI / 8;
+	public static final int NUM_OF_DIRECTIONS = 16;
+	
 	/**
 	 * The degree of angle between this direction and E
 	 */

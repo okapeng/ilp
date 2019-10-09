@@ -25,7 +25,7 @@ public class Position {
 	}
 
 	/**
-	 * Calculate the new Position after moving in a given direction
+	 * Calculate the new Position after moving in a given directions
 	 * 
 	 * @param direction
 	 * @return new position
@@ -48,4 +48,15 @@ public class Position {
 		return this.latitude < MAX_LATITIUDE && this.latitude > MIN_LATITIUDE && this.longitude < MAX_LONGITUDE
 				&& this.longitude > MIN_LONGITUDE;
 	}
+	
+	public double getRelativeDistance(Position position) {
+		return Math.sqrt(Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
+	}
+
+	@Override
+	public String toString() {
+		return "Position [latitude=" + latitude + ", longitude=" + longitude + "]";
+	}
+	
+	
 }

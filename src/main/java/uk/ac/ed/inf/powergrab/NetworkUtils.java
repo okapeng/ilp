@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MapUtil {
+public class NetworkUtils {
 
 	public static HttpURLConnection getConnection(String mapString) throws Exception {
 		URL mapUrl = null;
