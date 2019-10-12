@@ -13,6 +13,7 @@ import com.mapbox.geojson.Point;
 public class MapUtils {
 	
 	public final double MAX_TRANSFER_DISTANCE = 0.00025;
+	
 	private static MapUtils mapUtils = null;
 	private List<Feature> features;
 	private List<ChargingStation> chargingStations = new ArrayList<ChargingStation>();
@@ -46,16 +47,15 @@ public class MapUtils {
 	}
 	
 	public ChargingStation getNearestStation(Position curPosition){
-		ArrayList<Position> nearbyStations = new ArrayList<Position>();
-		
+
 		List<Double> distances = chargingStations.stream().map(stations -> curPosition.getRelativeDistance(stations.getPosition()))
 				.collect(Collectors.toList());
 		Double minDistance = Collections.min(distances);
 		
-		if (minDistance < MAX_TRANSFER_DISTANCE) 
-			return chargingStations.get(distances.indexOf(minDistance));
+//		if (minDistance < MAX_TRANSFER_DISTANCE) 
+//			return chargingStations.get(distances.indexOf(minDistance));
 		
-		return new ChargingStation(curPosition, 0, 0);
+		return chargingStations.get(distances.indexOf(minDistance));
 	}
 
 }

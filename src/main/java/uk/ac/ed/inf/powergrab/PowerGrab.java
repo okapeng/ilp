@@ -1,5 +1,7 @@
 package uk.ac.ed.inf.powergrab;
 
+import java.util.HashMap;
+
 public class PowerGrab {
 	
 	private static final double INITIAL_COINS = 0;
@@ -33,7 +35,9 @@ public class PowerGrab {
 	
 	private void playStateless(Position initPosition, int seed) {
 		Drone drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, seed);
+		HashMap<Direction, Position> allowedMoves = new HashMap<Direction, Position>();
 		while (drone.getPower() > 0 && moves < MAX_MOVES) {
+			
 			drone.move();
 			moves++;
 		}
