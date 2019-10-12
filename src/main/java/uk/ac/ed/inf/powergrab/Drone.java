@@ -1,5 +1,7 @@
 package uk.ac.ed.inf.powergrab;
 
+import java.util.List;
+
 public abstract class Drone {
 
 	protected Position curPosition;
@@ -13,7 +15,7 @@ public abstract class Drone {
 		this.power = power;
 	}
 	
-	public Position getCurPosition() {
+	public Position getPosition() {
 		return curPosition;
 	}
 
@@ -26,8 +28,8 @@ public abstract class Drone {
 		return power;
 	}
 
-	public void setCurPosition(Position curPosition) {
-		this.curPosition = curPosition;
+	public void setPosition(Position position) {
+		this.curPosition = position;
 	}
 
 	public void setCoins(double coins) {
@@ -38,8 +40,17 @@ public abstract class Drone {
 		this.power = power;
 	}
 
+	public void transfer(double coins, double power) {
+		this.coins += coins;
+		this.power += power;
+	}
 
-
-	public abstract Direction move();
+	public Position move(Direction direction) {
+		this.curPosition = curPosition.nextPosition(direction);
+		this.power--;
+		return this.curPosition;
+	}
+	
+	public abstract Direction decideMoveDirection(List<Direction> allowedDirections);
 	
 }

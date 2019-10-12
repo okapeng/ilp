@@ -1,45 +1,63 @@
 package uk.ac.ed.inf.powergrab;
 
-import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 public class PowerGrab {
-	
+
 	private static final double INITIAL_COINS = 0;
 	private static final double INITIAL_POWER = 250;
 	private static final int MAX_MOVES = 250;
-	
-	private Position initPosition;
-	private DroneType droneType;
-	private int randomSeed;
-	private int moves;
+
+	private Drone drone;
+	private int numOfMoves;
+	private StringBuffer movesTrace = new StringBuffer();
 
 	public PowerGrab(Position initPosition, DroneType droneType, int randomSeed) {
-		this.initPosition = initPosition;
-		this.droneType = droneType;
-		this.randomSeed = randomSeed;
-		this.moves = 0;
-	}
-
-	public void play() {
+		this.numOfMoves = 0;
 		switch (droneType) {
 		case stateful:
-			// TODO 
+
 			break;
 		case stateless:
-			playStateless(initPosition, randomSeed);
+			this.drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
 			break;
 		default:
-			return;
+			break;
 		}
+	}
+
+	public String play() {
+		while (drone.getPower() > 0 && numOfMoves < MAX_MOVES) {
+			Position oldPosition = drone.getPosition();
+			Direction moveDirection = drone.decideMoveDirection(getAllowedDirections());
+			Position newPosition = drone.move(moveDirection);
+			transfer();
+			MapUtils.getInstance().drawTrajectory(oldPosition, newPosition);
+			movesTrace.append(String.format("%s,%s,%s,%.2f,%.2f\n", oldPosition,moveDirection, newPosition, drone.getCoins(), drone.getPower()));
+			numOfMoves++;
+		}
+		
+		System.out.println(movesTrace.toString());
+		return movesTrace.toString();
 	}
 	
-	private void playStateless(Position initPosition, int seed) {
-		Drone drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, seed);
-		HashMap<Direction, Position> allowedMoves = new HashMap<Direction, Position>();
-		while (drone.getPower() > 0 && moves < MAX_MOVES) {
-			
-			drone.move();
-			moves++;
-		}
+	private void transfer() {
+		ChargingStation nearestStation = MapUtils.getInstance().getNearestStationInRange(drone.getPosition());
+		double coins = drone.getCoins() + nearestStation.getCoins() > 0 ? nearestStation.getCoins() : 0 - drone.getCoins();
+		double power = drone.getPower() + nearestStation.getPower() > 0 ? nearestStation.getPower() : 0 - drone.getPower();
+		drone.transfer(coins, power);
+//		if (coins != 0) {
+//			System.out.println(nearestStation);
+//		}
+		nearestStation.transfer(coins, power);
 	}
+
+	private List<Direction> getAllowedDirections() {
+		List<Direction> alloweDirections = new ArrayList<Direction>(Direction.DIRECTIONS);
+		return alloweDirections.stream().filter(dir -> drone.getPosition().nextPosition(dir).inPlayArea())
+				.collect(Collectors.toList());
+	}
+
 }

@@ -24,9 +24,14 @@ public class ChargingStation {
 		return power;
 	}
 	
-	public void transfer(Drone drone) {
-		drone.setCoins(this.coins - drone.getCoins() > 0 ? this.coins - drone.getCoins() : 0);
-		
+	public void transfer(double coins, double power) {
+		this.coins -= coins;
+		this.power -= power;
+	}
+
+	@Override
+	public String toString() {
+		return "ChargingStation [position=" + position + ", coins=" + coins + ", power=" + power + "]";
 	}
 	
 }

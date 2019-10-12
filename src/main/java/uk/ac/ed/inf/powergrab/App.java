@@ -9,7 +9,7 @@ import com.mapbox.geojson.FeatureCollection;;
  * @author Ivy Wang
  *
  */
-public class App {	
+public class App {
 	public static void main(String[] args) {
 		// TODO add argument check
 
@@ -22,14 +22,20 @@ public class App {
 			conn = NetworkUtils.getConnection(mapString);
 			mapSource = NetworkUtils.getMapSource(conn);
 			MapUtils.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
-			
 
 			Position initPosition = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
 			int randomSeed = Integer.parseInt(args[5]);
 			DroneType droneType = DroneType.valueOf(args[6]);
-			
+
+
 			PowerGrab powerGrab = new PowerGrab(initPosition, droneType, randomSeed);
-			powerGrab.play();
+			String moveTrace = powerGrab.play();
+			
+			FileUtils fileUtils = FileUtils.getInstance();
+			fileUtils.setFilename(String.format("%s-%s-%s-%s", droneType, args[0], args[1], args[2]));
+			fileUtils.outputGeojson( MapUtils.getInstance().getFeatures().toJson());
+			fileUtils.outputTxt(moveTrace);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

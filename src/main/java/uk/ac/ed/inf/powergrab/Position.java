@@ -55,7 +55,7 @@ public class Position {
 
 	@Override
 	public String toString() {
-		return "Position [latitude=" + latitude + ", longitude=" + longitude + "]";
+		return String.format("%.6f,%.6f", latitude, longitude);
 	}
 	
 	
