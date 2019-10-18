@@ -29,8 +29,6 @@ public class StatelessDrone extends Drone {
 
 		Direction firstDirection = directions.get(0);
 		if (MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection)).getCoins() > 0) {
-			System.out.println(MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection))
-					.getCoins());
 			return firstDirection;
 		} else {
 			directions = directions.stream().filter(dir -> {

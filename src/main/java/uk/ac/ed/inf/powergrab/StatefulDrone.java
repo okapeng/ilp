@@ -18,17 +18,15 @@ public class StatefulDrone extends Drone {
 		this.badStations = MapUtils.getInstance().getchargingStations().stream()
 				.filter(stations -> stations.getCoins() < 0 || stations.getPower() < 0).collect(Collectors.toList());
 
-		this.goals = MapUtils.getInstance().getchargingStations().stream()
-				.filter(stations -> stations.getCoins() > 0 && stations.getPower() > 0).collect(Collectors.toList());
+		this.goals = MapUtils.getInstance().getchargingStations().stream().filter(stations -> stations.getCoins() > 0)
+				.collect(Collectors.toList());
 		searchForGoal();
-
-		goals.stream().forEach(stations -> System.out.print(stations.getCoins() + " "));
 	}
 
 	@Override
 	public Direction decideMoveDirection(List<Direction> directions) {
 		if (lastMove != null) {
-			directions.remove(directions.indexOf(lastMove.getDiagonalDirection()));
+			directions.remove(lastMove.getDiagonalDirection());
 		}
 
 		if (tempGoal == null) {
@@ -49,23 +47,21 @@ public class StatefulDrone extends Drone {
 			}
 		});
 
-		directions.forEach(dir -> System.out.printf("%s: %.5f\t", dir,
-				(curPosition.nextPosition(dir).getRelativeDistance(tempGoal))));
-		System.out.println(directions);
-
 		return directions.get(0);
 	}
 
 	@Override
 	public Position move(Direction direction) {
 		super.move(direction);
-		if (tempGoal != null && tempGoal.getRelativeDistance(
-				MapUtils.getInstance().getNearestStation(curPosition).getPosition()) < MapUtils.MAX_TRANSFER_DISTANCE) {
-			goals.remove(0);
-			searchForGoal();
-		}
 		this.lastMove = direction;
 		return curPosition;
+	}
+
+	@Override
+	public void transfer(ChargingStation chargingStation, double coins, double power) {
+		goals.remove(chargingStation);
+		searchForGoal();
+		super.transfer(chargingStation, coins, power);
 	}
 
 	private void searchForGoal() {

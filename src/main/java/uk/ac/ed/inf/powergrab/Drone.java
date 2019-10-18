@@ -39,7 +39,7 @@ public abstract class Drone {
 		this.power = power;
 	}
 
-	public void transfer(double coins, double power) {
+	public void transfer(ChargingStation chargingStation, double coins, double power) {
 		this.coins += coins;
 		this.power += power;
 	}

@@ -40,23 +40,18 @@ public class PowerGrab {
 			numOfMoves++;
 		}
 
+		System.out.println(drone.coins);
 		return movesTrace.toString();
 	}
 
 	private void transfer() {
 		ChargingStation nearestStation = MapUtils.getInstance().getNearestStationInRange(drone.getPosition());
-		if (nearestStation.getCoins() != 0) {
-			System.out.println(nearestStation);
-		}
 		double coins = drone.getCoins() + nearestStation.getCoins() > 0 ? nearestStation.getCoins()
 				: 0 - drone.getCoins();
 		double power = drone.getPower() + nearestStation.getPower() > 0 ? nearestStation.getPower()
 				: 0 - drone.getPower();
-		drone.transfer(coins, power);
-//		if (coins != 0) {
-//			System.out.println(nearestStation);
-//		}
 		nearestStation.transfer(coins, power);
+		drone.transfer(nearestStation, coins, power);
 	}
 
 	private List<Direction> getAllowedDirections() {
