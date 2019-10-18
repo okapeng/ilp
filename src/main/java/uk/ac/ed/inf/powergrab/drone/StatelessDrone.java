@@ -1,10 +1,15 @@
-package uk.ac.ed.inf.powergrab;
+package uk.ac.ed.inf.powergrab.drone;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+
+import uk.ac.ed.inf.powergrab.map.ChargingStation;
+import uk.ac.ed.inf.powergrab.map.Direction;
+import uk.ac.ed.inf.powergrab.map.MapUtils;
+import uk.ac.ed.inf.powergrab.map.Position;
 
 public class StatelessDrone extends Drone {
 

@@ -1,8 +1,10 @@
-package uk.ac.ed.inf.powergrab;
+package uk.ac.ed.inf.powergrab.io;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import uk.ac.ed.inf.powergrab.map.MapUtils;
 
 public class FileUtils {
 	private static FileUtils fileUtils = null;

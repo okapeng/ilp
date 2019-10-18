@@ -1,4 +1,4 @@
-package uk.ac.ed.inf.powergrab;
+package uk.ac.ed.inf.powergrab.map;
 
 /**
  * The position of the drone

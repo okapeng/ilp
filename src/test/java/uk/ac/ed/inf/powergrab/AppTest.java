@@ -3,6 +3,8 @@ package uk.ac.ed.inf.powergrab;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import uk.ac.ed.inf.powergrab.map.Direction;
+import uk.ac.ed.inf.powergrab.map.Position;
 
 /**
  * Unit test for PowerGrab App.

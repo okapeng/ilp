@@ -1,4 +1,4 @@
-package uk.ac.ed.inf.powergrab;
+package uk.ac.ed.inf.powergrab.map;
 
 public class ChargingStation {
 	

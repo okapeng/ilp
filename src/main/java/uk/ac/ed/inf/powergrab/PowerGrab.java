@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import uk.ac.ed.inf.powergrab.drone.Drone;
+import uk.ac.ed.inf.powergrab.drone.DroneType;
+import uk.ac.ed.inf.powergrab.drone.StatefulDrone;
+import uk.ac.ed.inf.powergrab.drone.StatelessDrone;
+import uk.ac.ed.inf.powergrab.map.ChargingStation;
+import uk.ac.ed.inf.powergrab.map.Direction;
+import uk.ac.ed.inf.powergrab.map.MapUtils;
+import uk.ac.ed.inf.powergrab.map.Position;
+
 public class PowerGrab {
 
 	private static final double INITIAL_COINS = 0;
@@ -29,6 +38,8 @@ public class PowerGrab {
 	}
 
 	public String play() {
+		System.out.println(MapUtils.getInstance().getchargingStations().stream().map(ChargingStation::getCoins)
+				.filter(x -> x > 0).reduce(Double::sum));
 		while (drone.getPower() > 0 && numOfMoves < MAX_MOVES) {
 			Position oldPosition = drone.getPosition();
 			Direction moveDirection = drone.decideMoveDirection(getAllowedDirections());
@@ -40,7 +51,7 @@ public class PowerGrab {
 			numOfMoves++;
 		}
 
-		System.out.println(drone.coins);
+		System.out.println(drone);
 		return movesTrace.toString();
 	}
 

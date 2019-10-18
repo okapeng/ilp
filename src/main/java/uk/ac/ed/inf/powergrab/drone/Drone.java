@@ -1,6 +1,10 @@
-package uk.ac.ed.inf.powergrab;
+package uk.ac.ed.inf.powergrab.drone;
 
 import java.util.List;
+
+import uk.ac.ed.inf.powergrab.map.ChargingStation;
+import uk.ac.ed.inf.powergrab.map.Direction;
+import uk.ac.ed.inf.powergrab.map.Position;
 
 public abstract class Drone {
 
@@ -51,5 +55,10 @@ public abstract class Drone {
 	}
 
 	public abstract Direction decideMoveDirection(List<Direction> directions);
+
+	@Override
+	public String toString() {
+		return "Drone [curPosition=" + curPosition + ", coins=" + coins + ", power=" + power + "]";
+	}
 
 }

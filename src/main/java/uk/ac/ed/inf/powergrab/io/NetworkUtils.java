@@ -1,4 +1,4 @@
-package uk.ac.ed.inf.powergrab;
+package uk.ac.ed.inf.powergrab.io;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

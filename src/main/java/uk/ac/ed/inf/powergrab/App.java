@@ -2,7 +2,13 @@ package uk.ac.ed.inf.powergrab;
 
 import java.net.HttpURLConnection;
 
-import com.mapbox.geojson.FeatureCollection;;
+import com.mapbox.geojson.FeatureCollection;
+
+import uk.ac.ed.inf.powergrab.drone.DroneType;
+import uk.ac.ed.inf.powergrab.io.FileUtils;
+import uk.ac.ed.inf.powergrab.io.NetworkUtils;
+import uk.ac.ed.inf.powergrab.map.MapUtils;
+import uk.ac.ed.inf.powergrab.map.Position;
 
 /**
  * 
@@ -22,8 +28,6 @@ public class App {
 			conn = NetworkUtils.getConnection(mapString);
 			mapSource = NetworkUtils.getMapSource(conn);
 			MapUtils.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
-			System.out.println(MapUtils.getInstance().getchargingStations().stream().map(ChargingStation::getCoins)
-					.filter(x -> x > 0).reduce(Double::sum));
 
 			Position initPosition = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
 			int randomSeed = Integer.parseInt(args[5]);
@@ -31,13 +35,7 @@ public class App {
 
 			PowerGrab powerGrab = new PowerGrab(initPosition, droneType, randomSeed);
 			String moveTrace = powerGrab.play();
-//			System.out.println(moveTrace);
-
-//			MapUtils.getInstance().getchargingStations().forEach(station -> {
-//				if (station.getCoins() > 0) {
-//					System.out.println(station);
-//				}
-//			});
+			System.out.println(moveTrace);
 
 			FileUtils fileUtils = FileUtils.getInstance();
 			fileUtils.setFilename(String.format("%s-%s-%s-%s", droneType, args[0], args[1], args[2]));
