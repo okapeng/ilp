@@ -1,8 +1,8 @@
 package uk.ac.ed.inf.powergrab;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.ArrayList;
 
 public class PowerGrab {
 
@@ -18,7 +18,7 @@ public class PowerGrab {
 		this.numOfMoves = 0;
 		switch (droneType) {
 		case stateful:
-
+			this.drone = new StatefulDrone(initPosition, INITIAL_COINS, INITIAL_POWER);
 			break;
 		case stateless:
 			this.drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
@@ -35,18 +35,23 @@ public class PowerGrab {
 			Position newPosition = drone.move(moveDirection);
 			transfer();
 			MapUtils.getInstance().drawTrajectory(oldPosition, newPosition);
-			movesTrace.append(String.format("%s,%s,%s,%.2f,%.2f\n", oldPosition,moveDirection, newPosition, drone.getCoins(), drone.getPower()));
+			movesTrace.append(String.format("%s,%s,%s,%.2f,%.2f\n", oldPosition, moveDirection, newPosition,
+					drone.getCoins(), drone.getPower()));
 			numOfMoves++;
 		}
-		
-		System.out.println(movesTrace.toString());
+
 		return movesTrace.toString();
 	}
-	
+
 	private void transfer() {
 		ChargingStation nearestStation = MapUtils.getInstance().getNearestStationInRange(drone.getPosition());
-		double coins = drone.getCoins() + nearestStation.getCoins() > 0 ? nearestStation.getCoins() : 0 - drone.getCoins();
-		double power = drone.getPower() + nearestStation.getPower() > 0 ? nearestStation.getPower() : 0 - drone.getPower();
+		if (nearestStation.getCoins() != 0) {
+			System.out.println(nearestStation);
+		}
+		double coins = drone.getCoins() + nearestStation.getCoins() > 0 ? nearestStation.getCoins()
+				: 0 - drone.getCoins();
+		double power = drone.getPower() + nearestStation.getPower() > 0 ? nearestStation.getPower()
+				: 0 - drone.getPower();
 		drone.transfer(coins, power);
 //		if (coins != 0) {
 //			System.out.println(nearestStation);

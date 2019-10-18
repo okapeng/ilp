@@ -3,7 +3,6 @@ package uk.ac.ed.inf.powergrab;
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * The directions that a drone can choose to move
  * 
@@ -23,7 +22,8 @@ public enum Direction {
 	 */
 	private static final double UNIT_DEGREE = Math.PI / 8;
 	public static final int NUM_OF_DIRECTIONS = 16;
-	
+
+	public static final List<Direction> DIRECTIONS = Arrays.asList(Direction.values());
 
 	/**
 	 * The degree of angle between this direction and E
@@ -42,12 +42,10 @@ public enum Direction {
 	public double getDegree() {
 		return degree;
 	}
-	
-	
-	
-//	public static final List<Direction> DIRECTIONS2 = IntStream.range(0, Direction.NUM_OF_DIRECTIONS)
-//			.mapToObj(i -> Direction.valueOf(Integer.toString(i))).collect(Collectors.toList());
-	
-	public static final List<Direction> DIRECTIONS = Arrays.asList(Direction.values());
+
+	public Direction getDiagonalDirection() {
+		int indexOfDiagonal = (DIRECTIONS.indexOf(this) + (NUM_OF_DIRECTIONS / 2)) % NUM_OF_DIRECTIONS;
+		return DIRECTIONS.get(indexOfDiagonal);
+	}
 
 }

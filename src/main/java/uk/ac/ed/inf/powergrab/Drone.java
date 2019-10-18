@@ -7,14 +7,14 @@ public abstract class Drone {
 	protected Position curPosition;
 	protected double coins;
 	protected double power;
-	
+
 	public Drone(Position curPosition, double coins, double power) {
 		super();
 		this.curPosition = curPosition;
 		this.coins = coins;
 		this.power = power;
 	}
-	
+
 	public Position getPosition() {
 		return curPosition;
 	}
@@ -22,7 +22,6 @@ public abstract class Drone {
 	public double getCoins() {
 		return coins;
 	}
-
 
 	public double getPower() {
 		return power;
@@ -47,10 +46,10 @@ public abstract class Drone {
 
 	public Position move(Direction direction) {
 		this.curPosition = curPosition.nextPosition(direction);
-		this.power--;
+		this.power -= 1.25;
 		return this.curPosition;
 	}
-	
-	public abstract Direction decideMoveDirection(List<Direction> allowedDirections);
-	
+
+	public abstract Direction decideMoveDirection(List<Direction> directions);
+
 }

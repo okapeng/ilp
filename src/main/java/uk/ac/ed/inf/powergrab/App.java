@@ -27,20 +27,28 @@ public class App {
 			int randomSeed = Integer.parseInt(args[5]);
 			DroneType droneType = DroneType.valueOf(args[6]);
 
-
 			PowerGrab powerGrab = new PowerGrab(initPosition, droneType, randomSeed);
 			String moveTrace = powerGrab.play();
-			
+//			System.out.println(moveTrace);
+
+			MapUtils.getInstance().getchargingStations().forEach(station -> {
+				if (station.getCoins() > 0) {
+					System.out.println(station);
+				}
+			});
+			System.out.println(
+					MapUtils.getInstance().getchargingStations().stream().filter(s -> s.getCoins() >= 0).count());
+
 			FileUtils fileUtils = FileUtils.getInstance();
 			fileUtils.setFilename(String.format("%s-%s-%s-%s", droneType, args[0], args[1], args[2]));
-			fileUtils.outputGeojson( MapUtils.getInstance().getFeatures().toJson());
+			fileUtils.outputGeojson(MapUtils.getInstance().getFeatures().toJson());
 			fileUtils.outputTxt(moveTrace);
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			
+
 		}
 
 	}

@@ -1,5 +1,7 @@
 package uk.ac.ed.inf.powergrab;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -15,15 +17,31 @@ public class StatelessDrone extends Drone {
 
 	@Override
 	public Direction decideMoveDirection(List<Direction> directions) {
-		
-		directions = directions.stream().filter(dir -> {
-			ChargingStation nearestStation = MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(dir));
-			return nearestStation.getCoins() >= 0;
-		}).collect(Collectors.toList());
 
-		return directions.get(rand.nextInt(directions.size()));
+		Collections.sort(directions, new Comparator<Direction>() {
+			@Override
+			public int compare(Direction d1, Direction d2) {
+				ChargingStation s1 = MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(d1));
+				ChargingStation s2 = MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(d2));
+				return (int) (s2.getCoins() - s1.getCoins());
+			}
+		});
+
+		Direction firstDirection = directions.get(0);
+		if (MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection)).getCoins() > 0) {
+			System.out.println(MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection))
+					.getCoins());
+			return firstDirection;
+		} else {
+			directions = directions.stream().filter(dir -> {
+				ChargingStation nearestStation = MapUtils.getInstance()
+						.getNearestStationInRange(curPosition.nextPosition(dir));
+				return nearestStation.getCoins() >= 0;
+			}).collect(Collectors.toList());
+
+			return directions.get(rand.nextInt(directions.size()));
+		}
 	}
-
 
 //	public Direction move() {
 //		Direction moveDirection;
@@ -60,5 +78,23 @@ public class StatelessDrone extends Drone {
 //
 //		return moveDirection;
 //	}
+//	Collections.sort(directionStationMap.entrySet(), new Comparator<Map.Entry<Direction, ChargingStation>>() {
+//	@Override
+//	public int compare(Entry<Direction, ChargingStation> o1, Entry<Direction, ChargingStation> o2) {
+//		return (int) (o1.getValue().getCoins() - o2.getValue().getCoins());
+//	}
+//});
+	//
+//	directions = directions.stream().filter(dir -> {
+//		ChargingStation nearestStation = MapUtils.getInstance()
+//				.getNearestStationInRange(curPosition.nextPosition(dir));
+//		return nearestStation.getCoins() >= 0;
+//	}).collect(Collectors.toList());
+
+//	directions.stream().forEach(dir -> {
+//	System.out.print(
+//			MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins() + " ");
+//});
+//System.out.println();
 
 }

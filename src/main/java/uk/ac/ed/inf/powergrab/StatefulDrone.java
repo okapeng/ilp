@@ -1,17 +1,89 @@
-//package uk.ac.ed.inf.powergrab;
-//
-//import java.util.Comparator;
-//import java.util.TreeMap;
-//
-//public class StatefulDrone extends Drone {
-//	
-//	private ChargingStation tempGoal;
-//
-//	public StatefulDrone(Position curPosition, double coins, double power) {
-//		super(curPosition, coins, power);
-//		this.tempGoal = MapUtils.getInstance().getNearestStation(curPosition);
-//	}
-//
+package uk.ac.ed.inf.powergrab;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StatefulDrone extends Drone {
+
+	private List<ChargingStation> goals;
+	private List<ChargingStation> badStations;
+	private Position tempGoal;
+	private Direction lastMove;
+
+	public StatefulDrone(Position curPosition, double coins, double power) {
+		super(curPosition, coins, power);
+
+		this.badStations = MapUtils.getInstance().getchargingStations().stream()
+				.filter(stations -> stations.getCoins() < 0 || stations.getPower() < 0).collect(Collectors.toList());
+
+		this.goals = MapUtils.getInstance().getchargingStations().stream()
+				.filter(stations -> stations.getCoins() > 0 && stations.getPower() > 0).collect(Collectors.toList());
+		searchForGoal();
+
+		goals.stream().forEach(stations -> System.out.print(stations.getCoins() + " "));
+	}
+
+	@Override
+	public Direction decideMoveDirection(List<Direction> directions) {
+		if (lastMove != null) {
+			directions.remove(directions.indexOf(lastMove.getDiagonalDirection()));
+		}
+
+		if (tempGoal == null) {
+			return lastMove.getDiagonalDirection();
+		}
+
+		directions = directions.stream()
+				.filter(dir -> !badStations
+						.contains(MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(dir))))
+				.collect(Collectors.toList());
+
+		Collections.sort(directions, new Comparator<Direction>() {
+			@Override
+			public int compare(Direction d1, Direction d2) {
+				Position p1 = curPosition.nextPosition(d1);
+				Position p2 = curPosition.nextPosition(d2);
+				return Double.compare(p1.getRelativeDistance(tempGoal), p2.getRelativeDistance(tempGoal));
+			}
+		});
+
+		directions.forEach(dir -> System.out.printf("%s: %.5f\t", dir,
+				(curPosition.nextPosition(dir).getRelativeDistance(tempGoal))));
+		System.out.println(directions);
+
+		return directions.get(0);
+	}
+
+	@Override
+	public Position move(Direction direction) {
+		super.move(direction);
+		if (tempGoal != null && tempGoal.getRelativeDistance(
+				MapUtils.getInstance().getNearestStation(curPosition).getPosition()) < MapUtils.MAX_TRANSFER_DISTANCE) {
+			goals.remove(0);
+			searchForGoal();
+		}
+		this.lastMove = direction;
+		return curPosition;
+	}
+
+	private void searchForGoal() {
+		if (goals.size() == 0) {
+			tempGoal = null;
+			return;
+		}
+
+		Collections.sort(goals, new Comparator<ChargingStation>() {
+			@Override
+			public int compare(ChargingStation s1, ChargingStation s2) {
+				return Double.compare(curPosition.getRelativeDistance(s1.getPosition()),
+						curPosition.getRelativeDistance(s2.getPosition()));
+			}
+		});
+		this.tempGoal = goals.get(0).getPosition();
+	}
+
 //	@Override
 //	public Direction move() {
 //		Direction moveDirection;
@@ -50,5 +122,5 @@
 ////		return moveDirection;
 //		return null;
 //	}
-//
-//}
+
+}
