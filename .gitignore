@@ -70,10 +70,15 @@ local.properties
 .apt_generated
 
 .sts4-cache/
-
+# output file
+.geojson
+.txt
 # End of https://www.gitignore.io/api/eclipse
 <<<<<<< HEAD
 
 =======
 >>>>>>> 11800ccef77d6aa281875ac604f5e4d97af51001
 /target/
+/stateful-23-09-2019.txt
+/stateless-15-09-2019.geojson
+/stateless-15-09-2019.txt
