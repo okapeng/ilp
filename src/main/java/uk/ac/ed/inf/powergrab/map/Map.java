@@ -11,24 +11,28 @@ import com.mapbox.geojson.Geometry;
 import com.mapbox.geojson.LineString;
 import com.mapbox.geojson.Point;
 
-public class MapUtils {
+public class Map {
 
 	public static final double MAX_TRANSFER_DISTANCE = 0.00025;
 
-	private static MapUtils mapUtils = null;
+	private static Map map = null;
 	private List<Feature> features;
 	private List<ChargingStation> chargingStations = new ArrayList<ChargingStation>();
 
-	private MapUtils() {
+	private Map() {
 	}
 
-	public static MapUtils getInstance() {
-		if (mapUtils == null) {
-			synchronized (MapUtils.class) {
-				mapUtils = new MapUtils();
+	public static Map getInstance() {
+		if (map == null) {
+			synchronized (Map.class) {
+				map = new Map();
 			}
 		}
-		return mapUtils;
+		return map;
+	}
+
+	public void reset() {
+		map = new Map();
 	}
 
 	public void setFeatures(FeatureCollection features) {
@@ -54,8 +58,14 @@ public class MapUtils {
 	}
 
 	public ChargingStation getNearestStation(Position curPosition) {
+		if (curPosition == null) {
+			System.out.println("position");
+		}
+		if (chargingStations.isEmpty()) {
+			System.out.println("station");
+		}
 		List<Double> distances = chargingStations.stream()
-				.map(stations -> curPosition.getRelativeDistance(stations.getPosition())).collect(Collectors.toList());
+				.map(station -> curPosition.getRelativeDistance(station.getPosition())).collect(Collectors.toList());
 		Double minDistance = Collections.min(distances);
 
 		return chargingStations.get(distances.indexOf(minDistance));

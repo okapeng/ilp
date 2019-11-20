@@ -1,7 +1,12 @@
 package uk.ac.ed.inf.powergrab.map;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * The position of the drone
+ * 
  * @author ivy
  *
  */
@@ -32,7 +37,7 @@ public class Position {
 	 */
 	public Position nextPosition(Direction direction) {
 		if (direction == null) {
-			return null;
+			return this;
 		}
 		double newLatitude = latitude + R * Math.sin(direction.getDegree());
 		double newLongitude = longitude + R * Math.cos(direction.getDegree());
@@ -48,15 +53,21 @@ public class Position {
 		return this.latitude < MAX_LATITIUDE && this.latitude > MIN_LATITIUDE && this.longitude < MAX_LONGITUDE
 				&& this.longitude > MIN_LONGITUDE;
 	}
-	
+
 	public double getRelativeDistance(Position position) {
-		return Math.sqrt(Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
+		return Math.sqrt(
+				Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
+	}
+
+	public List<Direction> getAllowedDirections() {
+		List<Direction> alloweDirections = new ArrayList<Direction>(Direction.DIRECTIONS);
+		return alloweDirections.stream().filter(dir -> this.nextPosition(dir).inPlayArea())
+				.collect(Collectors.toList());
 	}
 
 	@Override
 	public String toString() {
 		return String.format("%.6f,%.6f", latitude, longitude);
 	}
-	
-	
+
 }

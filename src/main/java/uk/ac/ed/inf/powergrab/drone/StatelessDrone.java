@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
-import uk.ac.ed.inf.powergrab.map.MapUtils;
+import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.map.Position;
 
 public class StatelessDrone extends Drone {
@@ -26,18 +26,18 @@ public class StatelessDrone extends Drone {
 		Collections.sort(directions, new Comparator<Direction>() {
 			@Override
 			public int compare(Direction d1, Direction d2) {
-				ChargingStation s1 = MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(d1));
-				ChargingStation s2 = MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(d2));
+				ChargingStation s1 = Map.getInstance().getNearestStationInRange(curPosition.nextPosition(d1));
+				ChargingStation s2 = Map.getInstance().getNearestStationInRange(curPosition.nextPosition(d2));
 				return (int) (s2.getCoins() - s1.getCoins());
 			}
 		});
 
 		Direction firstDirection = directions.get(0);
-		if (MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection)).getCoins() > 0) {
+		if (Map.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection)).getCoins() > 0) {
 			return firstDirection;
 		} else {
 			directions = directions.stream().filter(dir -> {
-				ChargingStation nearestStation = MapUtils.getInstance()
+				ChargingStation nearestStation = Map.getInstance()
 						.getNearestStationInRange(curPosition.nextPosition(dir));
 				return nearestStation.getCoins() >= 0;
 			}).collect(Collectors.toList());
@@ -63,7 +63,7 @@ public class StatelessDrone extends Drone {
 //		for (Integer i = 0; i < Direction.NUM_OF_DIRECTIONS; i++) {
 //			Position tempPosition = curPosition.nextPosition(Direction.valueOf(i.toString()));
 //			if (tempPosition.inPlayArea()) {
-//				ChargingStation nearestStation = MapUtils.getInstance().getNearestStation(tempPosition);
+//				ChargingStation nearestStation = Map.getInstance().getNearestStation(tempPosition);
 //				if (nearestStation.getCoins() >= 0)
 //					potentialDirections.put(nearestStation, Direction.valueOf(i.toString()));
 //			}
@@ -89,14 +89,14 @@ public class StatelessDrone extends Drone {
 //});
 	//
 //	directions = directions.stream().filter(dir -> {
-//		ChargingStation nearestStation = MapUtils.getInstance()
+//		ChargingStation nearestStation = Map.getInstance()
 //				.getNearestStationInRange(curPosition.nextPosition(dir));
 //		return nearestStation.getCoins() >= 0;
 //	}).collect(Collectors.toList());
 
 //	directions.stream().forEach(dir -> {
 //	System.out.print(
-//			MapUtils.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins() + " ");
+//			Map.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins() + " ");
 //});
 //System.out.println();
 

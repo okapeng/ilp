@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class NetworkUtils {
 
-	public static HttpURLConnection getConnection(String mapString) throws Exception {
+	public static HttpURLConnection getConnection(String mapString) throws IOException {
 		URL mapUrl = null;
 		HttpURLConnection conn = null;
 		mapUrl = new URL(mapString);
