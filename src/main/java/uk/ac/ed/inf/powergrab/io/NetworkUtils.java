@@ -7,7 +7,12 @@ import java.net.URL;
 
 public class NetworkUtils {
 
-	public static HttpURLConnection getConnection(String mapString) throws IOException {
+	public static String downloadMap(String mapString) throws IOException {
+		HttpURLConnection conn = getConnection(mapString);
+		return readMapSource(conn);
+	}
+
+	private static HttpURLConnection getConnection(String mapString) throws IOException {
 		URL mapUrl = null;
 		HttpURLConnection conn = null;
 		mapUrl = new URL(mapString);
@@ -20,7 +25,7 @@ public class NetworkUtils {
 		return conn;
 	}
 
-	public static String getMapSource(HttpURLConnection conn) throws IOException {
+	private static String readMapSource(HttpURLConnection conn) throws IOException {
 		StringBuilder sb = new StringBuilder();
 		InputStreamReader inputStreamReader = new InputStreamReader(conn.getInputStream());
 		int c = inputStreamReader.read();

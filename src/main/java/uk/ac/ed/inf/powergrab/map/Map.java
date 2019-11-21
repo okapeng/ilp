@@ -57,24 +57,22 @@ public class Map {
 		return new ArrayList<ChargingStation>(this.chargingStations);
 	}
 
-	public ChargingStation getNearestStation(Position curPosition) {
-		if (curPosition == null) {
-			System.out.println("position");
-		}
-		if (chargingStations.isEmpty()) {
-			System.out.println("station");
-		}
+//	public ChargingStation getNearestStation(Position curPosition) {
+//		List<Double> distances = chargingStations.stream()
+//				.map(station -> curPosition.getRelativeDistance(station.getPosition())).collect(Collectors.toList());
+//		Double minDistance = Collections.min(distances);
+//
+//		return chargingStations.get(distances.indexOf(minDistance));
+//	}
+
+	public ChargingStation getNearestStationInRange(Position curPosition) {
 		List<Double> distances = chargingStations.stream()
 				.map(station -> curPosition.getRelativeDistance(station.getPosition())).collect(Collectors.toList());
 		Double minDistance = Collections.min(distances);
+		// System.out.println(minDistance);
+		ChargingStation nearestStation = chargingStations.get(distances.indexOf(minDistance));
 
-		return chargingStations.get(distances.indexOf(minDistance));
-	}
-
-	public ChargingStation getNearestStationInRange(Position curPosition) {
-		ChargingStation nearestStation = getNearestStation(curPosition);
-		return curPosition.getRelativeDistance(nearestStation.getPosition()) < MAX_TRANSFER_DISTANCE ? nearestStation
-				: new ChargingStation(curPosition, 0, 0);
+		return minDistance < MAX_TRANSFER_DISTANCE ? nearestStation : new ChargingStation(curPosition, 0, 0);
 	}
 
 	public void drawTrajectory(Position oldPosition, Position newPosition) {
