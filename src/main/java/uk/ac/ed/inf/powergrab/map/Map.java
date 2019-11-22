@@ -5,11 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.mapbox.geojson.Feature;
-import com.mapbox.geojson.FeatureCollection;
-import com.mapbox.geojson.Geometry;
-import com.mapbox.geojson.LineString;
-import com.mapbox.geojson.Point;
+import com.mapbox.geojson.*;
 
 public class Map {
 

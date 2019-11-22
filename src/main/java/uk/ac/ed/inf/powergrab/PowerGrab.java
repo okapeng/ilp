@@ -1,13 +1,7 @@
 package uk.ac.ed.inf.powergrab;
 
-import uk.ac.ed.inf.powergrab.drone.Drone;
-import uk.ac.ed.inf.powergrab.drone.DroneType;
-import uk.ac.ed.inf.powergrab.drone.StatefulDrone;
-import uk.ac.ed.inf.powergrab.drone.StatelessDrone;
-import uk.ac.ed.inf.powergrab.map.ChargingStation;
-import uk.ac.ed.inf.powergrab.map.Direction;
-import uk.ac.ed.inf.powergrab.map.Map;
-import uk.ac.ed.inf.powergrab.map.Position;
+import uk.ac.ed.inf.powergrab.drone.*;
+import uk.ac.ed.inf.powergrab.map.*;
 
 public class PowerGrab {
 

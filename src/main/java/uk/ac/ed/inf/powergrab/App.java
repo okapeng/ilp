@@ -5,11 +5,9 @@ import java.util.Arrays;
 
 import com.mapbox.geojson.FeatureCollection;
 
-import uk.ac.ed.inf.powergrab.drone.DroneType;
-import uk.ac.ed.inf.powergrab.io.FileUtils;
-import uk.ac.ed.inf.powergrab.io.NetworkUtils;
-import uk.ac.ed.inf.powergrab.map.Map;
-import uk.ac.ed.inf.powergrab.map.Position;
+import uk.ac.ed.inf.powergrab.drone.*;
+import uk.ac.ed.inf.powergrab.io.*;
+import uk.ac.ed.inf.powergrab.map.*;
 
 /**
  * 

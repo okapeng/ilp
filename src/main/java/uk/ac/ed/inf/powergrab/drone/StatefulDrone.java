@@ -6,10 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import uk.ac.ed.inf.powergrab.map.ChargingStation;
-import uk.ac.ed.inf.powergrab.map.Direction;
-import uk.ac.ed.inf.powergrab.map.Map;
-import uk.ac.ed.inf.powergrab.map.Position;
+import uk.ac.ed.inf.powergrab.map.*;
+
 
 public class StatefulDrone extends Drone {
 
@@ -18,8 +16,6 @@ public class StatefulDrone extends Drone {
 	private List<Position> visitedPositions;
 	private List<Position> badPositions;
 	private Direction lastMove;
-	private boolean reachGoal = false;
-	private boolean reachAllGoals = false;
 	private Map map;
 
 	private static final double BAD_RANGE = 0.00015;
@@ -43,58 +39,47 @@ public class StatefulDrone extends Drone {
 	@Override
 	public Direction decideMoveDirection(List<Direction> directions) {
 
-//		if (reachGoal) {
-//			visitedPositions = new ArrayList<Position>();
-//			searchForGoal();
-//			reachGoal = false;
-//		}
-		if (reachAllGoals) {
-			return lastMove.getDiagonalDirection();
-		}
 		if (lastMove != null) {
 			directions.remove(lastMove.getDiagonalDirection());
+			if (goals.isEmpty()) {
+				return lastMove.getDiagonalDirection();
+			}
 		}
-		if (visitedPositions.size() > 5 && visitedPositions.get(visitedPositions.size() - 4)
+		
+		if (visitedPositions.size() > 6 && visitedPositions.get(visitedPositions.size() - 4)
 				.getRelativeDistance(curPosition) < 3 * BAD_RANGE) {
-			ChargingStation unreachableStation = goals.get(0);
-			System.out.println("unreachable" + unreachableStation);
-			goals.remove(unreachableStation);
-			searchForGoal();
-			badPositions.add(curPosition);
-			goals.add(unreachableStation);
-			reachAllGoals = false;
-			System.out.println("temp goal" + goals.get(0));
-
-//			return lastMove.getDiagonalDirection();
+			resetGoal();
 		}
-
-//		List<Direction> directions_filter = directions.stream()
-//				.filter(dir -> !badStations.contains(map.getNearestStationInRange(curPosition.nextPosition(dir))))
-//				.filter(dir -> !isVisited(curPosition.nextPosition(dir))).collect(Collectors.toList());
+		
 		directions = directions.stream()
 				.filter(dir -> !badStations.contains(map.getNearestStationInRange(curPosition.nextPosition(dir)))).collect(Collectors.toList());
-		List<Direction> directions_filter = directions.stream()
+		List<Direction> niceDirections = directions.stream()
 				.filter(dir -> !isNearBad(curPosition.nextPosition(dir))).collect(Collectors.toList());
 
 		Position tempGoalPosition = goals.get(0).getPosition();
-		Collections.sort(directions_filter, new DirectionComparator(tempGoalPosition));
+		Collections.sort(niceDirections, new DirectionComparator(tempGoalPosition));
 		
-		if (directions_filter.isEmpty()) {
+		if (niceDirections.isEmpty()) {
 			Collections.sort(directions, new DirectionComparator(tempGoalPosition));
 			this.badPositions.add(curPosition);
-			return directions.get(0);
+			return directions.isEmpty() ? lastMove.getDiagonalDirection() : directions.get(0);
 		}
 
-		return directions_filter.get(0);
+		return niceDirections.get(0);
+	}
+	
+	private void resetGoal() {
+		ChargingStation unreachableStation = goals.get(0);
+		goals.remove(unreachableStation);
+		searchForGoal();
+		badPositions.add(curPosition);
+		goals.add(unreachableStation);
 	}
 
 	private boolean isNearBad(Position position) {
 		int numOfClosePos = this.badPositions.stream().parallel().filter(
 				visitedPositions -> (position.getRelativeDistance(visitedPositions) < BAD_RANGE))
 				.collect(Collectors.toSet()).size();
-//		if (numOfClosePos > 0) {
-//			System.out.println(position + "\t" + Integer.toString(numOfClosePos));
-//		}
 		return numOfClosePos > 0;
 	}
 
@@ -109,9 +94,6 @@ public class StatefulDrone extends Drone {
 	public void transfer(ChargingStation chargingStation, double coins, double power) {
 		if (goals.contains(chargingStation)) {
 			goals.remove(chargingStation);
-//			badStations.add(chargingStation);
-//			reachGoal = true;
-			reachAllGoals = (goals.size() == 0);
 			searchForGoal();
 		}
 		visitedPositions.add(curPosition);
@@ -119,7 +101,6 @@ public class StatefulDrone extends Drone {
 	}
 
 	private void searchForGoal() {
-//		reachAllGoals = (goals.size() == 0);
 		visitedPositions = new ArrayList<Position>();
 
 		Collections.sort(goals, new Comparator<ChargingStation>() {

@@ -2,9 +2,7 @@ package uk.ac.ed.inf.powergrab.drone;
 
 import java.util.List;
 
-import uk.ac.ed.inf.powergrab.map.ChargingStation;
-import uk.ac.ed.inf.powergrab.map.Direction;
-import uk.ac.ed.inf.powergrab.map.Position;
+import uk.ac.ed.inf.powergrab.map.*;
 
 public abstract class Drone {
 
