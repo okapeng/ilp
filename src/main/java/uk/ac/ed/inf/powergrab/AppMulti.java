@@ -19,9 +19,9 @@ public class AppMulti {
 
 				try {
 					String mapString = String.format(
-							"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", 2019,
+							"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", 2020,
 							String.format("%02d", i), String.format("%02d", j));
-					System.out.printf("Date: %s/%s/%s \n", 2019, String.format("%02d", i), String.format("%02d", j));
+					System.out.printf("Date: %s/%s/%s \n", 2020, String.format("%02d", i), String.format("%02d", j));
 					String mapSource = NetworkUtils.downloadMap(mapString);
 					Map.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
 

@@ -61,7 +61,6 @@ public class Map {
 		List<Double> distances = chargingStations.stream()
 				.map(station -> curPosition.getRelativeDistance(station.getPosition())).collect(Collectors.toList());
 		Double minDistance = Collections.min(distances);
-		// System.out.println(minDistance);
 		ChargingStation nearestStation = chargingStations.get(distances.indexOf(minDistance));
 
 		return minDistance < MAX_TRANSFER_DISTANCE ? nearestStation : new ChargingStation(curPosition, 0, 0);
