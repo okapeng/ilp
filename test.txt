@@ -1,0 +1,1426 @@
+Date: 2019/01/01 
+Remain Coins: 0
+Date: 2019/01/02 
+Remain Coins: 0
+Date: 2019/01/03 
+Remain Coins: 0
+Date: 2019/01/04 
+Remain Coins: 0
+Date: 2019/01/05 
+Remain Coins: 0
+Date: 2019/01/06 
+Remain Coins: 0
+Date: 2019/01/07 
+Remain Coins: 0
+Date: 2019/01/08 
+Remain Coins: 0
+Date: 2019/01/09 
+Remain Coins: 0
+Date: 2019/01/10 
+Remain Coins: 0
+Date: 2019/01/11 
+Remain Coins: 0
+Date: 2019/01/12 
+Remain Coins: 0
+Date: 2019/01/13 
+Remain Coins: 0
+Date: 2019/01/14 
+Remain Coins: 0
+Date: 2019/01/15 
+Remain Coins: 0
+Date: 2019/01/16 
+Remain Coins: 0
+Date: 2019/01/17 
+Remain Coins: -657
+Date: 2019/01/18 
+Remain Coins: 0
+Date: 2019/01/19 
+Remain Coins: 0
+Date: 2019/01/20 
+Remain Coins: 0
+Date: 2019/01/21 
+Remain Coins: 0
+Date: 2019/01/22 
+Remain Coins: 0
+Date: 2019/01/23 
+Remain Coins: 0
+Date: 2019/01/24 
+Remain Coins: 0
+Date: 2019/01/25 
+Remain Coins: 0
+Date: 2019/01/26 
+Remain Coins: 0
+Date: 2019/01/27 
+Remain Coins: 0
+Date: 2019/01/28 
+Remain Coins: 0
+Date: 2019/01/29 
+Remain Coins: 0
+Date: 2019/02/01 
+Remain Coins: 0
+Date: 2019/02/02 
+Remain Coins: 0
+Date: 2019/02/03 
+Remain Coins: 0
+Date: 2019/02/04 
+Remain Coins: 0
+Date: 2019/02/05 
+Remain Coins: 0
+Date: 2019/02/06 
+Remain Coins: 0
+Date: 2019/02/07 
+Remain Coins: 0
+Date: 2019/02/08 
+Remain Coins: 0
+Date: 2019/02/09 
+Remain Coins: 0
+Date: 2019/02/10 
+Remain Coins: 0
+Date: 2019/02/11 
+Remain Coins: -1098
+Date: 2019/02/12 
+Remain Coins: 0
+Date: 2019/02/13 
+Remain Coins: 0
+Date: 2019/02/14 
+Remain Coins: 0
+Date: 2019/02/15 
+Remain Coins: 0
+Date: 2019/02/16 
+Remain Coins: 0
+Date: 2019/02/17 
+Remain Coins: 0
+Date: 2019/02/18 
+Remain Coins: 0
+Date: 2019/02/19 
+Remain Coins: 0
+Date: 2019/02/20 
+Remain Coins: 0
+Date: 2019/02/21 
+Remain Coins: 0
+Date: 2019/02/22 
+Remain Coins: 0
+Date: 2019/02/23 
+Remain Coins: 0
+Date: 2019/02/24 
+Remain Coins: 0
+Date: 2019/02/25 
+Remain Coins: 0
+Date: 2019/02/26 
+Remain Coins: 0
+Date: 2019/02/27 
+Remain Coins: 0
+Date: 2019/02/28 
+Remain Coins: 0
+Date: 2019/02/29 
+Unable to acquire map from the server. Please try again.
+Date: 2019/03/01 
+Remain Coins: 0
+Date: 2019/03/02 
+Remain Coins: 0
+Date: 2019/03/03 
+Remain Coins: 0
+Date: 2019/03/04 
+Remain Coins: 0
+Date: 2019/03/05 
+Remain Coins: 0
+Date: 2019/03/06 
+Remain Coins: 0
+Date: 2019/03/07 
+Remain Coins: -64
+Date: 2019/03/08 
+Remain Coins: 0
+Date: 2019/03/09 
+Remain Coins: -27
+Date: 2019/03/10 
+Remain Coins: 0
+Date: 2019/03/11 
+Remain Coins: 0
+Date: 2019/03/12 
+Remain Coins: 0
+Date: 2019/03/13 
+Remain Coins: -114
+Date: 2019/03/14 
+Remain Coins: 0
+Date: 2019/03/15 
+Remain Coins: -142
+Date: 2019/03/16 
+Remain Coins: 0
+Date: 2019/03/17 
+Remain Coins: 0
+Date: 2019/03/18 
+Remain Coins: 0
+Date: 2019/03/19 
+Remain Coins: 0
+Date: 2019/03/20 
+Remain Coins: 0
+Date: 2019/03/21 
+Remain Coins: 0
+Date: 2019/03/22 
+Remain Coins: 0
+Date: 2019/03/23 
+Remain Coins: 0
+Date: 2019/03/24 
+Remain Coins: 0
+Date: 2019/03/25 
+Remain Coins: -1099
+Date: 2019/03/26 
+Remain Coins: 0
+Date: 2019/03/27 
+Remain Coins: 0
+Date: 2019/03/28 
+Remain Coins: 0
+Date: 2019/03/29 
+Remain Coins: 0
+Date: 2019/04/01 
+Remain Coins: 0
+Date: 2019/04/02 
+Remain Coins: 0
+Date: 2019/04/03 
+Remain Coins: 0
+Date: 2019/04/04 
+Remain Coins: 0
+Date: 2019/04/05 
+Remain Coins: 0
+Date: 2019/04/06 
+Remain Coins: 0
+Date: 2019/04/07 
+Remain Coins: 0
+Date: 2019/04/08 
+Remain Coins: 0
+Date: 2019/04/09 
+Remain Coins: 0
+Date: 2019/04/10 
+Remain Coins: 0
+Date: 2019/04/11 
+Remain Coins: 0
+Date: 2019/04/12 
+Remain Coins: 0
+Date: 2019/04/13 
+Remain Coins: 0
+Date: 2019/04/14 
+Remain Coins: 0
+Date: 2019/04/15 
+Remain Coins: 0
+Date: 2019/04/16 
+Remain Coins: 0
+Date: 2019/04/17 
+Remain Coins: 0
+Date: 2019/04/18 
+Remain Coins: 0
+Date: 2019/04/19 
+Remain Coins: 0
+Date: 2019/04/20 
+Remain Coins: 0
+Date: 2019/04/21 
+Remain Coins: 0
+Date: 2019/04/22 
+Remain Coins: 0
+Date: 2019/04/23 
+Remain Coins: -1318
+Date: 2019/04/24 
+Remain Coins: 0
+Date: 2019/04/25 
+Remain Coins: 0
+Date: 2019/04/26 
+Remain Coins: -718
+Date: 2019/04/27 
+Remain Coins: -553
+Date: 2019/04/28 
+Remain Coins: 0
+Date: 2019/04/29 
+Remain Coins: 0
+Date: 2019/05/01 
+Remain Coins: 0
+Date: 2019/05/02 
+Remain Coins: 0
+Date: 2019/05/03 
+Remain Coins: 0
+Date: 2019/05/04 
+Remain Coins: 0
+Date: 2019/05/05 
+Remain Coins: 0
+Date: 2019/05/06 
+Remain Coins: 0
+Date: 2019/05/07 
+Remain Coins: 0
+Date: 2019/05/08 
+Remain Coins: 0
+Date: 2019/05/09 
+Remain Coins: 0
+Date: 2019/05/10 
+Remain Coins: 0
+Date: 2019/05/11 
+Remain Coins: 0
+Date: 2019/05/12 
+Remain Coins: 0
+Date: 2019/05/13 
+Remain Coins: 0
+Date: 2019/05/14 
+Remain Coins: 0
+Date: 2019/05/15 
+Remain Coins: 0
+Date: 2019/05/16 
+Remain Coins: 0
+Date: 2019/05/17 
+Remain Coins: 0
+Date: 2019/05/18 
+Remain Coins: -189
+Date: 2019/05/19 
+Remain Coins: 0
+Date: 2019/05/20 
+Remain Coins: 0
+Date: 2019/05/21 
+Remain Coins: 0
+Date: 2019/05/22 
+Remain Coins: 0
+Date: 2019/05/23 
+Remain Coins: 0
+Date: 2019/05/24 
+Remain Coins: -111
+Date: 2019/05/25 
+Remain Coins: 0
+Date: 2019/05/26 
+Remain Coins: 0
+Date: 2019/05/27 
+Remain Coins: 0
+Date: 2019/05/28 
+Remain Coins: 0
+Date: 2019/05/29 
+Remain Coins: 0
+Date: 2019/06/01 
+Remain Coins: 0
+Date: 2019/06/02 
+Remain Coins: 0
+Date: 2019/06/03 
+Remain Coins: 0
+Date: 2019/06/04 
+Remain Coins: 0
+Date: 2019/06/05 
+Remain Coins: 0
+Date: 2019/06/06 
+Remain Coins: 0
+Date: 2019/06/07 
+Remain Coins: 0
+Date: 2019/06/08 
+Remain Coins: 0
+Date: 2019/06/09 
+Remain Coins: 0
+Date: 2019/06/10 
+Remain Coins: 0
+Date: 2019/06/11 
+Remain Coins: 0
+Date: 2019/06/12 
+Remain Coins: 0
+Date: 2019/06/13 
+Remain Coins: 0
+Date: 2019/06/14 
+Remain Coins: 0
+Date: 2019/06/15 
+Remain Coins: 0
+Date: 2019/06/16 
+Remain Coins: 0
+Date: 2019/06/17 
+Remain Coins: 0
+Date: 2019/06/18 
+Remain Coins: 0
+Date: 2019/06/19 
+Remain Coins: 0
+Date: 2019/06/20 
+Remain Coins: 0
+Date: 2019/06/21 
+Remain Coins: -728
+Date: 2019/06/22 
+Remain Coins: 0
+Date: 2019/06/23 
+Remain Coins: 0
+Date: 2019/06/24 
+Remain Coins: 0
+Date: 2019/06/25 
+Remain Coins: 0
+Date: 2019/06/26 
+Remain Coins: 0
+Date: 2019/06/27 
+Remain Coins: 0
+Date: 2019/06/28 
+Remain Coins: -1210
+Date: 2019/06/29 
+Remain Coins: 0
+Date: 2019/07/01 
+Remain Coins: 0
+Date: 2019/07/02 
+Remain Coins: -927
+Date: 2019/07/03 
+Remain Coins: -577
+Date: 2019/07/04 
+Remain Coins: 0
+Date: 2019/07/05 
+Remain Coins: 0
+Date: 2019/07/06 
+Remain Coins: 0
+Date: 2019/07/07 
+Remain Coins: 0
+Date: 2019/07/08 
+Remain Coins: 0
+Date: 2019/07/09 
+Remain Coins: 0
+Date: 2019/07/10 
+Remain Coins: 0
+Date: 2019/07/11 
+Remain Coins: 0
+Date: 2019/07/12 
+Remain Coins: -1182
+Date: 2019/07/13 
+Remain Coins: 0
+Date: 2019/07/14 
+Remain Coins: 0
+Date: 2019/07/15 
+Remain Coins: 0
+Date: 2019/07/16 
+Remain Coins: -491
+Date: 2019/07/17 
+Remain Coins: -64
+Date: 2019/07/18 
+Remain Coins: 0
+Date: 2019/07/19 
+Remain Coins: 0
+Date: 2019/07/20 
+Remain Coins: 0
+Date: 2019/07/21 
+Remain Coins: 0
+Date: 2019/07/22 
+Remain Coins: 0
+Date: 2019/07/23 
+Remain Coins: 0
+Date: 2019/07/24 
+Remain Coins: 0
+Date: 2019/07/25 
+Remain Coins: 0
+Date: 2019/07/26 
+Remain Coins: 0
+Date: 2019/07/27 
+Remain Coins: 0
+Date: 2019/07/28 
+Remain Coins: 0
+Date: 2019/07/29 
+Remain Coins: 0
+Date: 2019/08/01 
+Remain Coins: 0
+Date: 2019/08/02 
+Remain Coins: 0
+Date: 2019/08/03 
+Remain Coins: 0
+Date: 2019/08/04 
+Remain Coins: 0
+Date: 2019/08/05 
+Remain Coins: 0
+Date: 2019/08/06 
+Remain Coins: 0
+Date: 2019/08/07 
+Remain Coins: 0
+Date: 2019/08/08 
+Remain Coins: 0
+Date: 2019/08/09 
+Remain Coins: 0
+Date: 2019/08/10 
+Remain Coins: -815
+Date: 2019/08/11 
+Remain Coins: 0
+Date: 2019/08/12 
+Remain Coins: -299
+Date: 2019/08/13 
+Remain Coins: -239
+Date: 2019/08/14 
+Remain Coins: 0
+Date: 2019/08/15 
+Remain Coins: 0
+Date: 2019/08/16 
+Remain Coins: -1152
+Date: 2019/08/17 
+Remain Coins: 0
+Date: 2019/08/18 
+Remain Coins: 0
+Date: 2019/08/19 
+Remain Coins: -728
+Date: 2019/08/20 
+Remain Coins: 0
+Date: 2019/08/21 
+Remain Coins: 0
+Date: 2019/08/22 
+Remain Coins: -1255
+Date: 2019/08/23 
+Remain Coins: 0
+Date: 2019/08/24 
+Remain Coins: 0
+Date: 2019/08/25 
+Remain Coins: 0
+Date: 2019/08/26 
+Remain Coins: 0
+Date: 2019/08/27 
+Remain Coins: 0
+Date: 2019/08/28 
+Remain Coins: 0
+Date: 2019/08/29 
+Remain Coins: 0
+Date: 2019/09/01 
+Remain Coins: 0
+Date: 2019/09/02 
+Remain Coins: 0
+Date: 2019/09/03 
+Remain Coins: 0
+Date: 2019/09/04 
+Remain Coins: 0
+Date: 2019/09/05 
+Remain Coins: 0
+Date: 2019/09/06 
+Remain Coins: -1148
+Date: 2019/09/07 
+Remain Coins: 0
+Date: 2019/09/08 
+Remain Coins: 0
+Date: 2019/09/09 
+Remain Coins: 0
+Date: 2019/09/10 
+Remain Coins: 0
+Date: 2019/09/11 
+Remain Coins: 0
+Date: 2019/09/12 
+Remain Coins: 0
+Date: 2019/09/13 
+Remain Coins: 0
+Date: 2019/09/14 
+Remain Coins: 0
+Date: 2019/09/15 
+Remain Coins: -921
+Date: 2019/09/16 
+Remain Coins: 0
+Date: 2019/09/17 
+Remain Coins: 0
+Date: 2019/09/18 
+Remain Coins: 0
+Date: 2019/09/19 
+Remain Coins: 0
+Date: 2019/09/20 
+Remain Coins: 0
+Date: 2019/09/21 
+Remain Coins: 0
+Date: 2019/09/22 
+Remain Coins: 0
+Date: 2019/09/23 
+Remain Coins: 0
+Date: 2019/09/24 
+Remain Coins: 0
+Date: 2019/09/25 
+Remain Coins: 0
+Date: 2019/09/26 
+Remain Coins: 0
+Date: 2019/09/27 
+Remain Coins: 0
+Date: 2019/09/28 
+Remain Coins: 0
+Date: 2019/09/29 
+Remain Coins: 0
+Date: 2019/10/01 
+Remain Coins: 0
+Date: 2019/10/02 
+Remain Coins: 0
+Date: 2019/10/03 
+Remain Coins: 0
+Date: 2019/10/04 
+Remain Coins: 0
+Date: 2019/10/05 
+Remain Coins: 0
+Date: 2019/10/06 
+Remain Coins: 0
+Date: 2019/10/07 
+Remain Coins: 0
+Date: 2019/10/08 
+Remain Coins: 0
+Date: 2019/10/09 
+Remain Coins: 0
+Date: 2019/10/10 
+Remain Coins: 0
+Date: 2019/10/11 
+Remain Coins: 0
+Date: 2019/10/12 
+Remain Coins: 0
+Date: 2019/10/13 
+Remain Coins: 0
+Date: 2019/10/14 
+Remain Coins: 0
+Date: 2019/10/15 
+Remain Coins: 0
+Date: 2019/10/16 
+Remain Coins: 0
+Date: 2019/10/17 
+Remain Coins: 0
+Date: 2019/10/18 
+Remain Coins: 0
+Date: 2019/10/19 
+Remain Coins: 0
+Date: 2019/10/20 
+Remain Coins: 0
+Date: 2019/10/21 
+Remain Coins: 0
+Date: 2019/10/22 
+Remain Coins: 0
+Date: 2019/10/23 
+Remain Coins: 0
+Date: 2019/10/24 
+Remain Coins: 0
+Date: 2019/10/25 
+Remain Coins: -1412
+Date: 2019/10/26 
+Remain Coins: 0
+Date: 2019/10/27 
+Remain Coins: -846
+Date: 2019/10/28 
+Remain Coins: 0
+Date: 2019/10/29 
+Remain Coins: 0
+Date: 2019/11/01 
+Remain Coins: 0
+Date: 2019/11/02 
+Remain Coins: -143
+Date: 2019/11/03 
+Remain Coins: 0
+Date: 2019/11/04 
+Remain Coins: 0
+Date: 2019/11/05 
+Remain Coins: 0
+Date: 2019/11/06 
+Remain Coins: 0
+Date: 2019/11/07 
+Remain Coins: -19
+Date: 2019/11/08 
+Remain Coins: 0
+Date: 2019/11/09 
+Remain Coins: -992
+Date: 2019/11/10 
+Remain Coins: 0
+Date: 2019/11/11 
+Remain Coins: 0
+Date: 2019/11/12 
+Remain Coins: 0
+Date: 2019/11/13 
+Remain Coins: 0
+Date: 2019/11/14 
+Remain Coins: 0
+Date: 2019/11/15 
+Remain Coins: 0
+Date: 2019/11/16 
+Remain Coins: 0
+Date: 2019/11/17 
+Remain Coins: -930
+Date: 2019/11/18 
+Remain Coins: 0
+Date: 2019/11/19 
+Remain Coins: 0
+Date: 2019/11/20 
+Remain Coins: 0
+Date: 2019/11/21 
+Remain Coins: 0
+Date: 2019/11/22 
+Remain Coins: -927
+Date: 2019/11/23 
+Remain Coins: 0
+Date: 2019/11/24 
+Remain Coins: 0
+Date: 2019/11/25 
+Remain Coins: 0
+Date: 2019/11/26 
+Remain Coins: 0
+Date: 2019/11/27 
+Remain Coins: 0
+Date: 2019/11/28 
+Remain Coins: 0
+Date: 2019/11/29 
+Remain Coins: 0
+Date: 2019/12/01 
+Remain Coins: 0
+Date: 2019/12/02 
+Remain Coins: 0
+Date: 2019/12/03 
+Remain Coins: 0
+Date: 2019/12/04 
+Remain Coins: 0
+Date: 2019/12/05 
+Remain Coins: 0
+Date: 2019/12/06 
+Remain Coins: 0
+Date: 2019/12/07 
+Remain Coins: 0
+Date: 2019/12/08 
+Remain Coins: 0
+Date: 2019/12/09 
+Remain Coins: 0
+Date: 2019/12/10 
+Remain Coins: 0
+Date: 2019/12/11 
+Remain Coins: 0
+Date: 2019/12/12 
+Remain Coins: 0
+Date: 2019/12/13 
+Remain Coins: 0
+Date: 2019/12/14 
+Remain Coins: 0
+Date: 2019/12/15 
+Remain Coins: 0
+Date: 2019/12/16 
+Remain Coins: 0
+Date: 2019/12/17 
+Remain Coins: 0
+Date: 2019/12/18 
+Remain Coins: 0
+Date: 2019/12/19 
+Remain Coins: 0
+Date: 2019/12/20 
+Remain Coins: -638
+Date: 2019/12/21 
+Remain Coins: 0
+Date: 2019/12/22 
+Remain Coins: 0
+Date: 2019/12/23 
+Remain Coins: 0
+Date: 2019/12/24 
+Remain Coins: 0
+Date: 2019/12/25 
+Remain Coins: 0
+Date: 2019/12/26 
+Remain Coins: 0
+Date: 2019/12/27 
+Remain Coins: -248
+Date: 2019/12/28 
+Remain Coins: 0
+Date: 2019/12/29 
+Remain Coins: 0
+
+
+Date: 2019/01/01 
+Optional[1880.4355508574226]	Final coins: 1880.4355508574222
+Date: 2019/01/02 
+Optional[2218.500638371392]	Final coins: 2218.500638371392
+Date: 2019/01/03 
+Optional[2215.8569012220078]	Final coins: 2215.856901222008
+Date: 2019/01/04 
+Optional[2384.3173982220615]	Final coins: 2384.317398222062
+Date: 2019/01/05 
+Optional[2482.994690262762]	Final coins: 2482.9946902627617
+Date: 2019/01/06 
+Optional[1854.1850272521892]	Final coins: 1854.1850272521892
+Date: 2019/01/07 
+Optional[1654.7724966093854]	Final coins: 1654.7724966093851
+Date: 2019/01/08 
+Optional[2566.452713978309]	Final coins: 2566.4527139783086
+Date: 2019/01/09 
+Optional[1824.1232706117455]	Final coins: 1824.123270611746
+Date: 2019/01/10 
+Optional[2461.8197994175775]	Final coins: 2461.8197994175775
+Date: 2019/01/11 
+Optional[1679.4632437949047]	Final coins: 1679.4632437949047
+Date: 2019/01/12 
+Optional[2288.7639466702667]	Final coins: 2288.763946670267
+Date: 2019/01/13 
+Optional[1862.3462067335254]	Final coins: 1862.3462067335247
+Date: 2019/01/14 
+Optional[2216.287921935182]	Final coins: 2216.2879219351817
+Date: 2019/01/15 
+Optional[2136.604240860626]	Final coins: 2136.6042408606254
+Date: 2019/01/16 
+Optional[2254.8976607762743]	Final coins: 2254.8976607762743
+Date: 2019/01/17 
+Optional[1917.1313958860517]	Final coins: 1917.1313958860524
+Date: 2019/01/18 
+Optional[1616.7696848993592]	Final coins: 1616.7696848993592
+Date: 2019/01/19 
+Optional[2121.347531146519]	Final coins: 2121.347531146519
+Date: 2019/01/20 
+Optional[2146.2195250027]	Final coins: 2146.2195250027
+Date: 2019/01/21 
+Optional[2291.843329263006]	Final coins: 2291.8433292630057
+Date: 2019/01/22 
+Optional[2332.9010902603654]	Final coins: 2332.9010902603663
+Date: 2019/01/23 
+Optional[1847.7588028124999]	Final coins: 1847.7588028125006
+Date: 2019/01/24 
+Optional[2171.401305366863]	Final coins: 2171.401305366863
+Date: 2019/01/25 
+Optional[1882.8223915207436]	Final coins: 1882.8223915207438
+Date: 2019/01/26 
+Optional[1648.9793334125932]	Final coins: 1648.9793334125939
+Date: 2019/01/27 
+Optional[2370.9652858488976]	Final coins: 2370.965285848898
+Date: 2019/01/28 
+Optional[2423.0013086989584]	Final coins: 2423.0013086989575
+Date: 2019/01/29 
+Optional[1881.9384719153566]	Final coins: 1881.938471915356
+Date: 2019/02/01 
+Optional[1711.470662080815]	Final coins: 1711.4706620808142
+Date: 2019/02/02 
+Optional[2136.193681454619]	Final coins: 2136.1936814546198
+Date: 2019/02/03 
+Optional[2102.1898359012666]	Final coins: 2102.1898359012666
+Date: 2019/02/04 
+Optional[2203.501973267502]	Final coins: 2203.5019732675028
+Date: 2019/02/05 
+Optional[2714.1506114978315]	Final coins: 2714.150611497832
+Date: 2019/02/06 
+Optional[2133.9339673731706]	Final coins: 2133.9339673731706
+Date: 2019/02/07 
+Optional[2489.338018087222]	Final coins: 2489.3380180872214
+Date: 2019/02/08 
+Optional[2474.073909637841]	Final coins: 2474.073909637841
+Date: 2019/02/09 
+Optional[2297.5380329442305]	Final coins: 2297.5380329442305
+Date: 2019/02/10 
+Optional[2058.897258688759]	Final coins: 2058.8972586887594
+Date: 2019/02/11 
+Optional[2188.519720405295]	Final coins: 2188.5197204052943
+Date: 2019/02/12 
+Optional[3050.0498273927496]	Final coins: 509.35680669745875
+Date: 2019/02/13 
+Optional[2443.4541072675834]	Final coins: 2443.454107267584
+Date: 2019/02/14 
+Optional[2103.347035641124]	Final coins: 2103.3470356411244
+Date: 2019/02/15 
+Optional[3050.7937781491146]	Final coins: 3050.7937781491155
+Date: 2019/02/16 
+Optional[2444.0940143598978]	Final coins: 2444.0940143598973
+Date: 2019/02/17 
+Optional[2021.3162441518375]	Final coins: 2021.3162441518382
+Date: 2019/02/18 
+Optional[2412.6334150060966]	Final coins: 2412.6334150060957
+Date: 2019/02/19 
+Optional[2101.961259957808]	Final coins: 2101.9612599578077
+Date: 2019/02/20 
+Optional[2390.705024767528]	Final coins: 2390.705024767528
+Date: 2019/02/21 
+Optional[2384.477517002012]	Final coins: 2384.477517002012
+Date: 2019/02/22 
+Optional[2024.522265184489]	Final coins: 2024.5222651844892
+Date: 2019/02/23 
+Optional[2099.7863233869425]	Final coins: 2099.786323386943
+Date: 2019/02/24 
+Optional[2428.8366956403456]	Final coins: 2428.836695640345
+Date: 2019/02/25 
+Optional[1936.9589299149825]	Final coins: 1936.9589299149823
+Date: 2019/02/26 
+Optional[2807.5765511117265]	Final coins: 2807.5765511117265
+Date: 2019/02/27 
+Optional[2173.7949763838574]	Final coins: 2173.7949763838574
+Date: 2019/02/28 
+Optional[2218.2706081694882]	Final coins: 2218.2706081694882
+Date: 2019/02/29 
+Unable to acquire map from the server. Please try again.
+Date: 2019/03/01 
+Optional[2012.9783917042594]	Final coins: 2012.9783917042594
+Date: 2019/03/02 
+Optional[2051.2834502289106]	Final coins: 2051.2834502289106
+Date: 2019/03/03 
+Optional[2177.07886467898]	Final coins: 2177.07886467898
+Date: 2019/03/04 
+Optional[2665.347329348984]	Final coins: 2665.3473293489837
+Date: 2019/03/05 
+Optional[1792.582924883985]	Final coins: 1792.5829248839855
+Date: 2019/03/06 
+Optional[2558.155264972005]	Final coins: 2558.155264972005
+Date: 2019/03/07 
+Optional[2279.502128405958]	Final coins: 2279.5021284059576
+Date: 2019/03/08 
+Optional[1998.0802673343246]	Final coins: 1998.0802673343244
+Date: 2019/03/09 
+Optional[1877.6208556186343]	Final coins: 1877.6208556186343
+Date: 2019/03/10 
+Optional[2098.2225835724444]	Final coins: 2098.2225835724444
+Date: 2019/03/11 
+Optional[2106.1750162030567]	Final coins: 2106.1750162030567
+Date: 2019/03/12 
+Optional[2031.8930769272129]	Final coins: 2031.893076927213
+Date: 2019/03/13 
+Optional[1887.246353673753]	Final coins: 1887.2463536737528
+Date: 2019/03/14 
+Optional[2349.9573218140677]	Final coins: 2349.957321814067
+Date: 2019/03/15 
+Optional[1973.5823785648188]	Final coins: 1973.5823785648186
+Date: 2019/03/16 
+Optional[2264.1335581281305]	Final coins: 2264.1335581281305
+Date: 2019/03/17 
+Optional[2266.6822739775916]	Final coins: 2266.682273977592
+Date: 2019/03/18 
+Optional[2071.2095641299693]	Final coins: 2071.2095641299697
+Date: 2019/03/19 
+Optional[2272.4930670131653]	Final coins: 2272.4930670131657
+Date: 2019/03/20 
+Optional[2141.589678787966]	Final coins: 2141.589678787966
+Date: 2019/03/21 
+Optional[1716.7564353724408]	Final coins: 1716.7564353724408
+Date: 2019/03/22 
+Optional[2496.0820278052383]	Final coins: 2496.0820278052383
+Date: 2019/03/23 
+Optional[1884.2802341805807]	Final coins: 1884.280234180581
+Date: 2019/03/24 
+Optional[2388.319351679738]	Final coins: 2388.3193516797373
+Date: 2019/03/25 
+Optional[1948.5091520293124]	Final coins: 1948.5091520293122
+Date: 2019/03/26 
+Optional[2414.001948554051]	Final coins: 2414.001948554051
+Date: 2019/03/27 
+Optional[1734.2297654137794]	Final coins: 1734.2297654137794
+Date: 2019/03/28 
+Optional[2071.6648747765503]	Final coins: 2071.6648747765507
+Date: 2019/03/29 
+Optional[1920.681444017422]	Final coins: 1920.6814440174219
+Date: 2019/04/01 
+Optional[2433.8308814942957]	Final coins: 2433.8308814942957
+Date: 2019/04/02 
+Optional[2407.3125472629545]	Final coins: 2407.3125472629545
+Date: 2019/04/03 
+Optional[2161.0491468363293]	Final coins: 2161.0491468363284
+Date: 2019/04/04 
+Optional[2274.8107207005737]	Final coins: 2274.810720700573
+Date: 2019/04/05 
+Optional[2607.3433983949585]	Final coins: 2607.343398394959
+Date: 2019/04/06 
+Optional[2672.076539446278]	Final coins: 2672.0765394462774
+Date: 2019/04/07 
+Optional[2311.581861488191]	Final coins: 2311.581861488192
+Date: 2019/04/08 
+Optional[2052.6761090923374]	Final coins: 2052.6761090923374
+Date: 2019/04/09 
+Optional[2042.369788350777]	Final coins: 2042.3697883507766
+Date: 2019/04/10 
+Optional[2716.5669719354532]	Final coins: 2716.566971935454
+Date: 2019/04/11 
+Optional[2085.6875889384837]	Final coins: 2085.6875889384837
+Date: 2019/04/12 
+Optional[2456.689901301215]	Final coins: 2456.689901301214
+Date: 2019/04/13 
+Optional[1992.4524819260585]	Final coins: 1992.452481926058
+Date: 2019/04/14 
+Optional[1784.9583328732226]	Final coins: 1784.9583328732226
+Date: 2019/04/15 
+Optional[2113.649987522091]	Final coins: 2113.64998752209
+Date: 2019/04/16 
+Optional[2834.0426480563096]	Final coins: 2834.042648056311
+Date: 2019/04/17 
+Optional[2203.992252756309]	Final coins: 2203.9922527563094
+Date: 2019/04/18 
+Optional[2646.171754674239]	Final coins: 2646.171754674239
+Date: 2019/04/19 
+Optional[2461.999712234548]	Final coins: 2461.9997122345476
+Date: 2019/04/20 
+Optional[1994.7186618324413]	Final coins: 1994.7186618324413
+Date: 2019/04/21 
+Optional[2310.970542376887]	Final coins: 2310.970542376888
+Date: 2019/04/22 
+Optional[2244.9049597058015]	Final coins: 2244.9049597058015
+Date: 2019/04/23 
+Optional[2133.542564063141]	Final coins: 2133.542564063141
+Date: 2019/04/24 
+Optional[2257.42201103168]	Final coins: 2257.42201103168
+Date: 2019/04/25 
+Optional[2015.9249232239206]	Final coins: 2015.9249232239208
+Date: 2019/04/26 
+Optional[1996.4395234753301]	Final coins: 1996.4395234753301
+Date: 2019/04/27 
+Optional[2444.0653648228654]	Final coins: 2444.0653648228663
+Date: 2019/04/28 
+Optional[2381.746515335734]	Final coins: 2381.746515335734
+Date: 2019/04/29 
+Optional[2123.6490224261984]	Final coins: 2123.649022426199
+Date: 2019/05/01 
+Optional[2076.3164970456387]	Final coins: 2076.3164970456382
+Date: 2019/05/02 
+Optional[2637.105224516816]	Final coins: 2637.1052245168153
+Date: 2019/05/03 
+Optional[1932.8164884707073]	Final coins: 1932.816488470707
+Date: 2019/05/04 
+Optional[2117.0392385120035]	Final coins: 2117.039238512003
+Date: 2019/05/05 
+Optional[1877.1597376080088]	Final coins: 1877.159737608009
+Date: 2019/05/06 
+Optional[1880.8991160239812]	Final coins: 1880.8991160239812
+Date: 2019/05/07 
+Optional[2736.6512416634014]	Final coins: 2736.6512416634023
+Date: 2019/05/08 
+Optional[2554.675614551421]	Final coins: 2554.675614551422
+Date: 2019/05/09 
+Optional[2105.092439492814]	Final coins: 2105.0924394928143
+Date: 2019/05/10 
+Optional[2570.3659511246424]	Final coins: 2570.365951124642
+Date: 2019/05/11 
+Optional[2409.8576179478905]	Final coins: 2409.8576179478905
+Date: 2019/05/12 
+Optional[1934.3838193665501]	Final coins: 1934.3838193665497
+Date: 2019/05/13 
+Optional[1850.5046235485754]	Final coins: 1850.5046235485754
+Date: 2019/05/14 
+Optional[1722.6932135337029]	Final coins: 1722.6932135337026
+Date: 2019/05/15 
+Optional[1645.9090194805192]	Final coins: 1645.909019480519
+Date: 2019/05/16 
+Optional[2377.936871718181]	Final coins: 2377.936871718181
+Date: 2019/05/17 
+Optional[1987.889713887698]	Final coins: 1987.8897138876973
+Date: 2019/05/18 
+Optional[2174.2018074549737]	Final coins: 2174.2018074549733
+Date: 2019/05/19 
+Optional[1792.3255602383229]	Final coins: 1792.3255602383229
+Date: 2019/05/20 
+Optional[2137.9473581724806]	Final coins: 2137.94735817248
+Date: 2019/05/21 
+Optional[2387.941141580944]	Final coins: 2387.9411415809445
+Date: 2019/05/22 
+Optional[2425.5012702260956]	Final coins: 2425.5012702260947
+Date: 2019/05/23 
+Optional[2241.7645301557286]	Final coins: 2241.7645301557286
+Date: 2019/05/24 
+Optional[2350.553636721521]	Final coins: 2350.5536367215204
+Date: 2019/05/25 
+Optional[2391.9482667528237]	Final coins: 2391.948266752824
+Date: 2019/05/26 
+Optional[1959.5701861959365]	Final coins: 1959.570186195937
+Date: 2019/05/27 
+Optional[2144.407151098664]	Final coins: 2144.407151098664
+Date: 2019/05/28 
+Optional[2163.008743013525]	Final coins: 2163.0087430135254
+Date: 2019/05/29 
+Optional[2072.340714304084]	Final coins: 2072.340714304084
+Date: 2019/06/01 
+Optional[2196.282651656764]	Final coins: 2196.2826516567643
+Date: 2019/06/02 
+Optional[2385.074369636939]	Final coins: 2385.0743696369395
+Date: 2019/06/03 
+Optional[2457.771117190253]	Final coins: 2457.7711171902542
+Date: 2019/06/04 
+Optional[2206.876930859468]	Final coins: 2206.876930859468
+Date: 2019/06/05 
+Optional[2436.457284345336]	Final coins: 2436.457284345336
+Date: 2019/06/06 
+Optional[2137.46344823318]	Final coins: 2137.4634482331808
+Date: 2019/06/07 
+Optional[1972.4993365980522]	Final coins: 1972.4993365980524
+Date: 2019/06/08 
+Optional[1705.5025653199089]	Final coins: 1705.5025653199089
+Date: 2019/06/09 
+Optional[1520.3846957619178]	Final coins: 1520.3846957619176
+Date: 2019/06/10 
+Optional[2160.6270304221034]	Final coins: 2160.627030422103
+Date: 2019/06/11 
+Optional[1762.4665036109882]	Final coins: 1762.466503610988
+Date: 2019/06/12 
+Optional[2095.111235755412]	Final coins: 2095.111235755412
+Date: 2019/06/13 
+Optional[2324.2546585531218]	Final coins: 2324.2546585531218
+Date: 2019/06/14 
+Optional[2057.6852429869778]	Final coins: 2057.685242986978
+Date: 2019/06/15 
+Optional[2464.826064673589]	Final coins: 2464.8260646735894
+Date: 2019/06/16 
+Optional[2110.7795712790635]	Final coins: 2110.7795712790635
+Date: 2019/06/17 
+Optional[2505.9106001843065]	Final coins: 2505.9106001843065
+Date: 2019/06/18 
+Optional[1647.5331589289372]	Final coins: 1647.5331589289374
+Date: 2019/06/19 
+Optional[1974.4281057127816]	Final coins: 1974.4281057127819
+Date: 2019/06/20 
+Optional[2513.9914545971583]	Final coins: 2513.9914545971574
+Date: 2019/06/21 
+Optional[1780.7377173954508]	Final coins: 1780.7377173954512
+Date: 2019/06/22 
+Optional[2255.5874864667903]	Final coins: 2255.5874864667903
+Date: 2019/06/23 
+Optional[2538.3074733979715]	Final coins: 2538.307473397972
+Date: 2019/06/24 
+Optional[2087.974854691426]	Final coins: 2087.9748546914266
+Date: 2019/06/25 
+Optional[2127.9901814026284]	Final coins: 2127.9901814026284
+Date: 2019/06/26 
+Optional[2134.647587018294]	Final coins: 2134.647587018294
+Date: 2019/06/27 
+Optional[2337.026321713145]	Final coins: 2337.0263217131455
+Date: 2019/06/28 
+Optional[2200.3297605903476]	Final coins: 2200.329760590347
+Date: 2019/06/29 
+Optional[2431.022020553432]	Final coins: 2431.022020553432
+Date: 2019/07/01 
+Optional[1879.8026590424415]	Final coins: 1879.802659042441
+Date: 2019/07/02 
+Optional[2134.3994617239905]	Final coins: 2134.3994617239905
+Date: 2019/07/03 
+Optional[2369.15855112158]	Final coins: 2369.15855112158
+Date: 2019/07/04 
+Optional[2201.0912301662947]	Final coins: 2201.0912301662943
+Date: 2019/07/05 
+Optional[2123.4123529358867]	Final coins: 2123.4123529358867
+Date: 2019/07/06 
+Optional[1862.3493675213022]	Final coins: 1862.3493675213024
+Date: 2019/07/07 
+Optional[1903.8746468146408]	Final coins: 1903.8746468146405
+Date: 2019/07/08 
+Optional[1550.6826582958977]	Final coins: 1550.6826582958975
+Date: 2019/07/09 
+Optional[2314.796501523784]	Final coins: 2314.7965015237846
+Date: 2019/07/10 
+Optional[2147.2895829636805]	Final coins: 2147.2895829636805
+Date: 2019/07/11 
+Optional[2346.301850815038]	Final coins: 2346.301850815037
+Date: 2019/07/12 
+Optional[2330.275608498884]	Final coins: 2330.275608498884
+Date: 2019/07/13 
+Optional[2281.6740139006197]	Final coins: 2281.6740139006197
+Date: 2019/07/14 
+Optional[2142.0591904170697]	Final coins: 2142.0591904170697
+Date: 2019/07/15 
+Optional[2154.851187413765]	Final coins: 2154.851187413765
+Date: 2019/07/16 
+Optional[1827.5555460475468]	Final coins: 1827.5555460475468
+Date: 2019/07/17 
+Optional[2364.207375170694]	Final coins: 2364.2073751706944
+Date: 2019/07/18 
+Optional[2656.026767061548]	Final coins: 2656.026767061549
+Date: 2019/07/19 
+Optional[1871.5725112719006]	Final coins: 1871.5725112719003
+Date: 2019/07/20 
+Optional[1949.6706561516887]	Final coins: 1949.670656151689
+Date: 2019/07/21 
+Optional[1846.0040033100906]	Final coins: 1846.0040033100904
+Date: 2019/07/22 
+Optional[1700.4713757101244]	Final coins: 1700.4713757101244
+Date: 2019/07/23 
+Optional[2429.1574211608668]	Final coins: 2429.157421160867
+Date: 2019/07/24 
+Optional[2124.8452935988203]	Final coins: 2124.8452935988203
+Date: 2019/07/25 
+Optional[2012.2612691722225]	Final coins: 2012.2612691722236
+Date: 2019/07/26 
+Optional[1790.8959835355874]	Final coins: 1790.8959835355865
+Date: 2019/07/27 
+Optional[1920.7190018207857]	Final coins: 1920.719001820786
+Date: 2019/07/28 
+Optional[2608.8297163440084]	Final coins: 2608.8297163440084
+Date: 2019/07/29 
+Optional[2182.4041211550734]	Final coins: 2182.404121155074
+Date: 2019/08/01 
+Optional[2179.3890730613875]	Final coins: 2179.3890730613875
+Date: 2019/08/02 
+Optional[2282.6833085078315]	Final coins: 2282.683308507832
+Date: 2019/08/03 
+Optional[2284.9144820111524]	Final coins: 2284.9144820111533
+Date: 2019/08/04 
+Optional[2316.092677750741]	Final coins: 2316.092677750742
+Date: 2019/08/05 
+Optional[2443.696214528952]	Final coins: 2443.6962145289517
+Date: 2019/08/06 
+Optional[2214.3821703223553]	Final coins: 2214.382170322355
+Date: 2019/08/07 
+Optional[2032.1898419693305]	Final coins: 2032.1898419693305
+Date: 2019/08/08 
+Optional[1815.785994386207]	Final coins: 1815.7859943862063
+Date: 2019/08/09 
+Optional[1666.365689989193]	Final coins: 1666.365689989193
+Date: 2019/08/10 
+Optional[2611.7003740254163]	Final coins: 2611.700374025417
+Date: 2019/08/11 
+Optional[2519.4088085039953]	Final coins: 2519.4088085039953
+Date: 2019/08/12 
+Optional[2330.803973208132]	Final coins: 2330.803973208133
+Date: 2019/08/13 
+Optional[2644.608815788594]	Final coins: 2644.6088157885947
+Date: 2019/08/14 
+Optional[1712.162199308163]	Final coins: 1712.162199308163
+Date: 2019/08/15 
+Optional[1779.9295725135373]	Final coins: 1779.9295725135378
+Date: 2019/08/16 
+Optional[1819.6328285188183]	EChargingStation [position=55.945980,-3.188937, coins=-96.9437989500223, power=-65.97809180636438]
+ENEChargingStation [position=55.945980,-3.188937, coins=-96.9437989500223, power=-65.97809180636438]
+NEChargingStation [position=55.946259,-3.189076, coins=0.0, power=0.0]
+NNEChargingStation [position=55.946324,-3.189174, coins=0.0, power=0.0]
+NChargingStation [position=55.946347,-3.189288, coins=0.0, power=0.0]
+NNWChargingStation [position=55.946324,-3.189403, coins=0.0, power=0.0]
+NWChargingStation [position=55.946259,-3.189501, coins=0.0, power=0.0]
+WNWChargingStation [position=55.945971,-3.189548, coins=-46.13945417337274, power=-37.15293177176235]
+WChargingStation [position=55.945971,-3.189548, coins=-46.13945417337274, power=-37.15293177176235]
+WSWChargingStation [position=55.945971,-3.189548, coins=-46.13945417337274, power=-37.15293177176235]
+SWChargingStation [position=55.945971,-3.189548, coins=-46.13945417337274, power=-37.15293177176235]
+SSWChargingStation [position=55.945971,-3.189548, coins=-46.13945417337274, power=-37.15293177176235]
+SChargingStation [position=55.945747,-3.189288, coins=0.0, power=0.0]
+SSEChargingStation [position=55.945559,-3.189051, coins=-79.13093051394267, power=-72.55902604461944]
+SEChargingStation [position=55.945980,-3.188937, coins=-96.9437989500223, power=-65.97809180636438]
+ESEChargingStation [position=55.945980,-3.188937, coins=-96.9437989500223, power=-65.97809180636438]
+Final coins: 1819.6328285188188
+Date: 2019/08/17 
+Optional[2535.381656937598]	Final coins: 2535.381656937598
+Date: 2019/08/18 
+Optional[2204.4773992094224]	Final coins: 2204.4773992094224
+Date: 2019/08/19 
+Optional[1836.1201268139682]	Final coins: 1836.1201268139678
+Date: 2019/08/20 
+Optional[2293.287501067518]	Final coins: 2293.287501067518
+Date: 2019/08/21 
+Optional[2310.8060810731104]	Final coins: 2310.806081073111
+Date: 2019/08/22 
+Optional[2546.0146699101833]	Final coins: 2546.014669910184
+Date: 2019/08/23 
+Optional[2470.9047100414277]	Final coins: 2470.904710041427
+Date: 2019/08/24 
+Optional[2017.228708030255]	Final coins: 2017.2287080302547
+Date: 2019/08/25 
+Optional[1711.9855642252126]	Final coins: 1711.985564225212
+Date: 2019/08/26 
+Optional[2266.342076156299]	Final coins: 2266.3420761562984
+Date: 2019/08/27 
+Optional[2583.2445867840693]	Final coins: 2583.2445867840697
+Date: 2019/08/28 
+Optional[2313.8754953160133]	Final coins: 2313.8754953160137
+Date: 2019/08/29 
+Optional[2360.0457768335423]	Final coins: 2360.0457768335427
+Date: 2019/09/01 
+Optional[2887.1078279086037]	Final coins: 2887.1078279086037
+Date: 2019/09/02 
+Optional[2013.835153074207]	Final coins: 2013.8351530742063
+Date: 2019/09/03 
+Optional[2406.895924405407]	Final coins: 2406.8959244054076
+Date: 2019/09/04 
+Optional[2394.214099020252]	Final coins: 2394.2140990202524
+Date: 2019/09/05 
+Optional[2591.284879766416]	Final coins: 2591.284879766415
+Date: 2019/09/06 
+Optional[1786.7939496646711]	Final coins: 1786.7939496646711
+Date: 2019/09/07 
+Optional[2547.8220825591447]	Final coins: 2547.822082559145
+Date: 2019/09/08 
+Optional[2334.6301060370397]	Final coins: 2334.630106037041
+Date: 2019/09/09 
+Optional[1800.3645455455858]	Final coins: 1551.8700982141627
+Date: 2019/09/10 
+Optional[1356.4033368577766]	Final coins: 1356.4033368577768
+Date: 2019/09/11 
+Optional[2039.5857254776538]	Final coins: 2039.5857254776543
+Date: 2019/09/12 
+Optional[2340.7095162329297]	Final coins: 2340.7095162329306
+Date: 2019/09/13 
+Optional[1916.7516075455915]	Final coins: 1916.751607545592
+Date: 2019/09/14 
+Optional[1905.2245782062053]	Final coins: 1905.2245782062048
+Date: 2019/09/15 
+Optional[1756.0074774620873]	Final coins: 1756.0074774620875
+Date: 2019/09/16 
+Optional[2271.327177602541]	Final coins: 2271.327177602541
+Date: 2019/09/17 
+Optional[2137.8674848090645]	Final coins: 2137.867484809064
+Date: 2019/09/18 
+Optional[1874.0003010526814]	Final coins: 1874.0003010526816
+Date: 2019/09/19 
+Optional[1936.6419439924532]	Final coins: 1936.641943992453
+Date: 2019/09/20 
+Optional[1661.106237777533]	Final coins: 1661.106237777533
+Date: 2019/09/21 
+Optional[2058.2971660459116]	Final coins: 2058.297166045912
+Date: 2019/09/22 
+Optional[2517.582538207954]	Final coins: 2517.5825382079533
+Date: 2019/09/23 
+Optional[1756.5483109975441]	Final coins: 1756.5483109975437
+Date: 2019/09/24 
+Optional[2504.3144415138686]	Final coins: 2504.3144415138677
+Date: 2019/09/25 
+Optional[1913.6779333019458]	Final coins: 1913.6779333019458
+Date: 2019/09/26 
+Optional[1849.1636319890376]	Final coins: 1849.1636319890376
+Date: 2019/09/27 
+Optional[2148.0658277499615]	Final coins: 2148.0658277499615
+Date: 2019/09/28 
+Optional[2468.3566615993673]	Final coins: 2468.3566615993673
+Date: 2019/09/29 
+Optional[2531.5952484993504]	Final coins: 2531.5952484993513
+Date: 2019/10/01 
+Optional[1745.773051017158]	Final coins: 1745.773051017158
+Date: 2019/10/02 
+Optional[2246.5846782402996]	Final coins: 2246.5846782403
+Date: 2019/10/03 
+Optional[2325.8433395378106]	Final coins: 2325.8433395378106
+Date: 2019/10/04 
+Optional[1926.7837852316375]	Final coins: 1926.7837852316372
+Date: 2019/10/05 
+Optional[1937.6154422706047]	Final coins: 1937.6154422706054
+Date: 2019/10/06 
+Optional[2610.8044737972186]	Final coins: 2610.8044737972195
+Date: 2019/10/07 
+Optional[2355.186850688548]	EChargingStation [position=55.945674,-3.190468, coins=-108.09626479991158, power=-76.71369749869945]
+ENEChargingStation [position=55.945943,-3.190507, coins=0.0, power=0.0]
+NEChargingStation [position=55.946108,-3.190718, coins=-111.55598402298783, power=-73.00912137395224]
+NNEChargingStation [position=55.946108,-3.190718, coins=-111.55598402298783, power=-73.00912137395224]
+NChargingStation [position=55.946108,-3.190718, coins=-111.55598402298783, power=-73.00912137395224]
+NNWChargingStation [position=55.946108,-3.190718, coins=-111.55598402298783, power=-73.00912137395224]
+NWChargingStation [position=55.946040,-3.190996, coins=0.0, power=0.0]
+WNWChargingStation [position=55.945943,-3.191061, coins=0.0, power=0.0]
+WChargingStation [position=55.945617,-3.191057, coins=-35.754759344675996, power=-30.286783100678047]
+WSWChargingStation [position=55.945617,-3.191057, coins=-35.754759344675996, power=-30.286783100678047]
+SWChargingStation [position=55.945617,-3.191057, coins=-35.754759344675996, power=-30.286783100678047]
+SSWChargingStation [position=55.945529,-3.190917, coins=-36.508832036341396, power=-85.7780376087672]
+SChargingStation [position=55.945529,-3.190917, coins=-36.508832036341396, power=-85.7780376087672]
+SSEChargingStation [position=55.945674,-3.190468, coins=-108.09626479991158, power=-76.71369749869945]
+SEChargingStation [position=55.945674,-3.190468, coins=-108.09626479991158, power=-76.71369749869945]
+ESEChargingStation [position=55.945674,-3.190468, coins=-108.09626479991158, power=-76.71369749869945]
+Final coins: 2355.1868506885485
+Date: 2019/10/08 
+Optional[2298.833648777946]	Final coins: 2298.8336487779466
+Date: 2019/10/09 
+Optional[2169.1549445388932]	Final coins: 2169.154944538893
+Date: 2019/10/10 
+Optional[2301.377884614212]	Final coins: 2301.3778846142122
+Date: 2019/10/11 
+Optional[2125.9074810370084]	Final coins: 2125.9074810370084
+Date: 2019/10/12 
+Optional[2215.1689840167655]	Final coins: 2215.168984016766
+Date: 2019/10/13 
+Optional[2643.624993531229]	Final coins: 2643.624993531229
+Date: 2019/10/14 
+Optional[2038.1476989926591]	Final coins: 2038.1476989926593
+Date: 2019/10/15 
+Optional[2072.1684459226067]	Final coins: 2072.168445922607
+Date: 2019/10/16 
+Optional[2108.1268079205684]	Final coins: 2108.1268079205684
+Date: 2019/10/17 
+Optional[2348.2044111728974]	Final coins: 2348.2044111728974
+Date: 2019/10/18 
+Optional[1954.8807496161703]	Final coins: 1954.88074961617
+Date: 2019/10/19 
+Optional[2034.093970895244]	Final coins: 2034.0939708952435
+Date: 2019/10/20 
+Optional[2042.6464943106957]	Final coins: 2042.6464943106957
+Date: 2019/10/21 
+Optional[2846.44275821082]	Final coins: 2846.4427582108215
+Date: 2019/10/22 
+Optional[2796.5553714081807]	Final coins: 2796.5553714081807
+Date: 2019/10/23 
+Optional[2095.085863011488]	Final coins: 2095.0858630114876
+Date: 2019/10/24 
+Optional[2539.5309943161]	Final coins: 2539.5309943161005
+Date: 2019/10/25 
+Optional[2344.009541115947]	Final coins: 2344.0095411159477
+Date: 2019/10/26 
+Optional[2886.528429249401]	Final coins: 2886.528429249401
+Date: 2019/10/27 
+Optional[2093.176123176865]	Final coins: 2093.1761231768646
+Date: 2019/10/28 
+Optional[2397.866319733751]	Final coins: 2397.866319733751
+Date: 2019/10/29 
+Optional[2697.8028191185085]	Final coins: 2697.802819118508
+Date: 2019/11/01 
+Optional[2550.4773920622392]	Final coins: 2550.4773920622383
+Date: 2019/11/02 
+Optional[2803.5680258172583]	Final coins: 2803.5680258172583
+Date: 2019/11/03 
+Optional[2073.297524583328]	Final coins: 2073.297524583329
+Date: 2019/11/04 
+Optional[2133.790139593566]	Final coins: 2133.7901395935664
+Date: 2019/11/05 
+Optional[2148.2878842161867]	Final coins: 2148.287884216187
+Date: 2019/11/06 
+Optional[1420.5270623251677]	Final coins: 1420.527062325168
+Date: 2019/11/07 
+Optional[2103.994111258194]	Final coins: 2103.994111258195
+Date: 2019/11/08 
+Optional[2174.235817792049]	Final coins: 2174.235817792049
+Date: 2019/11/09 
+Optional[2174.7263699594987]	Final coins: 2174.7263699594987
+Date: 2019/11/10 
+Optional[1866.454949582234]	Final coins: 1866.4549495822332
+Date: 2019/11/11 
+Optional[1974.8005876497991]	Final coins: 1974.8005876497991
+Date: 2019/11/12 
+Optional[1982.5924691357995]	Final coins: 1982.5924691357995
+Date: 2019/11/13 
+Optional[3116.1882341063015]	Final coins: 3116.1882341063015
+Date: 2019/11/14 
+Optional[2513.7915584195352]	Final coins: 2513.7915584195352
+Date: 2019/11/15 
+Optional[2487.3133431654314]	Final coins: 2487.3133431654296
+Date: 2019/11/16 
+Optional[2155.624920371579]	Final coins: 2155.624920371579
+Date: 2019/11/17 
+Optional[1956.5989803376644]	Final coins: 1956.598980337665
+Date: 2019/11/18 
+Optional[2033.762385808418]	Final coins: 2033.7623858084182
+Date: 2019/11/19 
+Optional[1790.6921731450777]	Final coins: 1790.6921731450773
+Date: 2019/11/20 
+Optional[2528.1242228853625]	Final coins: 2528.1242228853625
+Date: 2019/11/21 
+Optional[2288.211181279053]	Final coins: 2288.2111812790527
+Date: 2019/11/22 
+Optional[2139.4483755432407]	Final coins: 2139.4483755432407
+Date: 2019/11/23 
+Optional[2143.4708542047156]	Final coins: 2143.470854204716
+Date: 2019/11/24 
+Optional[2346.5602294242617]	Final coins: 2346.5602294242617
+Date: 2019/11/25 
+Optional[2540.480100456502]	Final coins: 2540.480100456501
+Date: 2019/11/26 
+Optional[2642.4133055974526]	Final coins: 2642.4133055974517
+Date: 2019/11/27 
+Optional[1874.4636723956792]	Final coins: 1874.463672395679
+Date: 2019/11/28 
+Optional[2746.6788838040693]	Final coins: 2746.6788838040707
+Date: 2019/11/29 
+Optional[2520.9683686393237]	Final coins: 2520.968368639324
+Date: 2019/12/01 
+Optional[2292.1511485690294]	Final coins: 2292.151148569029
+Date: 2019/12/02 
+Optional[2070.1841531631435]	Final coins: 2070.1841531631435
+Date: 2019/12/03 
+Optional[2101.5330174666706]	Final coins: 2101.5330174666706
+Date: 2019/12/04 
+Optional[2775.483119064521]	Final coins: 2775.483119064521
+Date: 2019/12/05 
+Optional[1567.8182464470653]	Final coins: 1567.8182464470651
+Date: 2019/12/06 
+Optional[2859.278216211676]	Final coins: 2859.2782162116764
+Date: 2019/12/07 
+Optional[2120.5795990030915]	Final coins: 2120.5795990030906
+Date: 2019/12/08 
+Optional[2046.001031995618]	Final coins: 2046.0010319956182
+Date: 2019/12/09 
+Optional[2478.759343790518]	Final coins: 2478.759343790518
+Date: 2019/12/10 
+Optional[2022.5656066406334]	Final coins: 2022.5656066406332
+Date: 2019/12/11 
+Optional[2594.355465694332]	Final coins: 2594.355465694331
+Date: 2019/12/12 
+Optional[2492.088328115244]	Final coins: 2492.0883281152446
+Date: 2019/12/13 
+Optional[2768.855354466221]	Final coins: 2768.8553544662213
+Date: 2019/12/14 
+Optional[2457.1310965962075]	Final coins: 2457.131096596207
+Date: 2019/12/15 
+Optional[2917.600163431559]	Final coins: 2917.6001634315585
+Date: 2019/12/16 
+Optional[2465.529689350901]	Final coins: 2465.529689350902
+Date: 2019/12/17 
+Optional[2036.974169322242]	Final coins: 2036.9741693222425
+Date: 2019/12/18 
+Optional[2101.4888358196645]	Final coins: 2101.4888358196636
+Date: 2019/12/19 
+Optional[2233.9612182900282]	Final coins: 2233.9612182900287
+Date: 2019/12/20 
+Optional[2422.654772335821]	Final coins: 2422.6547723358203
+Date: 2019/12/21 
+Optional[2695.900780095736]	Final coins: 2695.9007800957356
+Date: 2019/12/22 
+Optional[2120.5980371905016]	Final coins: 2120.598037190501
+Date: 2019/12/23 
+Optional[1975.4003208933143]	Final coins: 1975.4003208933145
+Date: 2019/12/24 
+Optional[2196.411681006276]	Final coins: 2196.411681006276
+Date: 2019/12/25 
+Optional[1958.5215132338355]	Final coins: 1958.5215132338355
+Date: 2019/12/26 
+Optional[2288.167940638722]	Final coins: 2288.1679406387216
+Date: 2019/12/27 
+Optional[2278.6526859518217]	Final coins: 2278.6526859518217
+Date: 2019/12/28 
+Optional[2218.712860994154]	Final coins: 2218.7128609941547
+Date: 2019/12/29 
+Optional[2099.4776960457234]	Final coins: 2099.477696045723

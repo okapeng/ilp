@@ -57,14 +57,6 @@ public class Map {
 		return new ArrayList<ChargingStation>(this.chargingStations);
 	}
 
-//	public ChargingStation getNearestStation(Position curPosition) {
-//		List<Double> distances = chargingStations.stream()
-//				.map(station -> curPosition.getRelativeDistance(station.getPosition())).collect(Collectors.toList());
-//		Double minDistance = Collections.min(distances);
-//
-//		return chargingStations.get(distances.indexOf(minDistance));
-//	}
-
 	public ChargingStation getNearestStationInRange(Position curPosition) {
 		List<Double> distances = chargingStations.stream()
 				.map(station -> curPosition.getRelativeDistance(station.getPosition())).collect(Collectors.toList());

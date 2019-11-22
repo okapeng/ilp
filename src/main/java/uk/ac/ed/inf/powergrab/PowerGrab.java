@@ -14,6 +14,7 @@ public class PowerGrab {
 	private static final double INITIAL_COINS = 0;
 	private static final double INITIAL_POWER = 250;
 	private static final int MAX_MOVES = 250;
+	public static int count = 0;
 
 	private Drone drone;
 	private int numOfMoves;
@@ -29,13 +30,14 @@ public class PowerGrab {
 			this.drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
 			break;
 		default:
-			break;
+			throw new IllegalArgumentException();
 		}
 	}
 
 	public String play() {
 		Double sum = (Map.getInstance().getchargingStations().stream().map(ChargingStation::getCoins).filter(x -> x > 0)
 				.reduce(Double::sum)).get();
+
 		while (drone.getPower() > 0 && numOfMoves < MAX_MOVES) {
 			Position oldPosition = drone.getPosition();
 			Direction moveDirection = drone.decideMoveDirection(drone.getPosition().getAllowedDirections());
@@ -47,7 +49,10 @@ public class PowerGrab {
 			numOfMoves++;
 		}
 
-		System.out.println("Remain Coins: " + (int) (sum - drone.getCoins()));
+		if ((int) (sum - drone.getCoins()) > 0) {
+			System.out.println("Remain Coins: " + (int) (sum - drone.getCoins()));
+			count++;
+		}
 		return movesTrace.toString();
 	}
 
