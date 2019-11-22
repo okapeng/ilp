@@ -5,6 +5,9 @@ import java.util.List;
 import uk.ac.ed.inf.powergrab.map.*;
 
 public abstract class Drone {
+	public enum DroneType {
+		stateless, stateful;
+	}
 
 	protected Position curPosition;
 	protected double coins;
@@ -49,6 +52,7 @@ public abstract class Drone {
 	public Position move(Direction direction) {
 		this.curPosition = curPosition.nextPosition(direction);
 		this.power -= 1.25;
+		Map.getInstance().addDroneMovement(curPosition);
 		return this.curPosition;
 	}
 

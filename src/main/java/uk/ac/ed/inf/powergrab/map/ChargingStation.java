@@ -34,9 +34,4 @@ public class ChargingStation {
 		return "ChargingStation [position=" + position + ", coins=" + coins + ", power=" + power + "]";
 	}
 
-//	@Override
-//	public boolean equals(Object obj) {
-//		return obj instanceof ChargingStation ? this.getPosition().equals(((ChargingStation) obj).getPosition()) : false;
-//	}
-
 }

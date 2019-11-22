@@ -8,8 +8,16 @@ import java.net.URL;
 public class NetworkUtils {
 
 	public static String downloadMap(String mapString) throws IOException {
+		StringBuilder sb = new StringBuilder();
 		HttpURLConnection conn = getConnection(mapString);
-		return readMapSource(conn);
+		try (InputStreamReader inputStreamReader = new InputStreamReader(conn.getInputStream())) {
+			int c = inputStreamReader.read();
+			while (c != -1) {
+				sb.append((char) c);
+				c = inputStreamReader.read();
+			}
+			return sb.toString();
+		}
 	}
 
 	private static HttpURLConnection getConnection(String mapString) throws IOException {
@@ -23,16 +31,5 @@ public class NetworkUtils {
 		conn.setDoInput(true);
 		conn.connect();
 		return conn;
-	}
-
-	private static String readMapSource(HttpURLConnection conn) throws IOException {
-		StringBuilder sb = new StringBuilder();
-		InputStreamReader inputStreamReader = new InputStreamReader(conn.getInputStream());
-		int c = inputStreamReader.read();
-		while (c != -1) {
-			sb.append((char) c);
-			c = inputStreamReader.read();
-		}
-		return sb.toString();
 	}
 }

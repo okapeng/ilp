@@ -5,12 +5,12 @@ import java.util.Arrays;
 
 import com.mapbox.geojson.FeatureCollection;
 
-import uk.ac.ed.inf.powergrab.drone.*;
 import uk.ac.ed.inf.powergrab.io.*;
 import uk.ac.ed.inf.powergrab.map.*;
+import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
 
 /**
- * 
+ * Entrance point for PowerGrab App
  * @author Ivy Wang
  *
  */
@@ -25,7 +25,6 @@ public class App {
 					"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", args[2], args[1],
 					args[0]);
 			String mapSource = NetworkUtils.downloadMap(mapString);
-			Map.getInstance().reset();
 			Map.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
 
 			Position initPosition = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
@@ -34,7 +33,7 @@ public class App {
 
 			PowerGrab powerGrab = new PowerGrab(initPosition, droneType, randomSeed);
 			String moveTrace = powerGrab.play();
-//			System.out.println(moveTrace);
+			System.out.println(moveTrace);
 
 			String fileName = String.format("%s-%s-%s-%s", droneType, args[0], args[1], args[2]);
 			FileUtils.outputGeojson(fileName, Map.getInstance().getFeatures().toJson());

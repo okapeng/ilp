@@ -14,6 +14,7 @@ public class Map {
 	private static Map map = null;
 	private List<Feature> features;
 	private List<ChargingStation> chargingStations = new ArrayList<ChargingStation>();
+	private List<Point> droneTrace = new ArrayList<Point>();
 
 	private Map() {
 	}
@@ -46,6 +47,7 @@ public class Map {
 	}
 
 	public FeatureCollection getFeatures() {
+		features.add(Feature.fromGeometry(LineString.fromLngLats(droneTrace)));
 		return FeatureCollection.fromFeatures(features);
 	}
 
@@ -61,12 +63,9 @@ public class Map {
 
 		return minDistance < MAX_TRANSFER_DISTANCE ? nearestStation : new ChargingStation(curPosition, 0, 0);
 	}
-
-	public void drawTrajectory(Position oldPosition, Position newPosition) {
-		List<Point> endPoints = new ArrayList<Point>();
-		endPoints.add(Point.fromLngLat(oldPosition.longitude, oldPosition.latitude));
-		endPoints.add(Point.fromLngLat(newPosition.longitude, newPosition.latitude));
-		Feature lineString = Feature.fromGeometry(LineString.fromLngLats(endPoints));
-		features.add(lineString);
+	
+	public void addDroneMovement(Position position) {
+		droneTrace.add(Point.fromLngLat(position.longitude, position.latitude));
 	}
+
 }
