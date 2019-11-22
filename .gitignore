@@ -71,7 +71,7 @@ local.properties
 
 .sts4-cache/
 # output file
-.geojson
-.txt
+*.geojson
+*.txt
 # End of https://www.gitignore.io/api/eclipse
 
