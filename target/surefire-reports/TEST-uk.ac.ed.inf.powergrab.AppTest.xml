@@ -1,93 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="30" failures="0" name="uk.ac.ed.inf.powergrab.AppTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="30" failures="0" name="uk.ac.ed.inf.powergrab.AppTest" time="0.007" errors="0" skipped="0">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-    <property name="java.vm.version" value="25.222-b10"/>
-    <property name="java.vm.vendor" value="Private Build"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/ivy/git/ilp"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
+    <property name="java.vm.version" value="25.171-b11"/>
+    <property name="user.country.format" value="GB"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Ivy Wang\git\ilp"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=":"/>
+    <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="GB"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/ivy/git/ilp"/>
-    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="user.dir" value="C:\Users\Ivy Wang\git\ilp"/>
+    <property name="java.runtime.version" value="1.8.0_171-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.io.tmpdir" value="C:\Users\IVYWAN~1\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/home/ivy/git/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf733342415514790006.tmp"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\Ivy Wang\git\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8927852670432988495.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jdk1.8.0_171/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_171/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_171/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Program Files\Java\jdk1.8.0_171\jre\bin;C:\Program Files\Python37\Scripts\;C:\app\apache-maven-3.6.1\bin;C:\app\apache-tomcat-9.0.22\bin;C:\Program Files\Python37\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\PuTTY\;C:\Users\Ivy Wang\AppData\Roaming\Python\Python37\Scripts;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\MATLAB\R2019a\bin;C:\Program Files\Git\cmd;C:\Users\Ivy Wang\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.1.2\bin;C:\Users\Ivy Wang\AppData\Local\Programs\Fiddler;C:\Users\Ivy Wang\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2.2\bin;;C:\Program Files\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="5.0.0-36-generic"/>
-    <property name="user.home" value="/home/ivy"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\Ivy Wang"/>
     <property name="user.timezone" value="Europe/London"/>
-    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="user.name" value="ivy"/>
-    <property name="java.class.path" value="/snap/eclipse/40/plugins/org.eclipse.m2e.maven.runtime_1.11.0.20190220-2117/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Ivy Wang"/>
+    <property name="java.class.path" value="C:\Program Files\eclipse\plugins\org.eclipse.m2e.maven.runtime_1.12.0.20190529-1915\jars\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -gs /etc/maven/settings.xml -s /home/ivy/.m2/settings.xml package"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_171\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -gs C:\app\apache-maven-3.6.1\.m2\settings.xml -s C:\Users\Ivy Wang\.m2\settings.xml package"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.language" value="en"/>
-    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="user.language" value="zh"/>
+    <property name="user.language.format" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_222"/>
-    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
-    <property name="securerandom.source" value="file:/dev/./urandom"/>
-    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
-    <property name="java.vendor" value="Private Build"/>
-    <property name="maven.home" value="/home/ivy/git/ilp/EMBEDDED"/>
-    <property name="file.separator" value="/"/>
+    <property name="java.version" value="1.8.0_171"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_171\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\Ivy Wang\git\ilp\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.desktop" value="gnome"/>
-    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthThenSouth" time="0.004"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testEastThenWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthSouthEastWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthThenEastIsNotNorthEast" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNEisNorthEast" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNNEisNorthEast" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testENEisNorthEast" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSWisSouthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testWSWisSouthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSWisSouthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthEastThenSouthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthWestThenSouthEast" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testEastNorthEastThenWestSouthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSouthEastThenNorthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSouthWestThenNorthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthNorthEastThenSouthSouthWest" time="0.007"/>
   <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthNorthWestThenSouthSouthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testEastNorthEastThenWestSouthWest" time="0"/>
   <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testEastSouthEastThenWestNorthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenS" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenSthenSE" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenSthenSEthenNE" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenSthenSEthenNEthenWNW" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionLongitude" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testCentreInPlayArea" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testBoundaryOutOfPlayArea" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionOutOfPlayArea" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthNorthEastThenSouthSouthWest" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionConstructor" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNextPositionNotIdentity" time="0"/>
-  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionLatitude" time="0"/>
   <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthEastThenSouthEastThenSouthWestThenNorthWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testCentreInPlayArea" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthSouthEastWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNEisNorthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testENEisNorthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNextPositionNotIdentity" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionOutOfPlayArea" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionConstructor" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionLatitude" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthThenSouth" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testBoundaryOutOfPlayArea" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSWisSouthWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testPositionLongitude" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthThenEastIsNotNorthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNNEisNorthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSouthWestThenNorthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testWSWisSouthWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthEastThenSouthWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSWisSouthWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testNorthWestThenSouthEast" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSouthEastThenNorthWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenSthenSEthenNEthenWNW" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenSthenSEthenNE" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenSthenSE" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testEastThenWest" time="0"/>
+  <testcase classname="uk.ac.ed.inf.powergrab.AppTest" name="testSSEthenS" time="0"/>
 </testsuite>
