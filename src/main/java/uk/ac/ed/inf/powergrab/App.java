@@ -5,12 +5,15 @@ import java.util.Arrays;
 
 import com.mapbox.geojson.FeatureCollection;
 
-import uk.ac.ed.inf.powergrab.io.*;
-import uk.ac.ed.inf.powergrab.map.*;
 import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
+import uk.ac.ed.inf.powergrab.io.FileUtils;
+import uk.ac.ed.inf.powergrab.io.NetworkUtils;
+import uk.ac.ed.inf.powergrab.map.Map;
+import uk.ac.ed.inf.powergrab.map.Position;
 
 /**
  * Entrance point for PowerGrab App
+ * 
  * @author Ivy Wang
  *
  */
@@ -36,12 +39,14 @@ public class App {
 			System.out.println(moveTrace);
 
 			String fileName = String.format("%s-%s-%s-%s", droneType, args[0], args[1], args[2]);
-			FileUtils.outputGeojson(fileName, Map.getInstance().getFeatures().toJson());
-			FileUtils.outputTxt(fileName, moveTrace);
+			FileUtils.writeGeojson(fileName, Map.getInstance().getFeatures().toJson());
+			FileUtils.writeTxt(fileName, moveTrace);
 
 		} catch (IOException e) {
-			System.out.println("Network issue, unable to acquire map from server. Please try again.");
+			System.out.println("Unable to download map from server. Please try again.");
 		} catch (IllegalArgumentException e) {
+			// Either because the number of argument is wrong or the DroneType doesn't match
+			// with any supported type
 			System.out.println("Incorrect argument! \n"
 					+ "Usage: java -jar powergrab-0.0.1-SNAPSHOT.jar DD MM YYYY <initial_latitude> <initial_longitude> <random_seed> <drone_type>\n"
 					+ "Note: valid dronetypes: " + Arrays.toString(DroneType.values()));

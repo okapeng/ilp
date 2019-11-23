@@ -5,6 +5,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Tool class for downloading the map from server
+ * 
+ * @author Ivy Wang
+ *
+ */
 public class NetworkUtils {
 
 	public static String downloadMap(String mapString) throws IOException {

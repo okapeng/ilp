@@ -14,16 +14,20 @@ import uk.ac.ed.inf.powergrab.map.Position;
 public class AppMulti {
 	public static void main(String[] args) {
 		for (DroneType droneType : DroneType.values()) {
+//			if (droneType.equals(DroneType.stateless)) {
+//				continue;
+//			}
 			PowerGrab.count = 0;
 			for (int i = 1; i < 13; i++) {
 				for (int j = 1; j < 2; j++) {
-					Map.getInstance().reset();
+					Map.reset();
 
 					try {
 						String mapString = String.format(
 								"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", 2019,
 								String.format("%02d", i), String.format("%02d", i));
-						System.out.printf("Date: %s/%s/%s \n", 2019, String.format("%02d", i), String.format("%02d", i));
+						System.out.printf("Date: %s/%s/%s \n", 2019, String.format("%02d", i),
+								String.format("%02d", i));
 						String mapSource = NetworkUtils.downloadMap(mapString);
 						Map.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
 
@@ -36,8 +40,8 @@ public class AppMulti {
 
 						String fileName = String.format("%s-%s-%s-%s", droneType, String.format("%02d", i),
 								String.format("%02d", i), 2019);
-						FileUtils.outputGeojson(fileName, Map.getInstance().getFeatures().toJson());
-						FileUtils.outputTxt(fileName, moveTrace);
+						FileUtils.writeGeojson(fileName, Map.getInstance().getFeatures().toJson());
+						FileUtils.writeTxt(fileName, moveTrace);
 
 					} catch (IOException e) {
 						System.out.println("Unable to acquire map from the server. Please try again.");
@@ -51,6 +55,6 @@ public class AppMulti {
 			}
 			System.out.printf("Number of map fails for %s drone: %d\n", droneType, PowerGrab.count);
 		}
-		
+
 	}
 }

@@ -4,25 +4,27 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Tool class for generating output file
+ * 
+ * @author Ivy Wang
+ *
+ */
 public class FileUtils {
 
-	public static void outputGeojson(String filename, String features) {
-		try {
-			FileWriter writer = new FileWriter(new File(filename + ".geojson"));
+	public static void writeGeojson(String filename, String features) {
+		try (FileWriter writer = new FileWriter(new File(filename + ".geojson"))) {
 			writer.write(features);
-			writer.close();
 		} catch (IOException e) {
 			System.err.println("Error occurs when generating geojson output file!");
 		}
 	}
 
-	public static void outputTxt(String filename, String moveTraces) {
-		try {
-			FileWriter writer = new FileWriter(new File(filename + ".txt"));
+	public static void writeTxt(String filename, String moveTraces) {
+		try (FileWriter writer = new FileWriter(new File(filename + ".txt"))) {
 			writer.write(moveTraces);
-			writer.close();
 		} catch (IOException e) {
-			System.err.println("Error occurs when generating txt output file!");
+			System.err.println("Error occurs when generating geojson output file!");
 		}
 	}
 

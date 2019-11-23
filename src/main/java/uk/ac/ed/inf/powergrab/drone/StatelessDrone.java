@@ -1,15 +1,23 @@
 package uk.ac.ed.inf.powergrab.drone;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import uk.ac.ed.inf.powergrab.map.*;
+import uk.ac.ed.inf.powergrab.map.Direction;
+import uk.ac.ed.inf.powergrab.map.Map;
+import uk.ac.ed.inf.powergrab.map.Position;
 
+/**
+ * Stateless drone
+ * 
+ * @author ivy
+ *
+ */
 public class StatelessDrone extends Drone {
 
+	// Random instance to generate pseudo random numbers based on a seed
 	private Random rand;
 
 	public StatelessDrone(Position curPosition, double coins, double power, int seed) {
@@ -17,30 +25,28 @@ public class StatelessDrone extends Drone {
 		this.rand = new Random(seed);
 	}
 
+	/**
+	 * Implement the strategy for stateless drone to decide next moving direction
+	 */
 	@Override
 	public Direction decideMoveDirection(List<Direction> directions) {
+		// Filter out negative charging stations
+		directions.removeIf(
+				dir -> Map.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins() < 0);
 
-		Collections.sort(directions, new Comparator<Direction>() {
-			@Override
-			public int compare(Direction d1, Direction d2) {
-				ChargingStation s1 = Map.getInstance().getNearestStationInRange(curPosition.nextPosition(d1));
-				ChargingStation s2 = Map.getInstance().getNearestStationInRange(curPosition.nextPosition(d2));
-				return (int) (s2.getCoins() - s1.getCoins());
-			}
-		});
+		// Compute the potential coin gain after moving in each direction
+		List<Double> coinGains = directions.stream()
+				.map(dir -> Map.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins())
+				.collect(Collectors.toList());
 
-		Direction firstDirection = directions.get(0);
-		if (Map.getInstance().getNearestStationInRange(curPosition.nextPosition(firstDirection)).getCoins() > 0) {
-			return firstDirection;
-		} else {
-			directions = directions.stream().filter(dir -> {
-				ChargingStation nearestStation = Map.getInstance()
-						.getNearestStationInRange(curPosition.nextPosition(dir));
-				return nearestStation.getCoins() >= 0;
-			}).collect(Collectors.toList());
+		/**
+		 * Moves to the direction resulting in the maximum coins. Otherwise, randomly
+		 * choosing a direction without crashing into a negative station
+		 */
+		Double maxGain = Collections.max(coinGains);
+		return maxGain > 0 ? directions.get(coinGains.indexOf(maxGain))
+				: directions.get(rand.nextInt(directions.size()));
 
-			return directions.get(rand.nextInt(directions.size()));
-		}
 	}
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * The position of the drone
+ * Position of an object in the map
  * 
  * @author ivy
  *
@@ -33,7 +33,7 @@ public class Position {
 	 * Calculate the new Position after moving in a given directions
 	 * 
 	 * @param direction
-	 * @return new position
+	 * @return new position. If no direction is given, return current position
 	 */
 	public Position nextPosition(Direction direction) {
 		if (direction == null) {
@@ -54,11 +54,23 @@ public class Position {
 				&& this.longitude > MIN_LONGITUDE;
 	}
 
+	/**
+	 * Calculate the relative distance against another position
+	 * 
+	 * @param position
+	 * @return the relative distance
+	 */
 	public double getRelativeDistance(Position position) {
 		return Math.sqrt(
 				Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
 	}
 
+	/**
+	 * Given a position, find all the possible directions it can move within the
+	 * play area
+	 * 
+	 * @return List of directions within range
+	 */
 	public List<Direction> getAllowedDirections() {
 		List<Direction> alloweDirections = new ArrayList<Direction>(Direction.DIRECTIONS);
 		return alloweDirections.stream().filter(dir -> this.nextPosition(dir).inPlayArea())

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * The directions that a drone can choose to move
+ * Directions a drone can choose to move
  * 
  * @author ivy
  *
@@ -23,11 +23,12 @@ public enum Direction {
 	private static final double UNIT_DEGREE = Math.PI / 8;
 	public static final int NUM_OF_DIRECTIONS = 16;
 
+	/**
+	 * a list of all the possible direction a drone can move
+	 */
 	public static final List<Direction> DIRECTIONS = Arrays.asList(Direction.values());
 
-	/**
-	 * The degree of angle between this direction and E
-	 */
+	// The angle between this direction and E
 	private double degree;
 
 	/**
@@ -43,6 +44,10 @@ public enum Direction {
 		return degree;
 	}
 
+	/**
+	 * 
+	 * @return the direction opposites to this one
+	 */
 	public Direction getDiagonalDirection() {
 		int indexOfDiagonal = (DIRECTIONS.indexOf(this) + (NUM_OF_DIRECTIONS / 2)) % NUM_OF_DIRECTIONS;
 		return DIRECTIONS.get(indexOfDiagonal);
