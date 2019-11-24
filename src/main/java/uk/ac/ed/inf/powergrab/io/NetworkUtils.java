@@ -27,10 +27,8 @@ public class NetworkUtils {
 	}
 
 	private static HttpURLConnection getConnection(String mapString) throws IOException {
-		URL mapUrl = null;
-		HttpURLConnection conn = null;
-		mapUrl = new URL(mapString);
-		conn = (HttpURLConnection) mapUrl.openConnection();
+		URL mapUrl = new URL(mapString);
+		HttpURLConnection conn = (HttpURLConnection) mapUrl.openConnection();
 		conn.setReadTimeout(10000);
 		conn.setConnectTimeout(15000);
 		conn.setRequestMethod("GET");

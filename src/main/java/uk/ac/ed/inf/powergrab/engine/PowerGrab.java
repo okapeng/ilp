@@ -1,13 +1,14 @@
 package uk.ac.ed.inf.powergrab.engine;
 
 import uk.ac.ed.inf.powergrab.drone.Drone;
-import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
 import uk.ac.ed.inf.powergrab.drone.StatefulDrone;
 import uk.ac.ed.inf.powergrab.drone.StatelessDrone;
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.map.Position;
+
+import java.util.Arrays;
 
 /**
  * Game engine
@@ -26,23 +27,36 @@ public class PowerGrab {
 	private int numOfMoves;
 	private StringBuffer movesTrace = new StringBuffer();
 
+	/**
+	 * Drone type supported
+	 *
+	 * @author Ivy Wang
+	 *
+	 */
+	public enum DroneType {
+		stateless, stateful
+	}
+
 	/*
 	 * Initialise a new PowerGrab game with a starting position, drone type, and
 	 * random seed (for stateless drone only)
 	 */
-	public PowerGrab(Position initPosition, DroneType droneType, int randomSeed) {
-		this.numOfMoves = 0;
-		switch (droneType) {
-		case stateful:
-			this.drone = new StatefulDrone(initPosition, INITIAL_COINS, INITIAL_POWER);
-			break;
-		case stateless:
-			this.drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
-			break;
-		default:
-			throw new IllegalArgumentException();
+	public PowerGrab(Position initPosition, String droneTypeStr, int randomSeed) throws IllegalArgumentException {
+		try {
+			this.numOfMoves = 0;
+			DroneType droneType = DroneType.valueOf(droneTypeStr);
+			switch (droneType) {
+				case stateful:
+					this.drone = new StatefulDrone(initPosition, INITIAL_COINS, INITIAL_POWER);
+					break;
+				case stateless:
+					this.drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
+					break;
+			}
+			Map.getInstance().addDronePosition(initPosition);
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException("Note unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
 		}
-		Map.getInstance().addDronePosition(initPosition);
 	}
 
 	/**
@@ -52,7 +66,7 @@ public class PowerGrab {
 	 * @return String of drone's movement trace
 	 */
 	public String play() {
-		Double sum = (Map.getInstance().getchargingStations().stream().map(ChargingStation::getCoins).filter(x -> x > 0)
+		Double sum = (Map.getInstance().getChargingStations().stream().map(ChargingStation::getCoins).filter(x -> x > 0)
 				.reduce(Double::sum)).get();
 
 		while (drone.getPower() > 0 && numOfMoves < MAX_MOVES) {

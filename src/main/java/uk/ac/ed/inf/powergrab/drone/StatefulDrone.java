@@ -34,11 +34,11 @@ public class StatefulDrone extends Drone {
 	public StatefulDrone(Position curPosition, double coins, double power) {
 		super(curPosition, coins, power);
 
-		this.goals = Map.getInstance().getchargingStations().stream().filter(stations -> stations.getCoins() > 0)
+		this.goals = Map.getInstance().getChargingStations().stream().filter(stations -> stations.getCoins() > 0)
 				.collect(Collectors.toList());
 
-		visitedPositions = new ArrayList<Position>();
-		badPositions = new ArrayList<Position>();
+		visitedPositions = new ArrayList<>();
+		badPositions = new ArrayList<>();
 
 		searchForGoal(); // Search for initial goal
 	}
@@ -72,13 +72,10 @@ public class StatefulDrone extends Drone {
 				dir -> Map.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins() < 0);
 
 		// Sort the directions according to whether it is moving towards the goal
-		Collections.sort(directions, new Comparator<Direction>() {
-			@Override
-			public int compare(Direction d1, Direction d2) {
-				Position p1 = curPosition.nextPosition(d1);
-				Position p2 = curPosition.nextPosition(d2);
-				return Double.compare(p1.getRelativeDistance(tempGoal), p2.getRelativeDistance(tempGoal));
-			}
+		directions.sort((d1, d2) -> {
+			Position p1 = curPosition.nextPosition(d1);
+			Position p2 = curPosition.nextPosition(d2);
+			return Double.compare(p1.getRelativeDistance(tempGoal), p2.getRelativeDistance(tempGoal));
 		});
 
 		// Filter out directions close to bad positions i.e. dead end
@@ -93,6 +90,15 @@ public class StatefulDrone extends Drone {
 		}
 
 		return niceDirections.get(0);
+	}
+
+	/**
+	 * In addition to adjust the drone state, record the direction moving backwards
+	 */
+	@Override
+	public boolean move(Direction direction) {
+		this.backwardsDirection = direction.getDiagonalDirection();
+		return super.move(direction);
 	}
 
 	/**
@@ -144,27 +150,12 @@ public class StatefulDrone extends Drone {
 	}
 
 	/**
-	 * In addition to adjust the drone state, record the direction moving backwards
-	 */
-	@Override
-	public boolean move(Direction direction) {
-		this.backwardsDirection = direction.getDiagonalDirection();
-		return super.move(direction);
-	}
-
-	/**
 	 * Sort the goal list according to its relative distance to the drone
 	 */
 	private void searchForGoal() {
 		visitedPositions = new ArrayList<Position>();
 
-		Collections.sort(goals, new Comparator<ChargingStation>() {
-			@Override
-			public int compare(ChargingStation s1, ChargingStation s2) {
-				return Double.compare(curPosition.getRelativeDistance(s1.getPosition()),
-						curPosition.getRelativeDistance(s2.getPosition()));
-			}
-		});
+		goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
 	}
 
 }

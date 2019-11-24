@@ -19,14 +19,14 @@ import com.mapbox.geojson.Point;
  */
 public class Map {
 	// Maximum distance for a transfer to happen
-	public static final double MAX_TRANSFER_DISTANCE = 0.00025;
+	private static final double MAX_TRANSFER_DISTANCE = 0.00025;
 
 	private static Map map = null;
 	private List<Feature> features;
 	// List of all the charging stations in the map
-	private List<ChargingStation> chargingStations = new ArrayList<ChargingStation>();
+	private List<ChargingStation> chargingStations = new ArrayList<>();
 	// List of points a drone visited at each move in sequence
-	private List<Point> droneTrace = new ArrayList<Point>();
+	private List<Point> droneTrace = new ArrayList<>();
 
 	private Map() {
 	}
@@ -76,8 +76,8 @@ public class Map {
 	 * 
 	 * @return A list of all the charging stations in the map
 	 */
-	public List<ChargingStation> getchargingStations() {
-		return new ArrayList<ChargingStation>(this.chargingStations);
+	public List<ChargingStation> getChargingStations() {
+		return new ArrayList<>(this.chargingStations);
 	}
 
 	/**

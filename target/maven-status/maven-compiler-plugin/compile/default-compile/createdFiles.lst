@@ -1,1 +1,15 @@
+uk\ac\ed\inf\powergrab\engine\PowerGrab.class
+uk\ac\ed\inf\powergrab\io\FileUtils.class
+uk\ac\ed\inf\powergrab\map\Direction.class
+uk\ac\ed\inf\powergrab\drone\StatefulDrone.class
+uk\ac\ed\inf\powergrab\drone\Drone$DroneType.class
+uk\ac\ed\inf\powergrab\map\Map.class
+uk\ac\ed\inf\powergrab\AppMulti.class
+uk\ac\ed\inf\powergrab\drone\StatelessDrone.class
 uk\ac\ed\inf\powergrab\engine\PowerGrab$1.class
+uk\ac\ed\inf\powergrab\io\NetworkUtils.class
+uk\ac\ed\inf\powergrab\drone\Drone.class
+uk\ac\ed\inf\powergrab\drone\StatefulDrone$1.class
+uk\ac\ed\inf\powergrab\map\Position.class
+uk\ac\ed\inf\powergrab\map\ChargingStation.class
+uk\ac\ed\inf\powergrab\drone\StatefulDrone$2.class

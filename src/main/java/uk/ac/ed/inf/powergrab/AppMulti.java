@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 import com.mapbox.geojson.FeatureCollection;
 
-import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
 import uk.ac.ed.inf.powergrab.engine.PowerGrab;
+import uk.ac.ed.inf.powergrab.engine.PowerGrab.DroneType;
 import uk.ac.ed.inf.powergrab.io.FileUtils;
 import uk.ac.ed.inf.powergrab.io.NetworkUtils;
 import uk.ac.ed.inf.powergrab.map.Map;
@@ -35,7 +35,7 @@ public class AppMulti {
 						Position initPosition = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
 						int randomSeed = Integer.parseInt(args[5]);
 
-						PowerGrab powerGrab = new PowerGrab(initPosition, droneType, randomSeed);
+						PowerGrab powerGrab = new PowerGrab(initPosition, droneType.name(), randomSeed);
 						String moveTrace = powerGrab.play();
 //					System.out.println(moveTrace);
 

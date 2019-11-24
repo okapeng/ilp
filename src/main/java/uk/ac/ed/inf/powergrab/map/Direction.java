@@ -34,9 +34,9 @@ public enum Direction {
 	/**
 	 * Constructor of Direction, calculate the degree
 	 * 
-	 * @param order
+	 * @param index the index of a direction, starting from E
 	 */
-	private Direction(int index) {
+    Direction(int index) {
 		this.degree = index * UNIT_DEGREE;
 	}
 
