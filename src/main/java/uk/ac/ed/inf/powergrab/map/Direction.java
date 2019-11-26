@@ -48,7 +48,7 @@ public enum Direction {
 	 * 
 	 * @return the direction opposites to this one
 	 */
-	public Direction getDiagonalDirection() {
+	public Direction getOppositeDirection() {
 		int indexOfDiagonal = (DIRECTIONS.indexOf(this) + (NUM_OF_DIRECTIONS / 2)) % NUM_OF_DIRECTIONS;
 		return DIRECTIONS.get(indexOfDiagonal);
 	}

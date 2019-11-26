@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 public class Position {
 
 	private static final double R = 0.0003;
-	private static final double MAX_LATITIUDE = 55.946233;
-	private static final double MIN_LATITIUDE = 55.942617;
+	private static final double MAX_LATITUDE = 55.946233;
+	private static final double MIN_LATITUDE = 55.942617;
 	private static final double MAX_LONGITUDE = -3.184319;
 	private static final double MIN_LONGITUDE = -3.192473;
 
@@ -50,7 +50,7 @@ public class Position {
 	 * @return
 	 */
 	public boolean inPlayArea() {
-		return this.latitude < MAX_LATITIUDE && this.latitude > MIN_LATITIUDE && this.longitude < MAX_LONGITUDE
+		return this.latitude < MAX_LATITUDE && this.latitude > MIN_LATITUDE && this.longitude < MAX_LONGITUDE
 				&& this.longitude > MIN_LONGITUDE;
 	}
 
@@ -63,18 +63,6 @@ public class Position {
 	public double getRelativeDistance(Position position) {
 		return Math.sqrt(
 				Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
-	}
-
-	/**
-	 * Given a position, find all the possible directions it can move within the
-	 * play area
-	 * 
-	 * @return List of directions within range
-	 */
-	public List<Direction> getAllowedDirections() {
-		List<Direction> alloweDirections = new ArrayList<Direction>(Direction.DIRECTIONS);
-		return alloweDirections.stream().filter(dir -> this.nextPosition(dir).inPlayArea())
-				.collect(Collectors.toList());
 	}
 
 	@Override

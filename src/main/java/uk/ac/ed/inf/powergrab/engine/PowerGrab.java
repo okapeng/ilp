@@ -1,6 +1,7 @@
 package uk.ac.ed.inf.powergrab.engine;
 
 import uk.ac.ed.inf.powergrab.drone.Drone;
+import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
 import uk.ac.ed.inf.powergrab.drone.StatefulDrone;
 import uk.ac.ed.inf.powergrab.drone.StatelessDrone;
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
@@ -20,30 +21,21 @@ public class PowerGrab {
 
 	private static final double INITIAL_COINS = 0;
 	private static final double INITIAL_POWER = 250;
-	private static final int MAX_MOVES = 250;
+	private static final int MAX_NUMBER_OF_MOVES = 250;
 	public static int count = 0;
 
 	private Drone drone;
 	private int numOfMoves;
 	private StringBuffer movesTrace = new StringBuffer();
 
-	/**
-	 * Drone type supported
-	 *
-	 * @author Ivy Wang
-	 *
-	 */
-	public enum DroneType {
-		stateless, stateful
-	}
-
 	/*
 	 * Initialise a new PowerGrab game with a starting position, drone type, and
 	 * random seed (for stateless drone only)
 	 */
-	public PowerGrab(Position initPosition, String droneTypeStr, int randomSeed) throws IllegalArgumentException {
+	public PowerGrab(double initLatitude, double initLongitude, String droneTypeStr, int randomSeed) throws IllegalArgumentException {
 		try {
 			this.numOfMoves = 0;
+			Position initPosition = new Position(initLatitude, initLongitude);
 			DroneType droneType = DroneType.valueOf(droneTypeStr);
 			switch (droneType) {
 				case stateful:
@@ -55,7 +47,7 @@ public class PowerGrab {
 			}
 			Map.getInstance().addDronePosition(initPosition);
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException("Note unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
+			throw new IllegalArgumentException("Unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
 		}
 	}
 
@@ -69,9 +61,9 @@ public class PowerGrab {
 		Double sum = (Map.getInstance().getChargingStations().stream().map(ChargingStation::getCoins).filter(x -> x > 0)
 				.reduce(Double::sum)).get();
 
-		while (drone.getPower() > 0 && numOfMoves < MAX_MOVES) {
+		while (drone.getPower() > 0 && numOfMoves < MAX_NUMBER_OF_MOVES) {
 			Position oldPosition = drone.getPosition();
-			Direction moveDirection = drone.decideMoveDirection(drone.getPosition().getAllowedDirections());
+			Direction moveDirection = drone.decideMoveDirection(drone.getAllowedDirections());
 			if (!drone.move(moveDirection)) {
 				break;
 			}
@@ -91,7 +83,7 @@ public class PowerGrab {
 
 	/**
 	 * At each move, transfer the coins and power between the drone and the nearest
-	 * charging station within range
+	 * charging station within the range of minimum transfer distance
 	 */
 	private void transfer() {
 		ChargingStation nearestStation = Map.getInstance().getNearestStationInRange(drone.getPosition());

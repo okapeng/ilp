@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="641.0">uk.ac.ed.inf.powergrab.engine.PowerGrab</node>
+    <node x="476.0" y="392.5">uk.ac.ed.inf.powergrab.drone.StatelessDrone</node>
+    <node x="139.0" y="289.0">uk.ac.ed.inf.powergrab.drone.StatefulDrone</node>
+    <node x="0.0" y="947.0">uk.ac.ed.inf.powergrab.map</node>
+    <node x="638.0" y="641.0">uk.ac.ed.inf.powergrab.utils.FileUtils</node>
+    <node x="0.0" y="405.0">uk.ac.ed.inf.powergrab.drone.Drone.DroneType</node>
+    <node x="309.0" y="641.0">uk.ac.ed.inf.powergrab.utils.NetworkUtils</node>
+    <node x="139.0" y="0.0">uk.ac.ed.inf.powergrab.drone.Drone</node>
+    <node x="909.0" y="641.0">uk.ac.ed.inf.powergrab.App</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uk.ac.ed.inf.powergrab.drone.Drone.DroneType" target="uk.ac.ed.inf.powergrab.drone.Drone">
+      <point x="0.0" y="-37.5" />
+      <point x="59.5" y="264.0" />
+      <point x="191.83333333333331" y="264.0" />
+      <point x="-105.66666666666669" y="119.5" />
+    </edge>
+    <edge source="uk.ac.ed.inf.powergrab.drone.StatelessDrone" target="uk.ac.ed.inf.powergrab.drone.Drone">
+      <point x="0.0" y="-50.0" />
+      <point x="634.5" y="264.0" />
+      <point x="403.1666666666667" y="264.0" />
+      <point x="105.66666666666669" y="119.5" />
+    </edge>
+    <edge source="uk.ac.ed.inf.powergrab.drone.StatefulDrone" target="uk.ac.ed.inf.powergrab.drone.Drone">
+      <point x="0.0" y="-153.5" />
+      <point x="0.0" y="119.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8907563025210085" x="631.5" y="602.7735849056603" />
+  <SelectedNodes>
+    <node>uk.ac.ed.inf.powergrab.App</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

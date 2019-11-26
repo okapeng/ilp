@@ -3,6 +3,10 @@ package uk.ac.ed.inf.powergrab;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import uk.ac.ed.inf.powergrab.drone.Drone;
+import uk.ac.ed.inf.powergrab.drone.StatefulDrone;
+import uk.ac.ed.inf.powergrab.engine.PowerGrab;
+import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Position;
 
@@ -213,6 +217,13 @@ public class AppTest extends TestCase {
 		Position p5 = p4.nextPosition(Direction.WNW);
 		Position stop = new Position(55.94396264116995,-3.1881340947613324);
 		assertTrue(approxEq(p5, stop));
+	}
+
+	public void testChargingStationTransfer() {
+		Position pos = new Position(55.94396264116995,-3.1881340947613324);
+		ChargingStation chargingStation = new ChargingStation(pos, 20, 20);
+		Drone drone = new StatefulDrone(pos, 0, 0);
+
 	}
 	
 }

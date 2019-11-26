@@ -40,9 +40,9 @@ public class Map {
 		return map;
 	}
 
-	public static void reset() {
-		map = null;
-	}
+//	public static void reset() {
+//		map = null;
+//	}
 
 	/**
 	 * Extract information from the feature collection download from the sever

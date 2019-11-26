@@ -1,7 +1,6 @@
 package uk.ac.ed.inf.powergrab.drone;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -97,7 +96,7 @@ public class StatefulDrone extends Drone {
 	 */
 	@Override
 	public boolean move(Direction direction) {
-		this.backwardsDirection = direction.getDiagonalDirection();
+		this.backwardsDirection = direction.getOppositeDirection();
 		return super.move(direction);
 	}
 
@@ -150,11 +149,11 @@ public class StatefulDrone extends Drone {
 	}
 
 	/**
-	 * Sort the goal list according to its relative distance to the drone
+	 * Sort the goal list according to its relative distance to the drone.
+	 * Reset positions visited since last time reach a goal.
 	 */
 	private void searchForGoal() {
 		visitedPositions = new ArrayList<Position>();
-
 		goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
 	}
 

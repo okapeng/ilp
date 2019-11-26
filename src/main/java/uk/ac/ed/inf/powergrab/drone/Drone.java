@@ -1,6 +1,8 @@
 package uk.ac.ed.inf.powergrab.drone;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
@@ -13,6 +15,16 @@ import uk.ac.ed.inf.powergrab.map.Position;
  *
  */
 public abstract class Drone {
+
+	/**
+	 * Drone type supported by PowerGrab
+	 *
+	 * @author Ivy Wang
+	 *
+	 */
+	public enum DroneType {
+		stateless, stateful
+	}
 
 	// Amount of power a drone requires to make a move
 	private static final double POWER_CONSUMED_PER_MOVE = 1.25;
@@ -40,11 +52,10 @@ public abstract class Drone {
 	}
 
 	/**
-	 * Abstract method to be implemented based on the drone's strategy for deciding
-	 * which direction to move next
+	 * Abstract method to be implemented based on the drone's strategy
 	 *
 	 * @param directions All the possible directions a drone can choose from
-	 * @return
+	 * @return the direction the drone is going to move
 	 */
 	public abstract Direction decideMoveDirection(List<Direction> directions);
 
@@ -57,12 +68,24 @@ public abstract class Drone {
 	public boolean move(Direction direction) {
 		this.curPosition = curPosition.nextPosition(direction);
 		this.power -= POWER_CONSUMED_PER_MOVE;
-		return (this.power > 0);
+		return (this.power >= 0);
 	}
 
 	public void transfer(ChargingStation chargingStation, double coins, double power) {
 		this.coins += coins;
 		this.power += power;
+	}
+
+	/**
+	 * Find all the possible directions the drone can move within the
+	 * play area
+	 *
+	 * @return List of directions within range
+	 */
+	public List<Direction> getAllowedDirections() {
+		List<Direction> allowedDirections = new ArrayList<Direction>(Direction.DIRECTIONS);
+		return allowedDirections.stream().filter(dir -> curPosition.nextPosition(dir).inPlayArea())
+				.collect(Collectors.toList());
 	}
 
 }

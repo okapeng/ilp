@@ -5,10 +5,9 @@ import java.io.IOException;
 import com.mapbox.geojson.FeatureCollection;
 
 import uk.ac.ed.inf.powergrab.engine.PowerGrab;
-import uk.ac.ed.inf.powergrab.io.FileUtils;
-import uk.ac.ed.inf.powergrab.io.NetworkUtils;
+import uk.ac.ed.inf.powergrab.utils.FileUtils;
+import uk.ac.ed.inf.powergrab.utils.NetworkUtils;
 import uk.ac.ed.inf.powergrab.map.Map;
-import uk.ac.ed.inf.powergrab.map.Position;
 
 /**
  * Entrance point for PowerGrab App
@@ -21,7 +20,7 @@ public class App {
 
 		try {
 			if (args.length != 7)
-				throw new IllegalArgumentException("");
+				throw new IllegalArgumentException("Incorrect arguments number! ");
 
 			String mapString = String.format(
 					"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", args[2], args[1],
@@ -29,10 +28,9 @@ public class App {
 			String mapSource = NetworkUtils.downloadMap(mapString);
 			Map.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
 
-			Position initPosition = new Position(Double.parseDouble(args[3]), Double.parseDouble(args[4]));
 			int randomSeed = Integer.parseInt(args[5]);
 
-			PowerGrab powerGrab = new PowerGrab(initPosition, args[6], randomSeed);
+			PowerGrab powerGrab = new PowerGrab(Double.parseDouble(args[3]), Double.parseDouble(args[4]), args[6], randomSeed);
 			String moveTrace = powerGrab.play();
 			System.out.println(moveTrace);
 
@@ -45,7 +43,7 @@ public class App {
 		} catch (IllegalArgumentException e) {
 			// Either because the number of argument is wrong or the DroneType doesn't match
 			// with any supported type
-			System.out.println("Invalid App argument! " + e.getMessage()
+			System.out.println(e.getMessage()
 					+ "\nUsage: java -jar powergrab-0.0.1-SNAPSHOT.jar DD MM YYYY <initial_latitude> <initial_longitude> <random_seed> <drone_type>\n");
 		}
 

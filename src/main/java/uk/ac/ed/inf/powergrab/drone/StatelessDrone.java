@@ -39,7 +39,7 @@ public class StatelessDrone extends Drone {
 				.map(dir -> Map.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins())
 				.collect(Collectors.toList());
 
-		/**
+		/*
 		 * Moves to the direction resulting in the maximum coins. Otherwise, randomly
 		 * choosing a direction without crashing into a negative station
 		 */

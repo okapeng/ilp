@@ -1,4 +1,4 @@
-package uk.ac.ed.inf.powergrab.io;
+package uk.ac.ed.inf.powergrab.utils;
 
 import java.io.File;
 import java.io.FileWriter;
