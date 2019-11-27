@@ -1,15 +1,11 @@
 package uk.ac.ed.inf.powergrab.map;
 
+import com.mapbox.geojson.*;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.mapbox.geojson.Feature;
-import com.mapbox.geojson.FeatureCollection;
-import com.mapbox.geojson.Geometry;
-import com.mapbox.geojson.LineString;
-import com.mapbox.geojson.Point;
 
 /**
  * Singleton class to maintain the map for a PowerGrab game
@@ -40,9 +36,9 @@ public class Map {
 		return map;
 	}
 
-//	public static void reset() {
-//		map = null;
-//	}
+	public static void reset() {
+		map = null;
+	}
 
 	/**
 	 * Extract information from the feature collection download from the sever

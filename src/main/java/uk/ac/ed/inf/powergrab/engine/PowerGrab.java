@@ -2,8 +2,6 @@ package uk.ac.ed.inf.powergrab.engine;
 
 import uk.ac.ed.inf.powergrab.drone.Drone;
 import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
-import uk.ac.ed.inf.powergrab.drone.StatefulDrone;
-import uk.ac.ed.inf.powergrab.drone.StatelessDrone;
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Map;
@@ -37,16 +35,9 @@ public class PowerGrab {
 			this.numOfMoves = 0;
 			Position initPosition = new Position(initLatitude, initLongitude);
 			DroneType droneType = DroneType.valueOf(droneTypeStr);
-			switch (droneType) {
-				case stateful:
-					this.drone = new StatefulDrone(initPosition, INITIAL_COINS, INITIAL_POWER);
-					break;
-				case stateless:
-					this.drone = new StatelessDrone(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
-					break;
-			}
+			this.drone = droneType.newInstance(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
 			Map.getInstance().addDronePosition(initPosition);
-		} catch (IllegalArgumentException e) {
+		} catch (Exception e) {
 			throw new IllegalArgumentException("Unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
 		}
 	}

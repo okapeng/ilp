@@ -1,13 +1,13 @@
 package uk.ac.ed.inf.powergrab.drone;
 
+import uk.ac.ed.inf.powergrab.map.Direction;
+import uk.ac.ed.inf.powergrab.map.Map;
+import uk.ac.ed.inf.powergrab.map.Position;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-
-import uk.ac.ed.inf.powergrab.map.Direction;
-import uk.ac.ed.inf.powergrab.map.Map;
-import uk.ac.ed.inf.powergrab.map.Position;
 
 /**
  * Stateless drone
@@ -21,7 +21,7 @@ public class StatelessDrone extends Drone {
 	private Random rand;
 
 	public StatelessDrone(Position curPosition, double coins, double power, int seed) {
-		super(curPosition, coins, power);
+		super(curPosition, coins, power, seed);
 		this.rand = new Random(seed);
 	}
 

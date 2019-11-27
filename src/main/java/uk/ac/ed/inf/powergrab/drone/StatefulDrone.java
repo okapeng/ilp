@@ -1,14 +1,14 @@
 package uk.ac.ed.inf.powergrab.drone;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.map.Position;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Stateful drone
@@ -30,8 +30,8 @@ public class StatefulDrone extends Drone {
 	 * Initialize the Drone state and store the charging stations' information
 	 * extracted from the map
 	 */
-	public StatefulDrone(Position curPosition, double coins, double power) {
-		super(curPosition, coins, power);
+	public StatefulDrone(Position curPosition, double coins, double power, int seed) {
+		super(curPosition, coins, power, seed);
 
 		this.goals = Map.getInstance().getChargingStations().stream().filter(stations -> stations.getCoins() > 0)
 				.collect(Collectors.toList());
@@ -153,7 +153,7 @@ public class StatefulDrone extends Drone {
 	 * Reset positions visited since last time reach a goal.
 	 */
 	private void searchForGoal() {
-		visitedPositions = new ArrayList<Position>();
+		visitedPositions = new ArrayList<>();
 		goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
 	}
 

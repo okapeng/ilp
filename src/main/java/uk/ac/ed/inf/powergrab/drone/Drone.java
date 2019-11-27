@@ -1,12 +1,12 @@
 package uk.ac.ed.inf.powergrab.drone;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Position;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Skeleton for a valid drone class
@@ -23,17 +23,42 @@ public abstract class Drone {
 	 *
 	 */
 	public enum DroneType {
-		stateless, stateful
+		stateless("uk.ac.ed.inf.powergrab.drone.StatelessDrone"), stateful("uk.ac.ed.inf.powergrab.drone.StatefulDrone");
+
+		private Class<Drone> droneClass;
+
+		DroneType(String className) throws IllegalArgumentException {
+			try {
+				this.droneClass = (Class<Drone>) Class.forName(className);
+			} catch (ClassNotFoundException e) {
+				throw new IllegalArgumentException();
+			}
+		}
+
+		/**
+		 * Initiate a new instance of drone of the given type with the parameters passed in
+		 *
+		 * @param initPosition initial position of the Drone
+		 * @param coin         initial coin of the drone
+		 * @param power        initial power of the drone
+		 * @param seed         random seed
+		 * @return an instance of Drone with the given type
+		 * @throws Exception NoSuchMethodException infers that this drone type is not supported
+		 */
+		public Drone newInstance(Position initPosition, double coin, double power, int seed) throws Exception {
+			return droneClass.getConstructor(Position.class, double.class, double.class, int.class)
+					.newInstance(initPosition, coin, power, seed);
+		}
 	}
 
 	// Amount of power a drone requires to make a move
 	private static final double POWER_CONSUMED_PER_MOVE = 1.25;
 
-	protected Position curPosition;
+	Position curPosition;
 	protected double coins;
 	protected double power;
 
-	public Drone(Position curPosition, double coins, double power) {
+	public Drone(Position curPosition, double coins, double power, int seed) {
 		this.curPosition = curPosition;
 		this.coins = coins;
 		this.power = power;
@@ -49,6 +74,18 @@ public abstract class Drone {
 
 	public double getPower() {
 		return power;
+	}
+
+	/**
+	 * Find all the possible directions the drone can move within the
+	 * play area
+	 *
+	 * @return List of directions within range
+	 */
+	public List<Direction> getAllowedDirections() {
+		List<Direction> allowedDirections = new ArrayList<>(Direction.DIRECTIONS);
+		return allowedDirections.stream().filter(dir -> curPosition.nextPosition(dir).inPlayArea())
+				.collect(Collectors.toList());
 	}
 
 	/**
@@ -74,18 +111,6 @@ public abstract class Drone {
 	public void transfer(ChargingStation chargingStation, double coins, double power) {
 		this.coins += coins;
 		this.power += power;
-	}
-
-	/**
-	 * Find all the possible directions the drone can move within the
-	 * play area
-	 *
-	 * @return List of directions within range
-	 */
-	public List<Direction> getAllowedDirections() {
-		List<Direction> allowedDirections = new ArrayList<Direction>(Direction.DIRECTIONS);
-		return allowedDirections.stream().filter(dir -> curPosition.nextPosition(dir).inPlayArea())
-				.collect(Collectors.toList());
 	}
 
 }
