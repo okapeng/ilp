@@ -3,27 +3,26 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="788.0" y="229.5">uk.ac.ed.inf.powergrab.engine.PowerGrab</node>
-    <node x="361.5" y="590.0">uk.ac.ed.inf.powergrab.drone.StatelessDrone</node>
-    <node x="-38.5" y="926.5">uk.ac.ed.inf.powergrab.drone.StatefulDrone</node>
-    <node x="349.0" y="217.5">uk.ac.ed.inf.powergrab.map.Map</node>
-    <node x="407.0" y="-37.5">uk.ac.ed.inf.powergrab.utils.FileUtils</node>
-    <node x="98.0" y="82.5">uk.ac.ed.inf.powergrab.utils.NetworkUtils</node>
-    <node x="760.0" y="687.0">uk.ac.ed.inf.powergrab.drone.Drone.DroneType</node>
-    <node x="361.5" y="960.5">uk.ac.ed.inf.powergrab.drone.Drone</node>
-    <node x="446.0" y="94.0">uk.ac.ed.inf.powergrab.App</node>
+    <node x="668.0" y="269.5">uk.ac.ed.inf.powergrab.engine.PowerGrab</node>
+    <node x="241.5" y="950.0">uk.ac.ed.inf.powergrab.drone.StatelessDrone</node>
+    <node x="1041.5" y="1206.5">uk.ac.ed.inf.powergrab.drone.StatefulDrone</node>
+    <node x="229.0" y="246.0">uk.ac.ed.inf.powergrab.map.Map</node>
+    <node x="287.0" y="-37.5">uk.ac.ed.inf.powergrab.utils.FileUtils</node>
+    <node x="-22.0" y="82.5">uk.ac.ed.inf.powergrab.utils.NetworkUtils</node>
+    <node x="640.0" y="607.0">uk.ac.ed.inf.powergrab.drone.Drone.DroneType</node>
+    <node x="887.2169811320755" y="498.7484276729559">uk.ac.ed.inf.powergrab.drone.Drone</node>
+    <node x="326.0" y="94.0">uk.ac.ed.inf.powergrab.App</node>
   </nodes>
   <notes />
   <edges>
     <edge source="uk.ac.ed.inf.powergrab.App" target="uk.ac.ed.inf.powergrab.map.Map">
       <point x="0.0" y="26.0" />
-      <point x="0.0" y="-142.5" />
+      <point x="0.0" y="-154.0" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.engine.PowerGrab" target="uk.ac.ed.inf.powergrab.drone.Drone">
       <point x="132.0" y="0.0" />
-      <point x="1160.0" y="360.0" />
-      <point x="1160.0" y="1080.0" />
-      <point x="158.5" y="0.0" />
+      <point x="1200.0" y="400.0" />
+      <point x="0.0" y="-119.5" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.App" target="uk.ac.ed.inf.powergrab.utils.NetworkUtils">
       <point x="-74.0" y="0.0" />
@@ -31,33 +30,35 @@
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.drone.StatelessDrone" target="uk.ac.ed.inf.powergrab.map.Map">
       <point x="0.0" y="-50.0" />
-      <point x="0.0" y="142.5" />
+      <point x="0.0" y="154.0" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.drone.Drone.DroneType" target="uk.ac.ed.inf.powergrab.drone.Drone">
       <point x="0.0" y="73.0" />
-      <point x="920.0" y="1000.0" />
-      <point x="158.5" y="-80.0" />
+      <point x="800.0" y="920.0" />
+      <point x="-158.5" y="-80.0" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.drone.StatelessDrone" target="uk.ac.ed.inf.powergrab.drone.Drone">
-      <point x="0.0" y="50.0" />
-      <point x="0.0" y="-119.5" />
-    </edge>
-    <edge source="uk.ac.ed.inf.powergrab.App" target="uk.ac.ed.inf.powergrab.engine.PowerGrab">
-      <point x="74.0" y="20.0" />
-      <point x="920.0" y="140.0" />
-      <point x="0.0" y="-130.5" />
-    </edge>
-    <edge source="uk.ac.ed.inf.powergrab.drone.StatefulDrone" target="uk.ac.ed.inf.powergrab.drone.Drone">
       <point x="158.5" y="0.0" />
       <point x="-158.5" y="0.0" />
+    </edge>
+    <edge source="uk.ac.ed.inf.powergrab.App" target="uk.ac.ed.inf.powergrab.engine.PowerGrab">
+      <point x="40.0" y="26.0" />
+      <point x="440.0" y="200.0" />
+      <point x="760.0" y="200.0" />
+      <point x="-40.0" y="-130.5" />
+    </edge>
+    <edge source="uk.ac.ed.inf.powergrab.drone.StatefulDrone" target="uk.ac.ed.inf.powergrab.drone.Drone">
+      <point x="0.0" y="-153.5" />
+      <point x="0.0" y="119.5" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.App" target="uk.ac.ed.inf.powergrab.utils.FileUtils">
       <point x="0.0" y="-26.0" />
       <point x="0.0" y="37.5" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.drone.StatefulDrone" target="uk.ac.ed.inf.powergrab.map.Map">
-      <point x="0.0" y="-153.5" />
-      <point x="120.0" y="360.0" />
+      <point x="-158.5" y="0.0" />
+      <point x="160.0" y="1360.0" />
+      <point x="160.0" y="400.0" />
       <point x="-171.0" y="0.0" />
     </edge>
     <edge source="uk.ac.ed.inf.powergrab.engine.PowerGrab" target="uk.ac.ed.inf.powergrab.map.Map">
@@ -69,9 +70,9 @@
       <point x="0.0" y="-73.0" />
     </edge>
   </edges>
-  <settings layout="Orthogonal" zoom="0.9577557755775576" x="558.5895933838733" y="814.0261888352861" />
+  <settings layout="Orthogonal" zoom="0.505564387917329" x="740.5" y="581.0" />
   <SelectedNodes>
-    <node>uk.ac.ed.inf.powergrab.App</node>
+    <node>uk.ac.ed.inf.powergrab.drone.Drone</node>
   </SelectedNodes>
   <Categories>
     <Category>Constructors</Category>

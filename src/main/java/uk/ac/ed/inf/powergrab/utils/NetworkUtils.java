@@ -13,21 +13,21 @@ import java.net.URL;
  */
 public class NetworkUtils {
 
-	public static String downloadMap(String mapString) throws IOException {
+    public static String downloadMap(String mapUrl) throws IOException {
 		StringBuilder sb = new StringBuilder();
-		HttpURLConnection conn = getConnection(mapString);
+        HttpURLConnection conn = getConnection(new URL(mapUrl));
 		try (InputStreamReader inputStreamReader = new InputStreamReader(conn.getInputStream())) {
 			int c = inputStreamReader.read();
 			while (c != -1) {
 				sb.append((char) c);
 				c = inputStreamReader.read();
 			}
+            conn.disconnect();
 			return sb.toString();
 		}
 	}
 
-	private static HttpURLConnection getConnection(String mapString) throws IOException {
-		URL mapUrl = new URL(mapString);
+    private static HttpURLConnection getConnection(URL mapUrl) throws IOException {
 		HttpURLConnection conn = (HttpURLConnection) mapUrl.openConnection();
 		conn.setReadTimeout(10000);
 		conn.setConnectTimeout(15000);

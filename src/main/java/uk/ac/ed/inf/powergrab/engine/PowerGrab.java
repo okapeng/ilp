@@ -38,6 +38,7 @@ public class PowerGrab {
 			this.drone = droneType.newInstance(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
 			Map.getInstance().addDronePosition(initPosition);
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new IllegalArgumentException("Unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
 		}
 	}
@@ -89,9 +90,10 @@ public class PowerGrab {
 		nearestStation.transfer(coins, power);
 		drone.transfer(nearestStation, coins, power);
 
-//		if (coins < 0) {
-//			System.out.println("Crash to negative station");
-//		}
+		if (coins < 0) {
+			System.out.println(nearestStation);
+			System.out.println("Crash to negative station");
+		}
 
 	}
 

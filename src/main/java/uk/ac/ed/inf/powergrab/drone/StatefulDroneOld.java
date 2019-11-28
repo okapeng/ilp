@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 
 /**
  * Stateful drone
- * 
+ *
  * @author ivy
  *
  */
-public class StatefulDrone extends Drone {
+public class StatefulDroneOld extends Drone {
 
 	private List<ChargingStation> goals; // List of all the unvisited positive charging stations in the map.
 	private List<Position> visitedPositions; // List of positions visited since last charging.
@@ -30,7 +30,7 @@ public class StatefulDrone extends Drone {
 	 * Initialize the Drone state and store the charging stations' information
 	 * extracted from the map
 	 */
-	public StatefulDrone(Position curPosition, double coins, double power, int seed) {
+	public StatefulDroneOld(Position curPosition, double coins, double power, int seed) {
 		super(curPosition, coins, power, seed);
 
 		this.goals = Map.getInstance().getChargingStations().stream().filter(stations -> stations.getCoins() > 0)
@@ -137,7 +137,7 @@ public class StatefulDrone extends Drone {
 	/**
 	 * Check if position is near one of the bad positions. A position is bad if the
 	 * drone ends up in dead end or making non-progressive moves
-	 * 
+	 *
 	 * @param position The position to be checked
 	 * @return Whether it is within the range closer enough to one of the bad
 	 *         stations

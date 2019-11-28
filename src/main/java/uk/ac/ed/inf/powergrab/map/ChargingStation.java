@@ -41,4 +41,12 @@ public class ChargingStation {
 		this.power -= power;
 	}
 
+	@Override
+	public String toString() {
+		return "ChargingStation{" +
+				"position=" + position +
+				", coins=" + coins +
+				", power=" + power +
+				'}';
+	}
 }

@@ -26,7 +26,7 @@ public class StatelessDrone extends Drone {
 	}
 
 	/**
-	 * Implement the strategy for stateless drone to decide next moving direction
+     * Implement the strategy for stateless drone
 	 */
 	@Override
 	public Direction decideMoveDirection(List<Direction> directions) {

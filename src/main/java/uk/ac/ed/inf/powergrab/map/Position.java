@@ -65,6 +65,12 @@ public class Position {
 				Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
 	}
 
+	public List<Direction> getValidDirections() {
+		List<Direction> allowedDirections = new ArrayList<>(Direction.DIRECTIONS);
+		return allowedDirections.stream().filter(dir -> this.nextPosition(dir).inPlayArea())
+				.collect(Collectors.toList());
+	}
+
 	@Override
 	public String toString() {
 		return String.format("%.6f,%.6f", latitude, longitude);

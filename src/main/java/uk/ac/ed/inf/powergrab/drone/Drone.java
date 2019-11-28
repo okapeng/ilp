@@ -23,7 +23,9 @@ public abstract class Drone {
 	 *
 	 */
 	public enum DroneType {
-		stateless("uk.ac.ed.inf.powergrab.drone.StatelessDrone"), stateful("uk.ac.ed.inf.powergrab.drone.StatefulDrone");
+		stateless("uk.ac.ed.inf.powergrab.drone.StatelessDrone"),
+		stateful("uk.ac.ed.inf.powergrab.drone.StatefulDrone"),
+		statefulOld("uk.ac.ed.inf.powergrab.drone.StatefulDroneOld");
 
 		private Class<Drone> droneClass;
 
