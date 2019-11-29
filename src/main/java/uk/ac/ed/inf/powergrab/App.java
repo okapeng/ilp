@@ -1,13 +1,12 @@
 package uk.ac.ed.inf.powergrab;
 
-import java.io.IOException;
-
 import com.mapbox.geojson.FeatureCollection;
-
 import uk.ac.ed.inf.powergrab.engine.PowerGrab;
+import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.utils.FileUtils;
 import uk.ac.ed.inf.powergrab.utils.NetworkUtils;
-import uk.ac.ed.inf.powergrab.map.Map;
+
+import java.io.IOException;
 
 /**
  * Entrance point for PowerGrab App
@@ -32,7 +31,7 @@ public class App {
 
 			PowerGrab powerGrab = new PowerGrab(Double.parseDouble(args[3]), Double.parseDouble(args[4]), args[6], randomSeed);
 			String moveTrace = powerGrab.play();
-			System.out.println(moveTrace);
+//			System.out.println(moveTrace);
 
 			String fileName = String.format("%s-%s-%s-%s", args[6], args[0], args[1], args[2]);
 			FileUtils.writeGeojson(fileName, Map.getInstance().getFeatures().toJson());
