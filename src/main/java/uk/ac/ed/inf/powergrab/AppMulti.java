@@ -4,7 +4,6 @@ import com.mapbox.geojson.FeatureCollection;
 import uk.ac.ed.inf.powergrab.drone.Drone.DroneType;
 import uk.ac.ed.inf.powergrab.engine.PowerGrab;
 import uk.ac.ed.inf.powergrab.map.Map;
-import uk.ac.ed.inf.powergrab.utils.FileUtils;
 import uk.ac.ed.inf.powergrab.utils.NetworkUtils;
 
 import java.io.IOException;
@@ -18,15 +17,15 @@ public class AppMulti {
 			}
 			PowerGrab.count = 0;
 			for (int i = 1; i < 13; i++) {
-				for (int j = 1; j < 2; j++) {
+				for (int j = 1; j < 31; j++) {
 					Map.reset();
 
 					try {
 						String mapString = String.format(
-								"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", 2019,
-								String.format("%02d", i), String.format("%02d", i));
-						System.out.printf("Date: %s/%s/%s \n", 2019, String.format("%02d", i),
-								String.format("%02d", i));
+								"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", 2020,
+								String.format("%02d", i), String.format("%02d", j));
+//						System.out.printf("Date: %s/%s/%s \n", 2019, String.format("%02d", i),
+//								String.format("%02d", j));
 						String mapSource = NetworkUtils.downloadMap(mapString);
 						Map.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
 
@@ -38,8 +37,8 @@ public class AppMulti {
 
 						String fileName = String.format("%s-%s-%s-%s", droneType, String.format("%02d", i),
 								String.format("%02d", i), 2019);
-						FileUtils.writeGeojson(fileName, Map.getInstance().getFeatures().toJson());
-						FileUtils.writeTxt(fileName, moveTrace);
+//						FileUtils.writeGeojson(fileName, Map.getInstance().getFeatures().toJson());
+//						FileUtils.writeTxt(fileName, moveTrace);
 
 					} catch (IOException e) {
 						System.out.println("Unable to acquire map from the server. Please try again.");
@@ -51,6 +50,11 @@ public class AppMulti {
 
 				}
 			}
+			System.out.println(droneType);
+//			System.out.println("Average number of moves " +
+//					(PowerGrab.number.stream().reduce(Integer::sum).get() / PowerGrab.number.size()));
+//			System.out.println("Maximum number of moves " + Collections.max(PowerGrab.number));
+//			PowerGrab.number = new ArrayList<>();
 			System.out.printf("Number of map fails for %s drone: %d\n", droneType, PowerGrab.count);
 		}
 

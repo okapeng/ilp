@@ -10,106 +10,114 @@ import java.util.stream.Collectors;
 
 public class StatefulDrone extends Drone {
 
-    private final static int MAX_SEARCH_DEPTH = 1250;
+    private final static int MAX_SEARCH_DEPTH = 250;
     private static final double R = 0.0003;
-    private static final double BAD_RANGE = 0.00015;
+    private static final double BAD_RANGE = 0.0001;
+    private static final double DISTANCE_WEIGHT = 2;
+
     private Stack<Direction> route;
     private Random rand;
-    //    private List<ChargingStation> goals;
     private List<ChargingStation> badStations;
     private ChargingStation goal;
-    private Direction lastMove;
+    private Direction backwardsDirection;
+    private boolean reachAllGoals;
 
     public StatefulDrone(Position curPosition, double coins, double power, int seed) {
         super(curPosition, coins, power, seed);
-//        this.goals = Map.getInstance().getChargingStations().stream().filter(stations -> stations.getCoins() > 0)
-//                .collect(Collectors.toList());
         this.badStations = Map.getInstance().getChargingStations().stream().filter(stations -> stations.getCoins() < 0)
                 .collect(Collectors.toList());
         this.rand = new Random(seed);
+        this.reachAllGoals = false;
         searchForGoal();
     }
 
     @Override
     public Direction decideMoveDirection(List<Direction> directions) {
-        if (route.isEmpty() && !searchForGoal()) {
-            System.out.println("cannot find route");
+        if (reachAllGoals && backwardsDirection != null) return backwardsDirection;
+        if (route.isEmpty() && !reachAllGoals) {
             List<Direction> safeDirections = getSafeDirections(curPosition);
-            safeDirections.remove(lastMove.getOppositeDirection());
+//            safeDirections.remove(lastMove.getOppositeDirection());
             safeDirections.sort(Comparator.comparingDouble(dir -> curPosition.nextPosition(dir).getRelativeDistance(this.goal.getPosition())));
-//            return safeDirections.get(0);
             return safeDirections.get(rand.nextInt(Math.min(safeDirections.size(), 3)));
         }
-//        if (goals.isEmpty() && lastMove != null) {
-        if (route.isEmpty() && lastMove != null) {
-            return lastMove.getOppositeDirection();
-        }
-        return route.get(0);
+        return route.pop();
     }
 
     @Override
     public void transfer(ChargingStation chargingStation, double coins, double power) {
-//        goals.remove(chargingStation);
-        if (goal == chargingStation) goal = null;
+        if (coins != 0) searchForGoal();
         super.transfer(chargingStation, coins, power);
     }
 
     @Override
     public boolean move(Direction direction) {
-        if (!this.route.empty() && route.indexOf(direction) == 0) {
-            this.route.remove(0);
-        }
-        this.lastMove = direction;
+        this.backwardsDirection = direction.getOppositeDirection();
         return super.move(direction);
     }
 
-    private boolean searchForRoute() {
-        HashMap<Position, Stack<Direction>> initFrontier = new HashMap<>();
-        initFrontier.put(curPosition, new Stack<>());
-        return searchForRouteRec(initFrontier, 0, new ArrayList<>());
+    private void searchForGoal() {
+        List<ChargingStation> goals = Map.getInstance().getChargingStations().stream()
+                .filter(stations -> stations.getCoins() > 0)
+                .collect(Collectors.toList());
+        this.reachAllGoals = goals.isEmpty();
+//        if (reachAllGoals) return;
+
+        goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
+        this.route = new Stack<>();
+        while (route.isEmpty() && !goals.isEmpty()) {
+            this.goal = goals.get(0);
+            searchForRoute();
+            goals.remove(0);
+        }
     }
 
-    private boolean searchForRouteRec(HashMap<Position, Stack<Direction>> frontier, int depth, List<Position> explored) {
-        if (depth > MAX_SEARCH_DEPTH)
-            return false;
+    private void searchForRoute() {
+        HashMap<Position, Stack<Direction>> initFrontier = new HashMap<>();
+        initFrontier.put(curPosition, new Stack<>());
+        searchForRouteRec(initFrontier, 0, new ArrayList<>());
+    }
 
-        Optional<Position> closestPositionOp = frontier.keySet().stream()
-                .min(Comparator.comparingDouble(pos -> (pos.getRelativeDistance(goal.getPosition()) + frontier.get(pos).size() * R)));
-        if (!closestPositionOp.isPresent()) {
-            return false;
-        }
-        Position closestPosition = closestPositionOp.get();
+    private void searchForRouteRec(HashMap<Position, Stack<Direction>> frontier, int depth, List<Position> explored) {
+        if (depth > MAX_SEARCH_DEPTH || frontier.isEmpty()) return;
 
-        List<Direction> safeDirections = getSafeDirections(closestPosition);
-        safeDirections.removeIf(dir -> isExplored(explored, closestPosition.nextPosition(dir)));
-        if (safeDirections.size() > 1) {
+        java.util.Map.Entry<Position, Stack<Direction>> closestEntry = frontier.entrySet().stream()
+                .min(Comparator.comparingDouble(this::heuristic)).get();
+        Position closestPosition = closestEntry.getKey();
+        Stack<Direction> bestRoute = closestEntry.getValue();
+
+        List<Direction> newDirections = getSafeDirections(closestPosition);
+        newDirections.removeIf(dir -> isExplored(explored, closestPosition.nextPosition(dir)));
+
+        if (newDirections.size() > 1) {
             depth++;
-            for (Direction dir : safeDirections) {
+            for (Direction dir : newDirections) {
                 Position nextPosition = closestPosition.nextPosition(dir);
                 ChargingStation potentialStation = Map.getInstance().getNearestStationInRange(nextPosition);
-                if (potentialStation.getCoins() > 0
-                        && frontier.get(closestPosition).size() > 0) {
+                Stack<Direction> nextRoute = new Stack<>();
+                nextRoute.addAll(bestRoute);
+                nextRoute.add(0, dir);
+                if (potentialStation.getCoins() > 0 && nextRoute.size() > 0) {
                     this.goal = potentialStation;
-                    this.route = frontier.get(closestPosition);
-                    route.push(dir);
-                    return true;
+                    this.route = nextRoute;
+                    return;
                 }
-                Stack<Direction> tempRoute = new Stack<>();
-                tempRoute.addAll(frontier.get(closestPosition));
-                tempRoute.push(dir);
-                frontier.put(nextPosition, tempRoute);
+                frontier.put(nextPosition, nextRoute);
             }
         }
 
         frontier.remove(closestPosition);
         explored.add(closestPosition);
-        return searchForRouteRec(frontier, depth, explored);
+        searchForRouteRec(frontier, depth, explored);
+    }
 
+    private double heuristic(java.util.Map.Entry<Position, Stack<Direction>> entry) {
+        return entry.getKey().getRelativeDistance(goal.getPosition()) * DISTANCE_WEIGHT + entry.getValue().size() * R;
     }
 
     private List<Direction> getSafeDirections(Position position) {
         List<Direction> safeDirections = position.getValidDirections();
         safeDirections.removeIf(dir -> badStations.contains(Map.getInstance().getNearestStationInRange(position.nextPosition(dir))));
+//        safeDirections.removeIf(dir -> Map.getInstance().getNearestStationInRange(position.nextPosition(dir)).getCoins() < 0);
         return safeDirections;
     }
 
@@ -117,22 +125,5 @@ public class StatefulDrone extends Drone {
         long numOfClosePos = explored.stream().parallel()
                 .filter(visitedPositions -> (position.getRelativeDistance(visitedPositions) < BAD_RANGE)).count();
         return numOfClosePos > 0;
-    }
-
-    private boolean searchForGoal() {
-        List<ChargingStation> goals = Map.getInstance().getChargingStations().stream()
-                .filter(stations -> stations.getCoins() > 0)
-                .collect(Collectors.toList());
-        if (goals.isEmpty())
-            return true;
-        this.route = new Stack<>();
-        goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
-//        return searchForRoute();
-        while (route.isEmpty() && !goals.isEmpty()) {
-            this.goal = goals.get(0);
-            searchForRoute();
-            goals.remove(0);
-        }
-        return !route.isEmpty();
     }
 }

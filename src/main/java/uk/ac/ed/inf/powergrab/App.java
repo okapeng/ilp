@@ -40,6 +40,7 @@ public class App {
 		} catch (IOException e) {
 			System.out.println("Unable to download map from server. Please try again.");
 		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
 			// Either because the number of argument is wrong or the DroneType doesn't match
 			// with any supported type
 			System.out.println(e.getMessage()

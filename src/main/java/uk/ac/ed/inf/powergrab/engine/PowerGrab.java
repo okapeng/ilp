@@ -38,7 +38,6 @@ public class PowerGrab {
 			this.drone = droneType.newInstance(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
 			Map.getInstance().addDronePosition(initPosition);
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new IllegalArgumentException("Unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
 		}
 	}
