@@ -1,5 +1,6 @@
 package uk.ac.ed.inf.powergrab.drone;
 
+import uk.ac.ed.inf.powergrab.engine.PowerGrab;
 import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Map;
@@ -35,6 +36,7 @@ public class StatefulDrone extends Drone {
     public Direction decideMoveDirection(List<Direction> directions) {
         if (reachAllGoals && backwardsDirection != null) return backwardsDirection;
         if (route.isEmpty() && !reachAllGoals) {
+            System.out.println("Cannot reach goal " + goal);
             List<Direction> safeDirections = getSafeDirections(curPosition);
 //            safeDirections.remove(lastMove.getOppositeDirection());
             safeDirections.sort(Comparator.comparingDouble(dir -> curPosition.nextPosition(dir).getRelativeDistance(this.goal.getPosition())));
@@ -60,7 +62,11 @@ public class StatefulDrone extends Drone {
                 .filter(stations -> stations.getCoins() > 0)
                 .collect(Collectors.toList());
         this.reachAllGoals = goals.isEmpty();
-//        if (reachAllGoals) return;
+        if (reachAllGoals) {
+            System.out.println(PowerGrab.numOfMoves);
+            PowerGrab.number.add(PowerGrab.numOfMoves);
+            return;
+        }
 
         goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
         this.route = new Stack<>();
@@ -78,35 +84,36 @@ public class StatefulDrone extends Drone {
     }
 
     private void searchForRouteRec(HashMap<Position, Stack<Direction>> frontier, int depth, List<Position> explored) {
-        if (depth > MAX_SEARCH_DEPTH || frontier.isEmpty()) return;
+        if (depth > MAX_SEARCH_DEPTH || frontier.isEmpty()) {
+            System.out.printf("depth: %d, frontier: %s\n", depth, frontier);
+            return;
+        }
 
         java.util.Map.Entry<Position, Stack<Direction>> closestEntry = frontier.entrySet().stream()
                 .min(Comparator.comparingDouble(this::heuristic)).get();
         Position closestPosition = closestEntry.getKey();
         Stack<Direction> bestRoute = closestEntry.getValue();
+        frontier.remove(closestPosition);
+        explored.add(closestPosition);
 
         List<Direction> newDirections = getSafeDirections(closestPosition);
         newDirections.removeIf(dir -> isExplored(explored, closestPosition.nextPosition(dir)));
+        depth += newDirections.size() > 0 ? 1 : 0;
 
-        if (newDirections.size() > 1) {
-            depth++;
-            for (Direction dir : newDirections) {
-                Position nextPosition = closestPosition.nextPosition(dir);
-                ChargingStation potentialStation = Map.getInstance().getNearestStationInRange(nextPosition);
-                Stack<Direction> nextRoute = new Stack<>();
-                nextRoute.addAll(bestRoute);
-                nextRoute.add(0, dir);
-                if (potentialStation.getCoins() > 0 && nextRoute.size() > 0) {
-                    this.goal = potentialStation;
-                    this.route = nextRoute;
-                    return;
-                }
-                frontier.put(nextPosition, nextRoute);
+        for (Direction dir : newDirections) {
+            Position nextPosition = closestPosition.nextPosition(dir);
+            ChargingStation potentialStation = Map.getInstance().getNearestStationInRange(nextPosition);
+            Stack<Direction> nextRoute = new Stack<>();
+            nextRoute.addAll(bestRoute);
+            nextRoute.add(0, dir);
+            if (potentialStation.getCoins() > 0 && nextRoute.size() > 0) {
+                this.goal = potentialStation;
+                this.route = nextRoute;
+                return;
             }
+            frontier.put(nextPosition, nextRoute);
         }
 
-        frontier.remove(closestPosition);
-        explored.add(closestPosition);
         searchForRouteRec(frontier, depth, explored);
     }
 
@@ -116,8 +123,8 @@ public class StatefulDrone extends Drone {
 
     private List<Direction> getSafeDirections(Position position) {
         List<Direction> safeDirections = position.getValidDirections();
-        safeDirections.removeIf(dir -> badStations.contains(Map.getInstance().getNearestStationInRange(position.nextPosition(dir))));
-//        safeDirections.removeIf(dir -> Map.getInstance().getNearestStationInRange(position.nextPosition(dir)).getCoins() < 0);
+//        safeDirections.removeIf(dir -> badStations.contains(Map.getInstance().getNearestStationInRange(position.nextPosition(dir))));
+        safeDirections.removeIf(dir -> Map.getInstance().getNearestStationInRange(position.nextPosition(dir)).getCoins() < 0);
         return safeDirections;
     }
 

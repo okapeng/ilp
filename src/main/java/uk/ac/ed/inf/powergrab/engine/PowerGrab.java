@@ -7,7 +7,9 @@ import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.map.Position;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Game engine
@@ -23,7 +25,9 @@ public class PowerGrab {
 	public static int count = 0;
 
 	private Drone drone;
-	private int numOfMoves;
+    //	private int numOfMoves;
+    public static int numOfMoves;
+    public static List<Integer> number = new ArrayList<>();
 	private StringBuffer movesTrace = new StringBuffer();
 
 	/*
@@ -32,7 +36,7 @@ public class PowerGrab {
 	 */
 	public PowerGrab(double initLatitude, double initLongitude, String droneTypeStr, int randomSeed) throws IllegalArgumentException {
 		try {
-			this.numOfMoves = 0;
+            numOfMoves = 0;
 			Position initPosition = new Position(initLatitude, initLongitude);
 			DroneType droneType = DroneType.valueOf(droneTypeStr);
 			this.drone = droneType.newInstance(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
