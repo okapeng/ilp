@@ -1,9 +1,5 @@
 package uk.ac.ed.inf.powergrab.map;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 /**
  * Position of an object in the map
  * 
@@ -30,9 +26,9 @@ public class Position {
 	}
 
 	/**
-	 * Calculate the new Position after moving in a given directions
-	 * 
-	 * @param direction
+	 * Calculate the new Position after moving towards a given directions
+	 *
+	 * @param direction to be moved
 	 * @return new position. If no direction is given, return current position
 	 */
 	public Position nextPosition(Direction direction) {
@@ -45,9 +41,7 @@ public class Position {
 	}
 
 	/**
-	 * Check whether the position is within the playing area
-	 * 
-	 * @return
+	 * @return true if the position is within the play area
 	 */
 	public boolean inPlayArea() {
 		return this.latitude < MAX_LATITUDE && this.latitude > MIN_LATITUDE && this.longitude < MAX_LONGITUDE
@@ -55,20 +49,13 @@ public class Position {
 	}
 
 	/**
-	 * Calculate the relative distance against another position
-	 * 
-	 * @param position
+	 * Calculate the relative distance between this position and another position
+	 * @param position another position
 	 * @return the relative distance
 	 */
 	public double getRelativeDistance(Position position) {
 		return Math.sqrt(
 				Math.pow((this.latitude - position.latitude), 2) + Math.pow((this.longitude - position.longitude), 2));
-	}
-
-	public List<Direction> getValidDirections() {
-		List<Direction> allowedDirections = new ArrayList<>(Direction.DIRECTIONS);
-		return allowedDirections.stream().filter(dir -> this.nextPosition(dir).inPlayArea())
-				.collect(Collectors.toList());
 	}
 
 	@Override

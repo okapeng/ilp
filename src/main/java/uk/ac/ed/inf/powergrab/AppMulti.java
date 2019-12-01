@@ -7,14 +7,12 @@ import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.utils.NetworkUtils;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class AppMulti {
 	public static void main(String[] args) {
 		for (DroneType droneType : DroneType.values()) {
-			if (!droneType.equals(DroneType.stateful)) {
+			if (droneType.equals(DroneType.stateless)) {
 				continue;
 			}
 			PowerGrab.count = 0;
@@ -26,7 +24,7 @@ public class AppMulti {
 						String mapString = String.format(
 								"http://homepages.inf.ed.ac.uk/stg/powergrab/%s/%s/%s/powergrabmap.geojson", 2020,
 								String.format("%02d", i), String.format("%02d", j));
-						System.out.printf("Date: %s/%s/%s \n", 2020, String.format("%02d", i),
+						System.out.printf("Date: %s/%s/%s \n", 2019, String.format("%02d", i),
 								String.format("%02d", j));
 						String mapSource = NetworkUtils.downloadMap(mapString);
 						Map.getInstance().setFeatures(FeatureCollection.fromJson(mapSource));
@@ -53,10 +51,10 @@ public class AppMulti {
 				}
 			}
 			System.out.println(droneType);
-			System.out.println("Average number of moves " +
-					(PowerGrab.number.stream().reduce(Integer::sum).get() / PowerGrab.number.size()));
-			System.out.println("Maximum number of moves " + Collections.max(PowerGrab.number));
-			PowerGrab.number = new ArrayList<>();
+//			System.out.println("Average number of moves " +
+//					(PowerGrab.number.stream().reduce(Integer::sum).get() / PowerGrab.number.size()));
+//			System.out.println("Maximum number of moves " + Collections.max(PowerGrab.number));
+//			PowerGrab.number = new ArrayList<>();
 			System.out.printf("Number of map fails for %s drone: %d\n", droneType, PowerGrab.count);
 		}
 

@@ -7,9 +7,7 @@ import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Map;
 import uk.ac.ed.inf.powergrab.map.Position;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Game engine
@@ -25,9 +23,7 @@ public class PowerGrab {
 	public static int count = 0;
 
 	private Drone drone;
-    //	private int numOfMoves;
-    public static int numOfMoves;
-    public static List<Integer> number = new ArrayList<>();
+	private int numOfMoves;
 	private StringBuffer movesTrace = new StringBuffer();
 
 	/*
@@ -47,8 +43,9 @@ public class PowerGrab {
 	}
 
 	/**
-	 * Main loop for a powergrab game Each loop includes deciding move direction,
-	 * moving, transforming coins and powers from/to Charging station (optional)
+	 * Main loop for the powergrab game containing the life cycle of a drone.
+	 * Each loop includes finding all possible directions, deciding on the direction to move next,
+	 * moving the drone, transforming coins and powers between the charging station and drone(optional)
 	 * 
 	 * @return String of drone's movement trace
 	 */
@@ -78,7 +75,7 @@ public class PowerGrab {
 
 	/**
 	 * At each move, transfer the coins and power between the drone and the nearest
-	 * charging station within the range of minimum transfer distance
+	 * charging station within the range of minimum transfer distance if it exists.
 	 */
 	private void transfer() {
 		ChargingStation nearestStation = Map.getInstance().getNearestStationInRange(drone.getPosition());
@@ -91,7 +88,7 @@ public class PowerGrab {
 				: 0 - drone.getPower();
 
 		nearestStation.transfer(coins, power);
-		drone.transfer(nearestStation, coins, power);
+		drone.transfer(coins, power);
 
 		if (coins < 0) {
 			System.out.println(nearestStation);

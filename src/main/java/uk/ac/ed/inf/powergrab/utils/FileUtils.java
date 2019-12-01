@@ -12,6 +12,13 @@ import java.io.IOException;
  */
 public class FileUtils {
 
+	/**
+	 * Write the geojson string to a geojson file
+	 *
+	 * @param filename the name of the file without extension
+	 * @param features a geojson string with the charging stations' information
+	 *                 and a line string specifying the drone's trace
+	 */
 	public static void writeGeojson(String filename, String features) {
 		try (FileWriter writer = new FileWriter(new File(filename + ".geojson"))) {
 			writer.write(features);
@@ -20,6 +27,11 @@ public class FileUtils {
 		}
 	}
 
+	/**
+	 * Write the drone trace log to a txt file
+	 * @param filename the name of the file without extension
+	 * @param moveTraces a String specifying the drone's trace
+	 */
 	public static void writeTxt(String filename, String moveTraces) {
 		try (FileWriter writer = new FileWriter(new File(filename + ".txt"))) {
 			writer.write(moveTraces);

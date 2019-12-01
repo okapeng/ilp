@@ -13,21 +13,35 @@ import java.net.URL;
  */
 public class NetworkUtils {
 
-    public static String downloadMap(String mapUrl) throws IOException {
+	/**
+	 * Given the URL of a geojson file and read its content to a string
+	 *
+	 * @param mapUrl the URL address of the map file
+	 * @return a string containing the content of that file
+	 * @throws IOException fails to read the file's content
+	 */
+	public static String downloadMap(String mapUrl) throws IOException {
 		StringBuilder sb = new StringBuilder();
-        HttpURLConnection conn = getConnection(new URL(mapUrl));
+		HttpURLConnection conn = getConnection(new URL(mapUrl));
 		try (InputStreamReader inputStreamReader = new InputStreamReader(conn.getInputStream())) {
 			int c = inputStreamReader.read();
 			while (c != -1) {
 				sb.append((char) c);
 				c = inputStreamReader.read();
 			}
-            conn.disconnect();
+			conn.disconnect();
 			return sb.toString();
 		}
 	}
 
-    private static HttpURLConnection getConnection(URL mapUrl) throws IOException {
+	/**
+	 * Given the URL get a connection to the server
+	 *
+	 * @param mapUrl the URL of the file
+	 * @return an instance of Connection class
+	 * @throws IOException fails to make the connection
+	 */
+	private static HttpURLConnection getConnection(URL mapUrl) throws IOException {
 		HttpURLConnection conn = (HttpURLConnection) mapUrl.openConnection();
 		conn.setReadTimeout(10000);
 		conn.setConnectTimeout(15000);

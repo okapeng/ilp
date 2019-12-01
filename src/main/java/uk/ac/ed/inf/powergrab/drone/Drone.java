@@ -1,41 +1,43 @@
 package uk.ac.ed.inf.powergrab.drone;
 
-import uk.ac.ed.inf.powergrab.map.ChargingStation;
 import uk.ac.ed.inf.powergrab.map.Direction;
 import uk.ac.ed.inf.powergrab.map.Position;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
  * Skeleton for a valid drone class
- * 
  * @author Ivy Wang
- *
  */
 public abstract class Drone {
 
 	/**
-	 * Drone type supported by PowerGrab
-	 *
+     * Valid drone type supported by PowerGrab
 	 * @author Ivy Wang
-	 *
 	 */
 	public enum DroneType {
 		stateless("uk.ac.ed.inf.powergrab.drone.StatelessDrone"),
-		stateful("uk.ac.ed.inf.powergrab.drone.StatefulDrone"),
-		statefulOld("uk.ac.ed.inf.powergrab.drone.StatefulDroneOld");
+        stateful("uk.ac.ed.inf.powergrab.drone.StatefulDrone");
 
 		private Class<Drone> droneClass;
 
-		DroneType(String className) throws IllegalArgumentException {
-			try {
-				this.droneClass = (Class<Drone>) Class.forName(className);
-			} catch (ClassNotFoundException e) {
-				throw new IllegalArgumentException();
-			}
-		}
+        /**
+         * Given the name of the class with the implementation
+         * of that drone type, find the class
+         *
+         * @param className the fully qualified name of class extending Drone
+         * @throws IllegalArgumentException if the class with that name doesn't exist
+         */
+        DroneType(String className) throws IllegalArgumentException {
+            try {
+                this.droneClass = (Class<Drone>) Class.forName(className);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalArgumentException();
+            }
+        }
 
 		/**
 		 * Initiate a new instance of drone of the given type with the parameters passed in
@@ -43,9 +45,9 @@ public abstract class Drone {
 		 * @param initPosition initial position of the Drone
 		 * @param coin         initial coin of the drone
 		 * @param power        initial power of the drone
-		 * @param seed         random seed
-		 * @return an instance of Drone with the given type
-		 * @throws Exception NoSuchMethodException infers that this drone type is not supported
+         * @param seed         random seed
+         * @return an instance of Drone of the given class
+         * @throws Exception this drone type is not supported
 		 */
 		public Drone newInstance(Position initPosition, double coin, double power, int seed) throws Exception {
 			return droneClass.getConstructor(Position.class, double.class, double.class, int.class)
@@ -58,12 +60,14 @@ public abstract class Drone {
 
 	Position curPosition;
 	protected double coins;
-	protected double power;
+    protected double power;
+    protected Random rand;
 
 	public Drone(Position curPosition, double coins, double power, int seed) {
 		this.curPosition = curPosition;
 		this.coins = coins;
-		this.power = power;
+        this.power = power;
+        this.rand = new Random(seed);
 	}
 
 	public Position getPosition() {
@@ -92,25 +96,32 @@ public abstract class Drone {
 
 	/**
 	 * Abstract method to be implemented based on the drone's strategy
-	 *
-	 * @param directions All the possible directions a drone can choose from
+     *
+     * @param directions All the possible directions a drone can choose
 	 * @return the direction the drone is going to move
 	 */
 	public abstract Direction decideMoveDirection(List<Direction> directions);
 
 	/**
 	 * Move the drone based on a give direction
-	 * 
-	 * @param direction
-	 * @return true if the drone has enough power to make the move
+     *
+     * @param direction that the drone decided to move towards
+     * @return true if the drone has enough power to make that move
 	 */
 	public boolean move(Direction direction) {
 		this.curPosition = curPosition.nextPosition(direction);
 		this.power -= POWER_CONSUMED_PER_MOVE;
-		return (this.power >= 0);
-	}
+        return (this.power >= 0);
+    }
 
-	public void transfer(ChargingStation chargingStation, double coins, double power) {
+    /**
+     * Add the coins and power to the drone if they are positive,
+     * otherwise deduct them.
+     *
+     * @param coins the amount of coins to be transferred (can be negative or positive)
+     * @param power the amount of power to be transferred (can be negative or positive)
+     */
+    public void transfer(double coins, double power) {
 		this.coins += coins;
 		this.power += power;
 	}
