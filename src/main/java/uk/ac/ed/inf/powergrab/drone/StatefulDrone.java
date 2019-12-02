@@ -21,7 +21,6 @@ public class StatefulDrone extends Drone {
 
     public StatefulDrone(Position curPosition, double coins, double power, int seed) {
         super(curPosition, coins, power, seed);
-        this.reachAllGoals = false;
         searchForGoal(); // Search for the first goal
     }
 
@@ -79,35 +78,32 @@ public class StatefulDrone extends Drone {
         if (reachAllGoals) return;
 
         goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
-        RouteFinder routeFinder = new RouteFinder(curPosition, goals.get(0));
+        RouteFinder routeFinder = new RouteFinder(goals.get(0));
         this.route = routeFinder.search();
     }
 
     /**
-     * Inner class: given a goal and initial position find the shortest route to the goal
+     * Inner class: gives a goal and finds the shortest route from current position to the goal
      */
     private class RouteFinder {
         private static final int MAX_SEARCH_DEPTH = 250;
         private static final double HISTORY_WEIGHT = 0.0003;
         private static final double DISTANCE_WEIGHT = 2;
-        private static final double BAD_RANGE = 0.0001;
+        private static final double CLOSE_RANGE = 0.0001;
 
         private ChargingStation goal;
-        private Position initPosition;
         private HashMap<Position, Stack<Direction>> frontier = new HashMap<>();
         private List<Position> explored = new ArrayList<>();
         private int depth = 0;
 
         /**
-         * Constructor of RouteFinder, initialise the frontier with the initial position
+         * Constructor of RouteFinder, initialises the frontier with the drone's current position
          * and an empty route (stack)
          *
-         * @param initPosition initial position of the drone
-         * @param goal         the charging station aiming to reach
+         * @param goal  is the charging station the drone currently aiming to reach
          */
-        RouteFinder(Position initPosition, ChargingStation goal) {
+        RouteFinder(ChargingStation goal) {
             this.goal = goal;
-            this.initPosition = initPosition;
             frontier.put(curPosition, new Stack<>());
         }
 
@@ -146,14 +142,13 @@ public class StatefulDrone extends Drone {
         }
 
         /**
-         * If the search algorithm fails to find a route to the goal or any of the positive charging station
-         * return the direction randomly choosing from the first three directions moving towards the goal
-         *
-         * @return
+         * If the search algorithm fails to find a route to the goal or any of the positive charging station,
+         * invoke this method
+         * @return the direction randomly choosing from the first three directions moving towards the goal
          */
         private Stack<Direction> oneStepTowardsGoal() {
-            List<Direction> bestNextMove = getUnexploredDirections(initPosition).stream()
-                    .sorted(Comparator.comparingDouble(dir -> initPosition.nextPosition(dir).getRelativeDistance(goal.getPosition())))
+            List<Direction> bestNextMove = getUnexploredDirections(curPosition).stream()
+                    .sorted(Comparator.comparingDouble(dir -> curPosition.nextPosition(dir).getRelativeDistance(goal.getPosition())))
                     .collect(Collectors.toList());
             Stack<Direction> route = new Stack<>();
             route.add(bestNextMove.get(rand.nextInt(Math.min(bestNextMove.size(), 3))));
@@ -196,7 +191,7 @@ public class StatefulDrone extends Drone {
          */
         private boolean isExplored(Position position) {
             long numOfClosePos = explored.stream().parallel()
-                    .filter(visitedPositions -> (position.getRelativeDistance(visitedPositions) < BAD_RANGE)).count();
+                    .filter(visitedPositions -> (position.getRelativeDistance(visitedPositions) < CLOSE_RANGE)).count();
             return numOfClosePos > 0;
         }
 

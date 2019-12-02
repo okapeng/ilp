@@ -25,8 +25,8 @@ public abstract class Drone {
 		private Class<Drone> droneClass;
 
         /**
-         * Given the name of the class with the implementation
-         * of that drone type, find the class
+		 * Given the name of the subclass with the implementation
+		 * of a given type of drone, find the corresponding java class
          *
          * @param className the fully qualified name of class extending Drone
          * @throws IllegalArgumentException if the class with that name doesn't exist
@@ -34,6 +34,7 @@ public abstract class Drone {
         DroneType(String className) throws IllegalArgumentException {
             try {
                 this.droneClass = (Class<Drone>) Class.forName(className);
+				if (!this.droneClass.getSuperclass().equals(Drone.class)) throw new IllegalArgumentException();
             } catch (ClassNotFoundException e) {
                 throw new IllegalArgumentException();
             }
@@ -47,18 +48,22 @@ public abstract class Drone {
 		 * @param power        initial power of the drone
          * @param seed         random seed
          * @return an instance of Drone of the given class
-         * @throws Exception this drone type is not supported
+		 * @throws IllegalArgumentException indicates the drone type passed by user is not supported
 		 */
-		public Drone newInstance(Position initPosition, double coin, double power, int seed) throws Exception {
-			return droneClass.getConstructor(Position.class, double.class, double.class, int.class)
-					.newInstance(initPosition, coin, power, seed);
+		public Drone newInstance(Position initPosition, double coin, double power, int seed) throws IllegalArgumentException {
+			try {
+				return droneClass.getConstructor(Position.class, double.class, double.class, int.class)
+						.newInstance(initPosition, coin, power, seed);
+			} catch (Exception e) {
+				throw new IllegalArgumentException();
+			}
 		}
 	}
 
 	// Amount of power a drone requires to make a move
 	private static final double POWER_CONSUMED_PER_MOVE = 1.25;
 
-	Position curPosition;
+	protected Position curPosition;
 	protected double coins;
     protected double power;
     protected Random rand;

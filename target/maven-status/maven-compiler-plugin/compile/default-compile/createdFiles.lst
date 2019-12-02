@@ -7,5 +7,4 @@ uk\ac\ed\inf\powergrab\AppMulti.class
 uk\ac\ed\inf\powergrab\drone\StatelessDrone.class
 uk\ac\ed\inf\powergrab\drone\Drone.class
 uk\ac\ed\inf\powergrab\map\Position.class
-uk\ac\ed\inf\powergrab\drone\StatefulDroneOld.class
 uk\ac\ed\inf\powergrab\map\ChargingStation.class

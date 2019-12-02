@@ -32,21 +32,12 @@ public class ChargingStation {
 
 	/**
 	 * Transfer coins and power away from the station
-	 * 
-	 * @param coins amount to be transfered
-	 * @param power amount to be transfered
+	 *
+     * @param coins amount to be transferred
+     * @param power amount to be transferred
 	 */
 	public void transfer(double coins, double power) {
 		this.coins -= coins;
 		this.power -= power;
-	}
-
-	@Override
-	public String toString() {
-		return "ChargingStation{" +
-				"position=" + position +
-				", coins=" + coins +
-				", power=" + power +
-				'}';
 	}
 }

@@ -14,14 +14,14 @@ import java.util.stream.Collectors;
  *
  */
 public class Map {
-	// Maximum distance for a transfer to happen
+    // Maximum distance for a transfer to be happened
 	private static final double MAX_TRANSFER_DISTANCE = 0.00025;
 
 	private static Map map = null;
 	private List<Feature> features;
 	// List of all the charging stations in the map
 	private List<ChargingStation> chargingStations = new ArrayList<>();
-	// List of points a drone visited at each move in sequence
+    // List of points the drone has visited
 	private List<Point> droneTrace = new ArrayList<>();
 
 	private Map() {
@@ -41,12 +41,12 @@ public class Map {
 	}
 
 	/**
-	 * Extract information from the feature collection download from the sever
-	 * 
-	 * @param features
+     * Extract map information from the geojson string downloaded from the sever
+	 *
+     * @param map a geojson formatted string
 	 */
-	public void setFeatures(FeatureCollection features) {
-		this.features = features.features();
+    public void setMap(String map) {
+        this.features = FeatureCollection.fromJson(map).features();
 		for (Feature feature : this.features) {
 			Geometry geometry = feature.geometry();
 			if (geometry instanceof Point) {
@@ -69,17 +69,15 @@ public class Map {
 	}
 
 	/**
-	 * 
-	 * @return A list of all the charging stations in the map
+     * @return A copy of all the charging stations in the map
 	 */
 	public List<ChargingStation> getChargingStations() {
 		return new ArrayList<>(this.chargingStations);
 	}
 
 	/**
-	 * Find the closest charging station within the distance for a transfer to
-	 * happen between station and drone
-	 * 
+     * Find the closest charging station within the minimum distance for transfer happening
+     * between station and drone
 	 * @param position
 	 * @return The nearest charging station in range. If there is no charging
 	 *         station nearby, return a station with no coins and power.
@@ -93,8 +91,13 @@ public class Map {
 		return minDistance < MAX_TRANSFER_DISTANCE ? nearestStation : new ChargingStation(position, 0, 0);
 	}
 
-	public void addDronePosition(Position position) {
-		droneTrace.add(Point.fromLngLat(position.longitude, position.latitude));
-	}
+    /**
+     * Add the drone's current position to the map
+     *
+     * @param position drone's position
+     */
+    public void addDronePosition(Position position) {
+        droneTrace.add(Point.fromLngLat(position.longitude, position.latitude));
+    }
 
 }

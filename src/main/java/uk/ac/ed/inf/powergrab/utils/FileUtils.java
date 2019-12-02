@@ -16,12 +16,12 @@ public class FileUtils {
 	 * Write the geojson string to a geojson file
 	 *
 	 * @param filename the name of the file without extension
-	 * @param features a geojson string with the charging stations' information
-	 *                 and a line string specifying the drone's trace
+	 * @param map a geojson string containing the charging stations' information
+	 *                 and a line string specifying the drone's moving path
 	 */
-	public static void writeGeojson(String filename, String features) {
+	public static void writeGeojson(String filename, String map) {
 		try (FileWriter writer = new FileWriter(new File(filename + ".geojson"))) {
-			writer.write(features);
+			writer.write(map);
 		} catch (IOException e) {
 			System.err.println("Error occurs when generating geojson output file!");
 		}

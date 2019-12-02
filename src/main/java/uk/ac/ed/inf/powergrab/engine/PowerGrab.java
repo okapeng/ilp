@@ -23,7 +23,7 @@ public class PowerGrab {
 	public static int count = 0;
 
 	private Drone drone;
-	private int numOfMoves;
+	private int numOfMoves = 0;
 	private StringBuffer movesTrace = new StringBuffer();
 
 	/*
@@ -32,22 +32,21 @@ public class PowerGrab {
 	 */
 	public PowerGrab(double initLatitude, double initLongitude, String droneTypeStr, int randomSeed) throws IllegalArgumentException {
 		try {
-            numOfMoves = 0;
 			Position initPosition = new Position(initLatitude, initLongitude);
 			DroneType droneType = DroneType.valueOf(droneTypeStr);
 			this.drone = droneType.newInstance(initPosition, INITIAL_COINS, INITIAL_POWER, randomSeed);
 			Map.getInstance().addDronePosition(initPosition);
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Unsupported drone type, please choose from: " + Arrays.toString(DroneType.values()));
 		}
 	}
 
 	/**
-	 * Main loop for the powergrab game containing the life cycle of a drone.
+	 * Main loop for the powergrab game i.e. the life cycle of a drone.
 	 * Each loop includes finding all possible directions, deciding on the direction to move next,
 	 * moving the drone, transforming coins and powers between the charging station and drone(optional)
-	 * 
-	 * @return String of drone's movement trace
+	 *
+	 * @return String of drone's movement trace log
 	 */
 	public String play() {
 		Double sum = (Map.getInstance().getChargingStations().stream().map(ChargingStation::getCoins).filter(x -> x > 0)
@@ -56,9 +55,8 @@ public class PowerGrab {
 		while (drone.getPower() > 0 && numOfMoves < MAX_NUMBER_OF_MOVES) {
 			Position oldPosition = drone.getPosition();
 			Direction moveDirection = drone.decideMoveDirection(drone.getAllowedDirections());
-			if (!drone.move(moveDirection)) {
+			if (!drone.move(moveDirection))
 				break;
-			}
 			transfer();
 			Map.getInstance().addDronePosition(drone.getPosition());
 			movesTrace.append(String.format("%s,%s,%s,%.2f,%.2f\n", oldPosition, moveDirection, drone.getPosition(),

@@ -21,7 +21,6 @@ public enum Direction {
 	 * The fixed angle between two consecutive direction
 	 */
 	private static final double UNIT_DEGREE = Math.PI / 8;
-	public static final int NUM_OF_DIRECTIONS = 16;
 
 	/**
 	 * a list of all the possible direction a drone can move
@@ -49,7 +48,7 @@ public enum Direction {
 	 * @return the direction opposites to this one
 	 */
 	public Direction getOppositeDirection() {
-		int indexOfDiagonal = (DIRECTIONS.indexOf(this) + (NUM_OF_DIRECTIONS / 2)) % NUM_OF_DIRECTIONS;
+        int indexOfDiagonal = (DIRECTIONS.indexOf(this) + (DIRECTIONS.size() / 2)) % DIRECTIONS.size();
 		return DIRECTIONS.get(indexOfDiagonal);
 	}
 
