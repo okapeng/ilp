@@ -19,9 +19,12 @@ public class StatefulDrone extends Drone {
     private Direction backwardsDirection; // The direction back to last position
     private boolean reachAllGoals; // Whether the drone has visited all the positive charging station in the map
 
+    /**
+     * Initialise a regular drone and search for the first goal as well as a route to that goal
+     */
     public StatefulDrone(Position curPosition, double coins, double power, int seed) {
         super(curPosition, coins, power, seed);
-        searchForGoal(); // Search for the first goal
+        searchForGoal();
     }
 
     /**
@@ -31,12 +34,39 @@ public class StatefulDrone extends Drone {
      * because it's guaranteed to be safe
      *
      * @param directions All the possible directions the drone can choose
-     * @return
+     * @return direction to move next
      */
     @Override
     public Direction decideMoveDirection(List<Direction> directions) {
-        if (reachAllGoals && backwardsDirection != null) return backwardsDirection;
+        if (reachAllGoals) return backwardsDirection;
         return route.pop();
+    }
+
+    /**
+     * Find all the positive charging stations in the map and sort them according their
+     * relative distance to the drone. Select the closest station as goal. Instantiate
+     * a RouteFinder and pass the goal to it to find a route.
+     * If there is no positive stations left in the map, update reachAllGoals and stop searching.
+     * If the drone doesn't have a backwards direction i.e. hasn't move to any position, it will
+     * randomly select one safe direction. (Very unlikely)
+     */
+    private void searchForGoal() {
+        List<ChargingStation> goals = Map.getInstance().getChargingStations().stream()
+                .filter(stations -> stations.getCoins() > 0)
+                .collect(Collectors.toList());
+        this.reachAllGoals = goals.isEmpty();
+        if (reachAllGoals) {
+            if (backwardsDirection == null) {
+                List<Direction> directions = this.getAllowedDirections();
+                directions.removeIf(dir -> Map.getInstance().getNearestStationInRange(curPosition.nextPosition(dir)).getCoins() < 0);
+                backwardsDirection = directions.get(rand.nextInt(directions.size()));
+            }
+            return;
+        }
+
+        goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
+        RouteFinder routeFinder = new RouteFinder(goals.get(0));
+        this.route = routeFinder.search();
     }
 
     /**
@@ -65,25 +95,7 @@ public class StatefulDrone extends Drone {
     }
 
     /**
-     * Find all the positive charging stations in the map and sort them according their
-     * relative distance to the drone. Select the closest station as goal. Instantiate
-     * a RouteFinder and pass the current position and goal to it to find the route to goal.
-     * If there is no positive stations left in the map, update reachAllGoals and stop searching.
-     */
-    private void searchForGoal() {
-        List<ChargingStation> goals = Map.getInstance().getChargingStations().stream()
-                .filter(stations -> stations.getCoins() > 0)
-                .collect(Collectors.toList());
-        this.reachAllGoals = goals.isEmpty();
-        if (reachAllGoals) return;
-
-        goals.sort(Comparator.comparingDouble(g -> curPosition.getRelativeDistance(g.getPosition())));
-        RouteFinder routeFinder = new RouteFinder(goals.get(0));
-        this.route = routeFinder.search();
-    }
-
-    /**
-     * Inner class: gives a goal and finds the shortest route from current position to the goal
+     * Inner class: given a goal, it finds the shortest route from current position to that goal
      */
     private class RouteFinder {
         private static final int MAX_SEARCH_DEPTH = 250;
@@ -185,9 +197,8 @@ public class StatefulDrone extends Drone {
         /**
          * Check whether the input position is too close to any of the previously explored position
          * i.e. within the distance defined by BAD_RANGE
-         *
-         * @param position
-         * @return whether it's in the region of explored
+         * @param position new expanded position
+         * @return whether it's in the explored region
          */
         private boolean isExplored(Position position) {
             long numOfClosePos = explored.stream().parallel()

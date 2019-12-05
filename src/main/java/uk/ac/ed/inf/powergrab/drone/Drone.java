@@ -64,11 +64,11 @@ public abstract class Drone {
 	private static final double POWER_CONSUMED_PER_MOVE = 1.25;
 
 	protected Position curPosition;
-	protected double coins;
-    protected double power;
+    private double coins;
+    private double power;
     protected Random rand;
 
-	public Drone(Position curPosition, double coins, double power, int seed) {
+    Drone(Position curPosition, double coins, double power, int seed) {
 		this.curPosition = curPosition;
 		this.coins = coins;
         this.power = power;

@@ -60,7 +60,7 @@ public class Position {
 
 	@Override
 	public String toString() {
-		return String.format("%.6f,%.6f", latitude, longitude);
+		return (latitude + "," + longitude);
 	}
 
 }

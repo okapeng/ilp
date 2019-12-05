@@ -49,25 +49,18 @@ public class PowerGrab {
 	 * @return String of drone's movement trace log
 	 */
 	public String play() {
-		Double sum = (Map.getInstance().getChargingStations().stream().map(ChargingStation::getCoins).filter(x -> x > 0)
-				.reduce(Double::sum)).get();
-
 		while (drone.getPower() > 0 && numOfMoves < MAX_NUMBER_OF_MOVES) {
 			Position oldPosition = drone.getPosition();
 			Direction moveDirection = drone.decideMoveDirection(drone.getAllowedDirections());
-			if (!drone.move(moveDirection))
-				break;
+			if (!drone.move(moveDirection)) break;
 			transfer();
+
 			Map.getInstance().addDronePosition(drone.getPosition());
-			movesTrace.append(String.format("%s,%s,%s,%.2f,%.2f\n", oldPosition, moveDirection, drone.getPosition(),
+			movesTrace.append(String.format("%s,%s,%s,%f,%f\n", oldPosition, moveDirection, drone.getPosition(),
 					drone.getCoins(), drone.getPower()));
 			numOfMoves++;
 		}
-
-		if ((int) (sum - drone.getCoins()) > 0) {
-			System.out.println("Remain Coins: " + (int) (sum - drone.getCoins()));
-			count++;
-		}
+		movesTrace.deleteCharAt(movesTrace.lastIndexOf("\n")); //remove new line
 		return movesTrace.toString();
 	}
 
@@ -87,11 +80,6 @@ public class PowerGrab {
 
 		nearestStation.transfer(coins, power);
 		drone.transfer(coins, power);
-
-		if (coins < 0) {
-			System.out.println(nearestStation);
-			System.out.println("Crash to negative station");
-		}
 
 	}
 

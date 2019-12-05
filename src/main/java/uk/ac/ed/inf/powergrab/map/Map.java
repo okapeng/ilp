@@ -14,14 +14,14 @@ import java.util.stream.Collectors;
  *
  */
 public class Map {
-    // Maximum distance for a transfer to be happened
+	// Maximum distance for a transfer to be happened
 	private static final double MAX_TRANSFER_DISTANCE = 0.00025;
 
 	private static Map map = null;
 	private List<Feature> features;
 	// List of all the charging stations in the map
 	private List<ChargingStation> chargingStations = new ArrayList<>();
-    // List of points the drone has visited
+	// List of points the drone has visited
 	private List<Point> droneTrace = new ArrayList<>();
 
 	private Map() {
@@ -36,17 +36,13 @@ public class Map {
 		return map;
 	}
 
-	public static void reset() {
-		map = null;
-	}
-
 	/**
-     * Extract map information from the geojson string downloaded from the sever
+	 * Extract map information from the geojson string downloaded from the sever
 	 *
-     * @param map a geojson formatted string
+	 * @param map a geojson formatted string
 	 */
-    public void setMap(String map) {
-        this.features = FeatureCollection.fromJson(map).features();
+	public void setMap(String map) {
+		this.features = FeatureCollection.fromJson(map).features();
 		for (Feature feature : this.features) {
 			Geometry geometry = feature.geometry();
 			if (geometry instanceof Point) {
@@ -69,15 +65,15 @@ public class Map {
 	}
 
 	/**
-     * @return A copy of all the charging stations in the map
+	 * @return A copy of all the charging stations in the map
 	 */
 	public List<ChargingStation> getChargingStations() {
 		return new ArrayList<>(this.chargingStations);
 	}
 
 	/**
-     * Find the closest charging station within the minimum distance for transfer happening
-     * between station and drone
+	 * Find the closest charging station within the minimum distance for transfer happening
+	 * between station and drone
 	 * @param position
 	 * @return The nearest charging station in range. If there is no charging
 	 *         station nearby, return a station with no coins and power.
@@ -91,13 +87,13 @@ public class Map {
 		return minDistance < MAX_TRANSFER_DISTANCE ? nearestStation : new ChargingStation(position, 0, 0);
 	}
 
-    /**
-     * Add the drone's current position to the map
-     *
-     * @param position drone's position
-     */
-    public void addDronePosition(Position position) {
-        droneTrace.add(Point.fromLngLat(position.longitude, position.latitude));
-    }
+	/**
+	 * Add the drone's current position to the map
+	 *
+	 * @param position drone's position
+	 */
+	public void addDronePosition(Position position) {
+		droneTrace.add(Point.fromLngLat(position.longitude, position.latitude));
+	}
 
 }

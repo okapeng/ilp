@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class App {
 	/**
-	 * @param args
+	 * @param args DD MM YYYY <initial_latitude> <initial_longitude> <random_seed> <drone_type>
 	 */
 	public static void main(String[] args) {
 
